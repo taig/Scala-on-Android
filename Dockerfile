@@ -10,3 +10,6 @@ RUN		apt-get install -y nodejs
 RUN		apt-get clean
 
 RUN		npm install -g roots
+
+RUN		mkdir -p /root/scalaonandroid
+WORKDIR		/root/scalaonandroid
