@@ -1,0 +1,7 @@
+main:
+  build: .
+  command: roots watch
+  ports:
+   - "1111:1111"
+  volumes:
+   - .:/root/scalaonandroid
