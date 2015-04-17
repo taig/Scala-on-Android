@@ -1,6 +1,6 @@
 {
   "name": "scalaonandroid",
-  "description": "",
+  "description": "Comprehensive documentation for every aspect of your working environment",
   "dependencies": {
     "autoprefixer-stylus": "0.5.x",
     "axis": "0.3.x",
