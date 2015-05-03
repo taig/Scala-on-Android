@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset=utf-8 />
+	<title>{% block title %}Scala on Android{% endblock %}</title>
+	<link rel="stylesheet" type="text/css" media="screen" href="/asset/stylesheet/main.css" />
+</head>
+<body>
+	{% include 'include/header/index.html' %}
+	<main>{% block content %}{% endblock %}</main>
+	{% include 'include/footer/index.html' %}
+</body>
+</html>

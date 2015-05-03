@@ -1,0 +1,49 @@
+@import ../lib/bourbon/bourbon
+@import ../lib/neat/neat
+@import util/main
+
+html
+	:-webkit-font-smoothing antialiased
+	:-moz-osx-font-smoothing grayscale
+	:background-color color( neutral )
+	:color color( main )
+	:font-family font-family( roboto )
+	:font-size $base
+	:font-size 100%
+
+h1, h2, h3, h4, h5, h6
+	:font-weight 700
+	:text-transform uppercase
+
+main
+	+outer-container( $width )
+	:line-height $line
+
+	h1, h2, h3, h4, h5, h6
+		:line-height 1.2
+		:margin-bottom spacing()
+
+	@each $i in ( 1 2 3 4 5 6 )
+		h#{$i}
+			:font-size $base * ( .25 * ( 6 - $i ) + 1 )
+
+	section + section
+		:margin-top spacing( 4 )
+
+	ol
+		:list-style decimal inside
+
+	ul
+		:list-style circle inside
+
+	p
+		:margin-bottom spacing()
+		:text-align justify
+		:hyphens auto
+
+body
+	> main
+		:padding spacing( 4 ) 0
+
+@import include/main
+@import page/main

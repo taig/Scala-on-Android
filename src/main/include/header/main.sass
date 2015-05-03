@@ -1,0 +1,19 @@
+body > header
+	:background-color color( scala )
+	:box-shadow 0 rem( 3px ) rem( 3px ) 0 rgba( 0, 0, 0, .25 )
+	:color color( secondary )
+	:padding spacing( 2 ) 0
+
+#title
+	+outer-container( $width )
+	h1, h2
+		:line-height 1
+		:margin 0
+
+	h1
+		:font-size 2rem
+		:margin 0
+
+	h2
+		:color darken( color( scala ), 25% )
+		:font-size .75rem

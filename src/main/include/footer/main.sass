@@ -1,0 +1,12 @@
+body > footer
+	.story, .fixtures
+		> div
+			+outer-container( $width )
+			:padding spacing( 2 ) 0
+
+	.story
+		:background-color color( android )
+
+	.fixtures
+		:background-color darken( color( android ), 10% )
+		:color color( secondary )

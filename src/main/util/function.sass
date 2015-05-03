@@ -1,0 +1,14 @@
+@function color( $name )
+	@return map-get( $colors, $name )
+
+@function font( $name )
+	@return map-get( $fonts, $name )
+
+@function font-family( $name )
+	@return map-get( $font-families, $name )
+
+@function rem( $px, $base: $base )
+	@return ( $px / $base ) + 0rem
+
+@function spacing( $multiplier: 1 )
+	@return $spacing * $multiplier

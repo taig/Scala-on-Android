@@ -1,0 +1,20 @@
+@each $font in ( 100 normal 100 robotothin, 500 normal 500 robotoregular, 500i italic 500 robotoitalic, 700 normal 700 robotobold )
+{
+	$path: '/asset/font/roboto';
+	$file: $path + '/' + nth( $font, 1 );
+	$style: nth( $font, 2 );
+	$weight: nth( $font, 3 );
+	$svg: nth( $font, 4 );
+
+	@font-face
+	{
+		font-family: font( roboto );
+		src: url( '#{$file}.eot' );
+		src: url( '#{$file}.eot?#iefix' ) format( 'embedded-opentype' ),
+			 url( '#{$file}.woff' ) format( 'woff' ),
+			 url( '#{$file}.ttf' ) format( 'truetype' ),
+			 url( '#{$file}.svg##{$svg}') format( 'svg' );
+		font-style: $style;
+		font-weight: $weight;
+	}
+}
