@@ -9,6 +9,7 @@ var plugin =
 	dom: require( 'gulp-dom' ),
 	filter: require( 'gulp-filter' ),
 	highlight: require( 'gulp-highlight' ),
+	htmlmin: require( 'gulp-html-minifier' ),
 	maps: require( 'gulp-sourcemaps' ),
 	nunjucks: require( 'gulp-nunjucks-render' ),
 	plumber: require( 'gulp-plumber' ),
@@ -144,6 +145,18 @@ gulp.task( 'templates', function()
 			{
 				path.dirname = path.dirname.substr( 5 );
 			}
+		} ) )
+		.pipe( plugin.htmlmin(
+		{
+			collapseBooleanAttributes: true,
+			collapseWhitespace: true,
+			minifyCSS: true,
+			minifyJS: true,
+			minifyURLs: true,
+			removeAttributeQuotes: true,
+			removeComments: true,
+			removeRedundantAttributes: true,
+			removeEmptyAttributes: true
 		} ) )
 		.pipe( gulp.dest( destination.main ) )
 		.pipe( plugin.reload() );

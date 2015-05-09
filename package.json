@@ -10,6 +10,7 @@
     "gulp-dom": "^0.3.x",
     "gulp-filter": "^2.0.2",
     "gulp-highlight": "^1.0.0",
+    "gulp-html-minifier": "^0.1.6",
     "gulp-livereload": "^3.8.0",
     "gulp-nunjucks": "^1.0.3",
     "gulp-nunjucks-render": "^0.2.1",
