@@ -49,16 +49,6 @@ gulp.task( 'assets', function()
 
 gulp.task( 'javascript', function()
 {
-	//plugin.rjs(
-	//{
-	//	baseUrl: source.main,
-	//	name: 'main',
-	//	out: 'main.js',
-	//	paths:
-	//	{
-	//		jquery: '../asset/javascript/jquery-2.1.4'
-	//	}
-	//} )
 	gulp.src( source.main + 'main.js' )
 		.pipe( plugin.plumber() )
 		.pipe( plugin.rjs(
