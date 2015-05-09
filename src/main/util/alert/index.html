@@ -1,0 +1,3 @@
+{%- macro alert( type = '' ) -%}
+	<aside class="alert {{ type }}">{{ caller() }}</aside>
+{%- endmacro -%}

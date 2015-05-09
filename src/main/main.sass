@@ -1,5 +1,6 @@
 @import ../lib/bourbon/bourbon
 @import ../lib/neat/neat
+
 @import util/main
 
 html
@@ -11,39 +12,136 @@ html
 	:font-size $base
 	:font-size 100%
 
+body
+	:display flex
+	:flex-direction column
+	:min-height 100vh
+
 h1, h2, h3, h4, h5, h6
 	:font-weight 700
 	:text-transform uppercase
 
+em
+	:font-style italic
+
+strong
+	:font-weight 700
+
 main
-	+outer-container( $width )
+	+outer-container()
 	:line-height $line
 
 	h1, h2, h3, h4, h5, h6
 		:line-height 1.2
-		:margin-bottom spacing()
+		:margin-bottom spacing( 2 )
 
 	@each $i in ( 1 2 3 4 5 6 )
 		h#{$i}
 			:font-size $base * ( .25 * ( 6 - $i ) + 1 )
 
-	section + section
-		:margin-top spacing( 4 )
+	section
+		:position relative
+
+	ol, ul
+		ol, ul
+			margin-left: spacing( 4 )
 
 	ol
 		:list-style decimal inside
 
 	ul
-		:list-style circle inside
+		:list-style disc inside
+
+	a
+		$color: color( scala )
+		$overlap: 2px
+		:color $color
+		:text-decoration none
+		:position relative
+
+		+pseudo( after )
+			:background-color $color
+			:bottom 0
+			:height rem( 1px )
+			:left 50%
+			:opacity 0
+			:position absolute
+			:right 50%
+			:transition left 300ms, opacity 150ms 150ms, right 300ms
+
+		&:hover::after
+			:left rem( -$overlap )
+			:opacity .75
+			:right rem( -$overlap )
+			:transition left 300ms, opacity 150ms, right 300ms
+
+		&:visited
+			:color darken( $color, 10% )
 
 	p
-		:margin-bottom spacing()
+		:margin-bottom spacing( 2 )
 		:text-align justify
 		:hyphens auto
 
+		&:last-child
+			:margin-bottom 0
+
+	a.edit
+		:color color( main )
+		:left -1.5rem - spacing( 2 )
+		:font-family font( icon )
+		:font-size 1.5rem
+		:line-height 1
+		:opacity .25
+		:position absolute
+		:top .4rem
+		:transition opacity 300ms
+
+		+pseudo( before )
+			+position( absolute, 50%, 50%, 50%, 50% )
+			:background-color color( scala )
+			:border-radius 50%
+			:opacity 0
+			:transition all 300ms
+
+		+pseudo( after, '\f1fc' )
+			+position( relative, $right: auto, $left: auto )
+			:background none
+			:display block
+			:height auto
+			:opacity 1
+			:position relative
+
+		&:hover
+			:opacity 1
+
+			&::before
+				+position( null, -30%, -30%, -30%, -30% )
+				:opacity .5
+
+		&:active
+			&::before
+				:opacity .75
+
+		span
+			:display none
+
+	code, pre
+		:font-family Menlo, Monaco, 'Andale Mono', 'Lucida Console', 'Courier New', monospace
+		:tab-size 4
+
+	.content-list
+		:list-style-type none
+		
+		li:not( :last-child )
+			:margin-bottom spacing( 2 )
+
 body
 	> main
-		:padding spacing( 4 ) 0
+		:flex 1
+		:margin-top $header-height
+		:padding spacing( 4 ) 0 spacing( 8 )
+		:width 100%
 
 @import include/main
 @import page/main

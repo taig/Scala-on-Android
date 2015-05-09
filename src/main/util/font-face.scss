@@ -18,3 +18,16 @@
 		font-weight: $weight;
 	}
 }
+
+@font-face {
+	$file: '/asset/font/icon/material-design';
+
+	font-family: font( icon );
+	src: url( '#{$file}.eot?v=1.0.1' );
+	src: url( '#{$file}.eot?#iefix&v=1.0.1' ) format( 'embedded-opentype' ),
+		 url( '#{$file}.woff?v=1.0.1' ) format( 'woff' ),
+		 url( '#{$file}.ttf?v=1.0.1' ) format( 'truetype' ),
+		 url( '#{$file}.svg?v=1.0.1#Material-Design-Iconic-Font' ) format('svg');
+	font-style: normal;
+	font-weight: normal;
+}

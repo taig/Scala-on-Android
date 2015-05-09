@@ -1,0 +1,12 @@
+div.image
+	:display table
+	:margin auto
+	:position relative
+	
+	+pseudo( before )
+		+position( absolute, rem( 5px ), rem( -5px ), rem( -5px ), rem( -5px ) )
+		:background-color transparentize( black, .95 )
+		:z-index -1
+
+	img
+		:display block

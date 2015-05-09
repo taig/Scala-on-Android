@@ -1,11 +1,7 @@
 {% extends '/layout.html' %}
 
-{% block content %}
-	<section class="contents">
-		{% markdown '/page/home/contents.md' %}
-	</section>
+{% set id = 'contents' %}
 
-	<section class="introduction">
-		{% markdown '/page/home/introduction.md' %}
-	</section>
+{% block content %}
+	{{ section( '/page/home/contents.html', 'contents' ) }}
 {% endblock %}

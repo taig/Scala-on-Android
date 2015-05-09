@@ -1,8 +1,13 @@
 <footer>
 	<div class="story">
-		<div>Story</div>
+		{% if previous( current ) %}
+			<div class="back"><a href="{{ previous( current ).url }}">{{ previous( current ).title }}</a></div>
+		{% endif %}
+		{% if next( current ) %}
+			<div class="continue"><a href="{{ next( current ).url }}">{{ next( current ).title }}</a></div>
+		{% endif %}
 	</div>
 	<div class="fixtures">
-		<div>Fixtures</div>
+		<img src="/asset/image/scala-android-logo.svg" class="logo" alt="Scala on Android logo" />
 	</div>
 </footer>

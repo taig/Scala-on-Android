@@ -1,0 +1,42 @@
+<h2>Introduction</h2>
+
+<p>
+	Android applications are usually developed with the Java programming language and the Android Software Development
+	Kit (Android SDK). The program code you write gets compiled to Java bytecode and is then translated to so-called
+	<em>Dalvik bytecode</em> (an Android-specific format). On the actual device the <em>Android Runtime (ART)</em> is
+	then able to execute these instructions. For you, as an application developer, this process is entirely happening
+	behind scenes and does not affect you. It does, however, leave you the freedom to decide how to generate your
+	bytecode.
+</p>
+
+<p>
+	Although Java is the only officially supported and documented language to create SDK apps, Android’s implicit
+	compatibility with Java bytecode opens the door to a variety of other Java Virtual Machine (JVM) technologies. In
+	fact, every JVM programming language that is able to interop with Java programs might be used as a fully functional
+	alternative to Java.
+</p>
+
+<img src="/asset/image/hello-scala.svg" class="hello-scala" alt="Waving android with the Scala logo on its chest" />
+
+<p>
+	The Scala programming language is one out of several JVM technologies that fulfills this requirement. On top of that
+	it covers most features of Java and adds a variety of highly useful capabilities, such as: type inference,
+	functional programing paradigms, actor-based concurrency and traits (as an improvement to Java interfaces) to just
+	mention a few of them. Scala’s steadily growing community has recently created a couple of ambitious projects aiming
+	to make Scala on Android a compelling experience.
+</p>
+
+<p>
+	But be warned: Leaving the safe haven of Google's Java environment does not come without a price. To enjoy the
+	benefits of Scala on Android you have to not only sacrifice official tooling support and deal with longer compile
+	times but you also have a much tougher build configuration ahead of you to get basic things working. If you still
+	think that Scala is worth the hassle, this documentation is there to guide you past the rough edges.
+</p>
+
+{% call alert( warning ) %}
+	<p>
+		When you have no experience with either Scala or Android development yet, please consider that both technologies
+		come with quite a steep learning curve. It is highly recommended to first get a basic understanding for both
+		technologies separately.
+	</p>
+{% endcall %}

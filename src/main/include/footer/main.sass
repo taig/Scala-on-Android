@@ -1,12 +1,72 @@
 body > footer
 	.story, .fixtures
+		+outer-container()
+		:position relative
+
 		> div
-			+outer-container( $width )
+			+outer-container()
 			:padding spacing( 2 ) 0
 
 	.story
-		:background-color color( android )
+		+background( color( android ) )
+		:align-items center
+		:display flex
+		:width 100%
+
+		.back, .continue
+			:flex 1
+
+		.back::before, .continue::after
+			:font-family font( icon )
+			:font-size 1.5rem
+			:display inline-block
+			:line-height 1
+			:vertical-align middle
+
+		.back
+			&::before
+				:content '\f1b5'
+				:margin-right spacing()
+
+		.continue
+			:text-align right
+
+			&::after
+				:content '\f1b6'
+				:margin-left spacing()
+
+		a
+			$color: darken( color( android ), 30% )
+			$overlap: 2px
+			:color $color
+			:position relative
+			:text-decoration none
+			:text-transform uppercase
+			:vertical-align middle
+
+			&::after
+				:background-color $color
+				:bottom 0
+				:content ''
+				:height rem( 1px )
+				:left 50%
+				:opacity 0
+				:position absolute
+				:right 50%
+				:transition left 300ms, opacity 150ms 150ms, right 300ms
+	
+			&:hover::after
+				:left rem( -$overlap )
+				:opacity .75
+				:right rem( -$overlap )
+				:transition left 300ms, opacity 150ms, right 300ms
 
 	.fixtures
-		:background-color darken( color( android ), 10% )
+		+background( darken( color( android ), 10% ) )
 		:color color( secondary )
+
+		.logo
+			:display block
+			:margin auto
+			:padding spacing( 4 ) 0
+			:width 14rem

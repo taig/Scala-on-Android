@@ -1,15 +1,21 @@
 var	gulp = require( 'gulp' ),
-	markdown = require( 'nunjucks-markdown' ),
-	marked = require( 'marked' );
+	_ = require( 'underscore' );
 
 var plugin =
 {
 	connect: require( 'gulp-connect' ),
+	cssmin: require( 'gulp-cssmin' ),
+	data: require( 'gulp-data' ),
+	dom: require( 'gulp-dom' ),
+	filter: require( 'gulp-filter' ),
+	highlight: require( 'gulp-highlight' ),
 	maps: require( 'gulp-sourcemaps' ),
 	nunjucks: require( 'gulp-nunjucks-render' ),
 	plumber: require( 'gulp-plumber' ),
 	prefixer: require( 'gulp-autoprefixer' ),
 	reload: require( 'gulp-livereload' ),
+	rename: require('gulp-rename'),
+	rjs: require( 'gulp-requirejs-optimize' ),
 	sass: require( 'gulp-sass' ),
 	watch: require( 'gulp-watch' )
 };
@@ -25,14 +31,47 @@ var	source =
 		main: './dist/'
 	};
 
-gulp.task( 'default', [ 'assets', 'stylesheets', 'templates' ] );
+gulp.task( 'default', [ 'assets', 'javascript', 'stylesheets', 'templates' ] );
 gulp.task( 'develop', [ 'default', 'connect', 'watch' ] );
 
 gulp.task( 'assets', function()
 {
-	gulp.src( source.asset + '**/*' )
+	gulp.src( source.asset + '*/**/*' )
 		.pipe( plugin.plumber() )
 		.pipe( gulp.dest( destination.asset ) )
+		.pipe( plugin.reload() );
+
+	gulp.src( source.asset + 'favicon.ico' )
+		.pipe( plugin.plumber() )
+		.pipe( gulp.dest( destination.main ) )
+		.pipe( plugin.reload() );
+} );
+
+gulp.task( 'javascript', function()
+{
+	//plugin.rjs(
+	//{
+	//	baseUrl: source.main,
+	//	name: 'main',
+	//	out: 'main.js',
+	//	paths:
+	//	{
+	//		jquery: '../asset/javascript/jquery-2.1.4'
+	//	}
+	//} )
+	gulp.src( source.main + 'main.js' )
+		.pipe( plugin.plumber() )
+		.pipe( plugin.rjs(
+		{
+			baseUrl: source.main,
+			name: 'main',
+			out: 'main.js',
+			paths:
+			{
+				jquery: '../lib/jquery-2.1.4'
+			}
+		} ) )
+		.pipe( gulp.dest( destination.asset + '/javascript' ) )
 		.pipe( plugin.reload() );
 } );
 
@@ -45,19 +84,77 @@ gulp.task( 'stylesheets', function()
 		.pipe( plugin.prefixer() )
 		.pipe( plugin.maps.write( '.' ) )
 		.pipe( gulp.dest( destination.asset + '/stylesheet' ) )
+		.pipe( plugin.filter( '*.css' ) )
+		.pipe( plugin.rename( { suffix: '.min' } ) )
+		.pipe( plugin.cssmin() )
+		.pipe( gulp.dest( destination.asset + '/stylesheet' ) )
 		.pipe( plugin.reload() );
 } );
 
 gulp.task( 'templates', function()
 {
-	markdown.register(
-		plugin.nunjucks.nunjucks.configure( [ source.main ] ),
-		marked
-	);
+	var sitemap = require( './sitemap.json' );
+
+	plugin.nunjucks.nunjucks.configure( [ source.main ] );
 
 	gulp.src( source.main + '**/index.html' )
 		.pipe( plugin.plumber() )
+		.pipe( plugin.data(
+		{
+			find: function( id )
+			{
+				return _.find( sitemap, function( page ) { return page.id === id; } );
+			},
+			previous: function( current )
+			{
+				var i = _.indexOf( sitemap, current );
+
+				if( i > 0 )
+				{
+					return sitemap[i - 1];
+				}
+			},
+			next: function( current )
+			{
+				var i = _.indexOf( sitemap, current );
+
+				if( i !== -1 && sitemap.length > i + 1 )
+				{
+					return sitemap[i + 1];
+				}
+			},
+			sitemap: sitemap
+		} ) )
 		.pipe( plugin.nunjucks() )
+		.pipe( plugin.dom( function()
+		{
+			var items = this.querySelectorAll( '[data-src]' );
+
+			for( var i = 0; i < items.length; i++ )
+			{
+				var item = items[i];
+					url = 'https://github.com/taig/scala-on-android/edit/master/src/main/' + item.getAttribute( 'data-src' );
+				
+				var a = this.createElement( 'a' );
+				a.setAttribute( 'class', 'edit' );
+				a.setAttribute( 'href', url );
+				a.setAttribute( 'target', '_blank' );
+				a.setAttribute( 'title', 'Edit on GitHub' );
+				a.innerHTML = '<span>Edit</span>';
+
+				item.appendChild( a );
+			}
+
+			return this;
+		} ) )
+		.pipe( plugin.highlight() )
+		.pipe( plugin.rename( function( path )
+		{
+			if( path.dirname.indexOf( 'page/' ) === 0 )
+			{
+				path.dirname = path.dirname.substr( 5 );
+			}
+		} ) )
 		.pipe( gulp.dest( destination.main ) )
 		.pipe( plugin.reload() );
 } );
@@ -67,6 +164,7 @@ gulp.task( 'watch', function()
 	plugin.reload.listen();
 
 	plugin.watch( source.asset + '**/*', function() { gulp.start( 'assets' ); } );
+	plugin.watch( source.main + '**/*.js', function() { gulp.start( 'javascript' ); } );
 	plugin.watch( source.main + '**/*.{sass,scss}', function() { gulp.start( 'stylesheets' ); } );
 	plugin.watch( source.main + '**/*.{html,md}', function() { gulp.start( 'templates' ); } );
 } );

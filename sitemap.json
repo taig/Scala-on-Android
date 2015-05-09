@@ -1,0 +1,7 @@
+[
+	{ "id": "contents", "title": "Table of Contents", "url": "/", "skip": true },
+	{ "id": "introduction", "title": "Introduction", "url": "/introduction" },
+	{ "id": "prerequisites", "title": "Prerequisites", "url": "/prerequisites" },
+	{ "id": "editor", "title": "Editor / IDE", "url": "/editor" },
+	{ "id": "build-system", "title": "Build System", "url": "/build-system" }
+]
