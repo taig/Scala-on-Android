@@ -29,11 +29,15 @@ strong
 
 main
 	+outer-container()
+	:flex 1
 	:line-height $line
+	:margin-top $header-height
+	:padding-bottom spacing( 8 )
+	:padding-top spacing( 4 )
+	:width 100%
 
 	h1, h2, h3, h4, h5, h6
 		:line-height 1.2
-		:margin-bottom spacing( 2 )
 
 	@each $i in ( 1 2 3 4 5 6 )
 		h#{$i}
@@ -41,6 +45,9 @@ main
 
 	section
 		:position relative
+
+		> *:not( :last-child )
+			:margin-bottom spacing( 2 )
 
 	ol, ul
 		ol, ul
@@ -79,12 +86,24 @@ main
 			:color darken( $color, 10% )
 
 	p
-		:margin-bottom spacing( 2 )
 		:text-align justify
 		:hyphens auto
 
-		&:last-child
-			:margin-bottom 0
+	table
+		:margin-bottom spacing( 2 )
+		:width 100%
+
+		td, th
+			:border-bottom rem( 1px ) solid darken( color( neutral ), 30% )
+			:padding spacing()
+			:text-align center
+			:vertical-align middle
+
+		tbody tr:last-child td
+			:border-bottom none
+
+		tr td:nth-child( even )
+			:background-color darken( color( neutral ), 5% )
 
 	a.edit
 		:color color( main )
@@ -126,22 +145,14 @@ main
 		span
 			:display none
 
-	code, pre
-		:font-family Menlo, Monaco, 'Andale Mono', 'Lucida Console', 'Courier New', monospace
-		:tab-size 4
-
 	.content-list
 		:list-style-type none
-		
+
 		li:not( :last-child )
 			:margin-bottom spacing( 2 )
 
-body
-	> main
-		:flex 1
-		:margin-top $header-height
-		:padding spacing( 4 ) 0 spacing( 8 )
-		:width 100%
+		li > *:not( :last-child )
+			:margin-bottom spacing( 2 )
 
 @import include/main
 @import page/main

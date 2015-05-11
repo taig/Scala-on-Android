@@ -1,0 +1,29 @@
+section.build-tool-sbt
+	.title
+		h3
+			:font-size 1.2rem
+			:font-weight normal
+
+section.build-tool-sbt-structure
+	.directory-structure
+		+background( darken( color( neutral ), 10% ) )
+		:line-height 1
+		:padding spacing( 2 ) 0
+
+		code.inline
+			:background none
+
+		&, ol
+			:font-family font-family( code )
+			:list-style none
+
+		li
+			:padding spacing( .75 ) 0
+
+			&:last-child
+				:padding-bottom 0
+
+		p
+			:color darken( color( android ), 20% )
+			:font-family font-family( roboto )
+			:line-height $line

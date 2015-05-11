@@ -1,0 +1,13 @@
+code
+	:font-family font-family( code )
+	:font-size .9rem
+
+	&.inline
+		:background-color darken( color( neutral ), 10% )
+
+pre code
+	+background( darken( color( neutral ), 10% ) )
+	:display block
+	:padding spacing( 2 ) 0
+	:tab-size 4
+	:word-wrap break-word

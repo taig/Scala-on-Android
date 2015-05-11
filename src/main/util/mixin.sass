@@ -1,6 +1,8 @@
 =outer-container()
 	:margin auto
-	:max-width rem( 960px )
+	:max-width $width
+	:padding-left spacing( 4 )
+	:padding-right spacing( 4 )
 
 =position( $position, $top: null, $right: null, $bottom: null, $left: null )
 	:bottom $bottom
@@ -27,3 +29,8 @@
 		:height 100%
 		:width 100vw
 		:z-index -1
+
+%icon
+	:font-family font( icon )
+	:display inline-block
+	:line-height 1

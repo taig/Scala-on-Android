@@ -1,10 +1,10 @@
 <footer>
 	<div class="story">
-		{% if previous( current ) %}
-			<div class="back"><a href="{{ previous( current ).url }}">{{ previous( current ).title }}</a></div>
+		{% if current.previous %}
+			<div class="back"><a href="{{ current.previous.url }}">{{ current.previous.title }}</a></div>
 		{% endif %}
-		{% if next( current ) %}
-			<div class="continue"><a href="{{ next( current ).url }}">{{ next( current ).title }}</a></div>
+		{% if current.next %}
+			<div class="continue"><a href="{{ current.next.url }}">{{ current.next.title }}</a></div>
 		{% endif %}
 	</div>
 	<div class="fixtures">

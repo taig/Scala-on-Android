@@ -1,0 +1,14 @@
+{% extends '/layout.html' %}
+
+{% set id = 'build-tool-sbt' %}
+
+{% block content %}
+	<section class="build-tool-sbt">
+		<div class="title">
+			<h2>sbt</h2>
+			<h3>Scala Build Tool</h3>
+		</div>
+		{{ section( 'page/build-tool/sbt/installation.html' ) }}
+		{{ section( 'page/build-tool/sbt/structure.html', 'build-tool-sbt-structure' ) }}
+	</section>
+{% endblock %}

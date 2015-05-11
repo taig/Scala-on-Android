@@ -84,38 +84,13 @@ gulp.task( 'stylesheets', function()
 
 gulp.task( 'templates', function()
 {
-	var sitemap = require( './sitemap.json' );
+	var sitemap = require( './sitemap.js' );
 
 	plugin.nunjucks.nunjucks.configure( [ source.main ] );
 
 	gulp.src( source.main + '**/index.html' )
 		.pipe( plugin.plumber() )
-		.pipe( plugin.data(
-		{
-			find: function( id )
-			{
-				return _.find( sitemap, function( page ) { return page.id === id; } );
-			},
-			previous: function( current )
-			{
-				var i = _.indexOf( sitemap, current );
-
-				if( i > 0 )
-				{
-					return sitemap[i - 1];
-				}
-			},
-			next: function( current )
-			{
-				var i = _.indexOf( sitemap, current );
-
-				if( i !== -1 && sitemap.length > i + 1 )
-				{
-					return sitemap[i + 1];
-				}
-			},
-			sitemap: sitemap
-		} ) )
+		.pipe( plugin.data( { sitemap: sitemap } ) )
 		.pipe( plugin.nunjucks() )
 		.pipe( plugin.dom( function()
 		{
@@ -169,7 +144,7 @@ gulp.task( 'watch', function()
 	plugin.watch( source.asset + '**/*', function() { gulp.start( 'assets' ); } );
 	plugin.watch( source.main + '**/*.js', function() { gulp.start( 'javascript' ); } );
 	plugin.watch( source.main + '**/*.{sass,scss}', function() { gulp.start( 'stylesheets' ); } );
-	plugin.watch( source.main + '**/*.{html,md}', function() { gulp.start( 'templates' ); } );
+	plugin.watch( source.main + '**/*.{html,txt}', function() { gulp.start( 'templates' ); } );
 } );
 
 gulp.task( 'connect', function()

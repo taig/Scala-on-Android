@@ -1,0 +1,68 @@
+<h3>Comparison</h3>
+
+<table>
+	<thead>
+	<tr>
+		<td></td>
+		<td>
+			<strong><em>sbt</em></strong><br />
+			(Android SDK Plugin for SBT)
+		</td>
+		<td>
+			<strong><em>Gradle</em></strong><br />
+			(gradle-android-scala-plugin)
+		</td>
+	</tr>
+	</thead>
+	<tbody>
+	<tr>
+		<td>Mixed Scala and Java projects</td>
+		<td class="yes"><span>Yes</span></td>
+		<td class="yes"><span>Yes</span></td>
+	</tr>
+	<tr>
+		<td>Linting (limited to bytecode)</td>
+		<td class="yes"><span>Yes</span></td>
+		<td class="no"><span>No</span></td>
+	</tr>
+	<tr>
+		<td>MultiDex</td>
+		<td class="yes"><span>Yes</span></td>
+		<td class="yes"><span>Yes</span></td>
+	</tr>
+	<tr>
+		<td><em>ProGuard</em> caching</td>
+		<td class="yes"><span>Yes</span></td>
+		<td class="unknown"><span>Unknown</span></td>
+	</tr>
+	<tr>
+		<td>Continuous compilation</td>
+		<td class="yes"><span>Yes</span></td>
+		<td class="no">
+			<span>No</span>
+			<a href="https://issues.gradle.org/browse/GRADLE-1351" target="_blank">*</a>
+		</td>
+	</tr>
+	<tr>
+		<td>Scala compiler plugins (e.g. <em>macro paradise</em>)</td>
+		<td class="yes"><span>Yes</span></td>
+		<td class="no">
+			<span>No</span>
+			<a href="https://discuss.gradle.org/t/how-to-apply-scala-macro-paradise-plugin/9316" target="_blank">*</a>
+		</td>
+	</tr>
+	<tr>
+		<td>Custom annotation processing</td>
+		<td class="no"><span>No</span></td>
+		<td class="no"><span>No</span></td>
+	</tr>
+	</tbody>
+</table>
+
+<p>
+	<em>sbt</em> and <em>Gradle</em>, and their respective plugins for Scala on Android, are reliable and mature tools. Pointing the finger on one of them and declaring it as the better choice is not possible from an objective point of view. <em>Gradle</em> on one hand is the default build system for Android. It works well with Android Studio and there is plenty of documentation for Android specific niceties . <em>sbt</em> on the other hand is the standard build tool for Scala. It is written in Scala and also configured by the user in this language. <em>sbt</em> comes with advanced features to leverage the capabilities of this ecosystem.
+</p>
+
+<p>
+	At the end of the day the choice of whether to use <em>sbt</em> or <em>Gradle</em> is a matter of taste and previous experiences. Measured by <em>GitHub</em> stars and commits, the <em>Android SDK Plugin for SBT</em> is the more popular tool. For this very reason, this documentation is focusing on <em>sbt</em> and contains several chapters that are specific to this setup. It is therefore advised to take the <em>sbt</em> path in order to follow further instructions.
+</p>

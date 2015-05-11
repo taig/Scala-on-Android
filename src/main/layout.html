@@ -1,29 +1,25 @@
 {% from 'util/alert/index.html' import alert %}
-{% from 'util/command/index.html' import command %}
+{% from 'util/code/index.html' import code, command %}
 {% from 'util/image/index.html' import image %}
 
-{%- macro code( path, language = 'scala' ) -%}
-<pre><code class="{{ language }}">{% include "page/home/test.scala.html" %}</code></pre>
-{%- endmacro -%}
-
 {%- macro section( file, class = '' ) -%}
-<section class="{{ class }}" data-src="{{ file }}">{% include file %}</section>
+	<section class="{{ class }}" data-src="{{ file }}">{% include file %}</section>
 {%- endmacro -%}
 
-{% set current = find( id ) %}
+{% set current = sitemap.find( id ) %}
 
 <!DOCTYPE html>
 
 <html lang="en">
 <head>
 	<meta charset=utf-8 />
-	<title>Scala on Android: {{ current.title }}</title>
+	<title>Scala on Android › {{ sitemap.path( current )|join( ' › ' ) }}</title>
 	<link rel="stylesheet" type="text/css" media="screen" href="/asset/stylesheet/main.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="/asset/stylesheet/github.css" />
 </head>
 <body>
 	{% include 'include/header/index.html' %}
-	<main>{% block content %}{% endblock %}</main>
+	<main id="{{ id }}">{% block content %}{% endblock %}</main>
 	{% include 'include/footer/index.html' %}
 
 	<script data-main="/asset/javascript/main" src="/asset/javascript/require-2.1.17.min.js"></script>

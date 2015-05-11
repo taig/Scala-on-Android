@@ -1,0 +1,87 @@
+<ol class="directory-structure">
+	<li>
+		<span>project-root/</span>
+		<ol>
+			<li>
+				<span>project/</span>
+				<ol>
+					<li>
+						<span>Build.scala</span>
+						<p>
+							Your actual build configuration. Here you specify your (sub-) projects, manage application dependencies and configure <em>ProGuard.</em>
+						</p>
+						<p>
+							You can also manage your build via {{ command( '/build.sbt' ) }}. However, {{ command( '/project/Build.scala' ) }} is written in actual Scala code, is slightly more expressive and allows you to keep all of your configuration files in the {{ command( '/project' ) }} folder.
+						</p>
+					</li>
+					<li>
+						<span>build.properties</span>
+						<p>
+							An optional, but recommended file that specifies the <em>sbt</em> version for this build.
+						</p>
+					</li>
+					<li>
+						<span>plugins.sbt</span>
+						<p>
+							Dependencies for <em>sbt</em> are managed in this file. This is necessary, as we need to rely on <em>Android SDK Plugin for SBT</em> here.
+						</p>
+					</li>
+				</ol>
+			</li>
+			<li>
+				<span>src/</span>
+				<ol>
+					<li>
+						<span>main/</span>
+						<ol>
+							<li>
+								<span>AndroidManifest.xml</span>
+							</li>
+							<li>
+								<span>res/</span>
+								<p>
+									Common Android resource folders such as {{ command( 'drawable/' ) }} and {{ command( 'values/' ) }} go here.
+								</p>
+							</li>
+							<li>
+								<span>java/</span>
+								<p>
+									Java source files that may interact with the Scala sources and vice versa.
+								</p>
+							</li>
+							<li>
+								<span>scala/</span>
+								<p>
+									The actual application code is located in this folder if you're not building a Java app with <em>sbt</em> (which is also possible).
+								</p>
+							</li>
+						</ol>
+					</li>
+					<li>
+						<span>test/</span>
+						<ol>
+							<li>
+								<span>AndroidManifest.xml</span>
+							</li>
+							<li>
+								<span>res/</span>
+							</li>
+							<li>
+								<span>java/</span>
+							</li>
+							<li>
+								<span>scala/</span>
+							</li>
+						</ol>
+					</li>
+					<li>
+						<span>androidTest/</span>
+						<p>
+							A folder introduced by the Android plugin to host instrumentation tests.
+						</p>
+					</li>
+				</ol>
+			</li>
+		</ol>
+	</li>
+</ol>
