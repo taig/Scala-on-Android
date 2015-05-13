@@ -1,28 +1,29 @@
 <ul class="content-list">
 	<li>
-		<h4>Java Development Kit (JDK)</h4>
+		<h4>{{ names.render( 'jdk' ) }}</h4>
 
 		<p>
-			Android supports Java 7, so the <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html" target="_blank">JDK 7</a> should also be your choice for now. If you already have a newer version of the JDK installed, this will work as well, but then you have to specify your compile target properly to version 1.7, which will be explained in the build tools topic.
+			{{ names.name( 'android' ) }} supports {{ names.name( 'java' ) }} 7, so the <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html" target="_blank">{{ names.abbreviation( 'jdk' ) }} 7</a> should also be your choice for now. If you already have a newer version of the {{ names.abbreviation( 'jdk' ) }} installed, this will work as well, but then you have to specify your compile target properly to version 1.7, which will be explained in the build tools topic.
 		</p>
 
 		{% call alert( warning ) %}
 			<p>
-				With the upcoming release of Scala 2.12, <a href="http://www.scala-lang.org/news/2.12-roadmap" target="_blank">Java 8 will be required</a>. Therefore <strong>Scala 2.12 can not be used for Android development</strong> until Google introduces Java 8 support for Android.
+				With the upcoming release of {{ names.name( 'scala' ) }} 2.12, <a href="http://www.scala-lang.org/news/2.12-roadmap" target="_blank">{{ names.name( 'java' ) }} 8 will be required</a>. Therefore <strong>{{ names.name( 'scala' ) }} 2.12 can not be used for {{ names.name( 'android' ) }} development</strong> until {{ names.name( 'google' ) }} introduces {{ names.name( 'java' ) }} 8 support for {{ names.name( 'android' ) }}.
 			</p>
 		{% endcall %}
 	</li>
 	<li>
-		<h4>Android Software Development Kit (SDK)</h4>
+		<h4>{{ names.render( 'android-sdk' ) }}</h4>
 
 		<p>
-			The Android SDK is a comprehensive tooling suite. It comes with applications that compile Java to Android bytecode, debugging and profiling applications, the Android emulator and <a href="https://developer.android.com/tools/help/index.html" target="_blank">a whole lot more</a>.
+			The {{ names.abbreviation( 'android-sdk' ) }} is a comprehensive tooling suite. It comes with applications that compile {{ names.name( 'java' ) }} to {{ names.name( 'android' ) }} bytecode, debugging and profiling applications, the {{ names.name( 'android' ) }} emulator and a {{ sourcelink( 'android-tools', 'whole lot more' ) }}.
 		</p>
 
 		<p>
-			<a href="https://developer.android.com/sdk/index.html#Other" target="_blank">Download</a> and <a href="https://developer.android.com/sdk/installing/index.html?pkg=tools" target="_blank">Install</a> the SDK. Then open your terminal and run {{ command( 'android sdk' ) }}. The <em>Android SDK Manager</em> window will pop up and ask you to install Android version specific documentation, development APIs, sources and disk images for emulation. For a quick start it is sufficient to stick with the default selection.
+			{{ sourcelink( 'android-download', 'Download' ) }} and {{ sourcelink( 'android-install', 'install' ) }} the {{ names.abbreviation( 'sdk' ) }}. Then open your terminal and run {{ command( 'android sdk' ) }}. The {{ names.abbreviation( 'android-sdk-manager' ) }} window will pop up and ask you to install {{ names.name( 'android' ) }} version specific documentation, development {{ names.abbreviation( 'api' ) }}s, sources and disk images for emulation. For a quick start it is sufficient to stick with the default selection.
 		</p>
 
+		{# TODO use name and striptags() #}
 		{{
 			image(
 				'/asset/image/android-sdk-manager-settings.png',
@@ -34,24 +35,24 @@
 		<h4>Build Tool</h4>
 
 		<p>
-			Build tool integration plugins for Scala on Android are currently available for <a href="https://github.com/pfn/android-sdk-plugin" target="_blank"><em>sbt</em></a>, <a href="https://github.com/saturday06/gradle-android-scala-plugin" target="_blank"><em>Gradle</em></a> and <a href="https://github.com/simpligility/android-maven-plugin/tree/master/src/test/projects/scala" target="_blank"><em>Maven</em></a>. <em>sbt</em>, the <em>Scala Build Tool</em>, is the Scala standard build tool and its configuration files are also written in Scala. The <em>Android SDK Plugin for SBT</em> is a very mature and well maintained plugin, furthermore most Scala IDEs integrate <em>sbt</em> nicely. Therefore <em>sbt</em> is the build tool of choice for this documentation.
+			Build tool integration plugins for {{ names.name( 'scala-android' ) }} are currently available for {{ sourcelink( 'sbt-plugin', names.abbreviation( 'sbt' ) ) }}, {{ sourcelink( 'gradle-plugin', names.name( 'gradle' ) ) }} and {{ sourcelink( 'maven-plugin', names.name( 'maven' ) ) }}. The {{ names.render( 'sbt' ) }}, is the {{ names.name( 'scala' ) }} standard build tool and its configuration files are also written in {{ names.name( 'scala' ) }}. The {{ names.name( 'sbt-plugin' ) }} is a very mature and well maintained plugin, furthermore most {{ names.name( 'scala' ) }} {{ names.abbreviation( 'ide' ) }}s integrate {{ names.abbreviation( 'scala' ) }} nicely. Therefore {{ names.abbreviation( 'sbt' ) }} is the build tool of choice for this documentation.
 		</p>
 
 		{% call alert( warning ) %}
 			<p>
-				If you do not have any experiences with Scala on Android and other build tools than sbt, it is highly recommended to chose sbt, since many parts of this documentation are focused on its configuration details!
+				If you do not have any experiences with {{ names.name( 'scala-android' ) }} and other build tools than {{ names.abbreviation( 'sbt' ) }}, it is highly recommended to chose {{ names.abbreviation( 'sbt' ) }}, since many parts of this documentation are focused on its configuration details!
 			</p>
 		{% endcall %}
 
 		<p>
-			A comparison of available build tools and detailed instructions for <em>sbt</em> is waiting for you in the <a href="{{ current.next.url }}">next chapter</a>.
+			A comparison of available build tools and detailed instructions for {{ names.abbreviation( 'sbt' ) }} is waiting for you in the <a href="{{ current.next.url }}">next chapter</a>.
 		</p>
 	</li>
 	<li>
-		<h4>Editor / IDE</h4>
+		<h4>Editor / {{ names.abbreviation( 'ide' ) }}</h4>
 
 		<p>
-			You are more or less free to use any editor of your choice. With IDEs the integration process might cause a little trouble and depends on your build tool of choice. Please refer to the <a href="#">Editor / IDE</a> chapter for further information. The recommended tool is <em>IntelliJ IDEA</em>, which is also used as reference throughout the documentation.
+			You are more or less free to use any editor of your choice. With {{ names.abbreviation( 'ide' ) }}s the integration process might cause a little trouble and depends on your build tool of choice. Please refer to the <a href="#">Editor / {{ names.abbreviation( 'ide' ) }}</a> chapter for further information. The recommended tool is {{ names.name( 'intellij-idea' ) }}, which is also used as reference throughout the documentation.
 		</p>
 	</li>
 </ul>

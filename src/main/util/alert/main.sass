@@ -1,4 +1,4 @@
-aside.alert
+.alert
 	+background( color( main ) )
 	:color color( neutral )
 	:padding spacing( 2 ) 0 spacing( 2 ) 2.5rem + spacing( 2 )
@@ -7,9 +7,7 @@ aside.alert
 	+pseudo( after )
 		+position( absolute, $top: spacing( 2 ), $left: 0 )
 		:color color( neutral )
+		:content '\f0a1'
 		:font-family font( icon )
 		:font-size 2.5rem
 		:line-height 1
-
-	&::after
-		:content '\f0a1'

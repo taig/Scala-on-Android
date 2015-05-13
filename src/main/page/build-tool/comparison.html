@@ -5,18 +5,18 @@
 	<tr>
 		<td></td>
 		<td>
-			<strong><em>sbt</em></strong><br />
-			(Android SDK Plugin for SBT)
+			<strong>{{ names.abbreviation( 'sbt' ) }}</strong><br />
+			({{ names.name( 'sbt-plugin' ) }})
 		</td>
 		<td>
-			<strong><em>Gradle</em></strong><br />
-			(gradle-android-scala-plugin)
+			<strong>{{ names.name( 'gradle' ) }}</strong><br />
+			({{ names.name( 'gradle-plugin' ) }})
 		</td>
 	</tr>
 	</thead>
 	<tbody>
 	<tr>
-		<td>Mixed Scala and Java projects</td>
+		<td>Mixed {{ names.name( 'scala' ) }} and {{ names.name( 'java' ) }} projects</td>
 		<td class="yes"><span>Yes</span></td>
 		<td class="yes"><span>Yes</span></td>
 	</tr>
@@ -31,7 +31,7 @@
 		<td class="yes"><span>Yes</span></td>
 	</tr>
 	<tr>
-		<td><em>ProGuard</em> caching</td>
+		<td>{{ names.name( 'proguard' ) }} caching</td>
 		<td class="yes"><span>Yes</span></td>
 		<td class="unknown"><span>Unknown</span></td>
 	</tr>
@@ -44,7 +44,7 @@
 		</td>
 	</tr>
 	<tr>
-		<td>Scala compiler plugins (e.g. <em>macro paradise</em>)</td>
+		<td>{{ names.name( 'scala' ) }} compiler plugins (e.g. <em>macro paradise</em>)</td>
 		<td class="yes"><span>Yes</span></td>
 		<td class="no">
 			<span>No</span>
@@ -60,9 +60,9 @@
 </table>
 
 <p>
-	<em>sbt</em> and <em>Gradle</em>, and their respective plugins for Scala on Android, are reliable and mature tools. Pointing the finger on one of them and declaring it as the better choice is not possible from an objective point of view. <em>Gradle</em> on one hand is the default build system for Android. It works well with Android Studio and there is plenty of documentation for Android specific niceties . <em>sbt</em> on the other hand is the standard build tool for Scala. It is written in Scala and also configured by the user in this language. <em>sbt</em> comes with advanced features to leverage the capabilities of this ecosystem.
+	{{ names.abbreviation( 'sbt' ) }} and {{ names.name( 'gradle' ) }}, and their respective plugins for {{ names.name( 'scala-android' ) }}, are reliable and mature tools. Pointing the finger on one of them and declaring it as the better choice is not possible from an objective point of view. {{ names.name( 'gradle' ) }} on one hand is the default build system for {{ names.name( 'android' ) }}. It works well with {{ names.name( 'android-studio' ) }} and there is plenty of documentation for {{ names.name( 'android' ) }} specific niceties. {{ names.abbreviation( 'sbt' ) }} on the other hand is the standard build tool for {{ names.name( 'scala' ) }}. It is written in {{ names.name( 'scala' ) }} and also configured by the user in this language. {{ names.abbreviation( 'sbt' ) }} comes with advanced features to leverage the capabilities of this ecosystem.
 </p>
 
 <p>
-	At the end of the day the choice of whether to use <em>sbt</em> or <em>Gradle</em> is a matter of taste and previous experiences. Measured by <em>GitHub</em> stars and commits, the <em>Android SDK Plugin for SBT</em> is the more popular tool. For this very reason, this documentation is focusing on <em>sbt</em> and contains several chapters that are specific to this setup. It is therefore advised to take the <em>sbt</em> path in order to follow further instructions.
+	At the end of the day the choice of whether to use {{ names.abbreviation( 'sbt' ) }} or {{ names.name( 'gradle' ) }} is a matter of taste and previous experiences. Measured by {{ names.name( 'github' ) }} stars and commits, the {{ names.name( 'sbt-plugin' ) }} is the more popular tool. For this very reason, this documentation is focusing on {{ names.abbreviation( 'sbt' ) }} and contains several chapters that are specific to this setup. It is therefore advised to take the {{ names.abbreviation( 'sbt' ) }} path in order to follow further instructions.
 </p>

@@ -6,10 +6,12 @@ var plugin =
 	connect: require( 'gulp-connect' ),
 	cssmin: require( 'gulp-cssmin' ),
 	data: require( 'gulp-data' ),
+	debug: require( 'gulp-debug' ),
 	dom: require( 'gulp-dom' ),
 	filter: require( 'gulp-filter' ),
 	highlight: require( 'gulp-highlight' ),
 	htmlmin: require( 'gulp-html-minifier' ),
+	jshint: require( 'gulp-jshint' ),
 	maps: require( 'gulp-sourcemaps' ),
 	nunjucks: require( 'gulp-nunjucks-render' ),
 	plumber: require( 'gulp-plumber' ),
@@ -33,7 +35,15 @@ var	source =
 	};
 
 gulp.task( 'default', [ 'assets', 'javascript', 'stylesheets', 'templates' ] );
-gulp.task( 'develop', [ 'default', 'connect', 'watch' ] );
+gulp.task( 'develop', [ 'jshint', 'default', 'connect', 'watch' ] );
+
+gulp.task( 'jshint', function()
+{
+	gulp.src( [ './gulpfile.js', source.main + '**/*.js' ] )
+		.pipe( plugin.jshint() )
+		.pipe( plugin.jshint.reporter( 'default' ) )
+		.pipe( plugin.jshint.reporter( 'fail' ) );
+} );
 
 gulp.task( 'assets', function()
 {
@@ -84,13 +94,15 @@ gulp.task( 'stylesheets', function()
 
 gulp.task( 'templates', function()
 {
-	var sitemap = require( './sitemap.js' );
+	var	names = require( source.main + '/names.js' ),
+		sitemap = require( source.main + '/sitemap.js' ),
+		sources = require( source.main + '/sources.js' );
 
 	plugin.nunjucks.nunjucks.configure( [ source.main ] );
 
 	gulp.src( source.main + '**/index.html' )
-		.pipe( plugin.plumber() )
-		.pipe( plugin.data( { sitemap: sitemap } ) )
+		//.pipe( plugin.plumber() )
+		.pipe( plugin.data( { names: names, sitemap: sitemap, sources: sources } ) )
 		.pipe( plugin.nunjucks() )
 		.pipe( plugin.dom( function()
 		{
@@ -100,7 +112,9 @@ gulp.task( 'templates', function()
 			{
 				var item = items[i];
 					url = 'https://github.com/taig/scala-on-android/edit/master/src/main/' + item.getAttribute( 'data-src' );
-				
+
+				item.removeAttribute( 'data-src' );
+
 				var a = this.createElement( 'a' );
 				a.setAttribute( 'class', 'edit' );
 				a.setAttribute( 'href', url );
@@ -116,6 +130,7 @@ gulp.task( 'templates', function()
 		.pipe( plugin.highlight() )
 		.pipe( plugin.rename( function( path )
 		{
+			// Move page/ subdirectories to root directory
 			if( path.dirname.indexOf( 'page/' ) === 0 )
 			{
 				path.dirname = path.dirname.substr( 5 );

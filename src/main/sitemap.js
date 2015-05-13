@@ -1,3 +1,5 @@
+var names = require( './names.js' );
+
 /**
  * Page structure
  * 
@@ -9,7 +11,7 @@ var sitemap = [
 	{ "id": "introduction", "title": "Introduction", "url": "/introduction" },
 	{ "id": "prerequisites", "title": "Prerequisites", "url": "/prerequisites" },
 	{ "id": "build-tool", "title": "Build Tool", "url": "/build-tool", "children": [
-		{ "id": "sbt", "title": "sbt", "url": "/sbt" }
+		{ "id": "sbt", "title": names.render( 'sbt' ), "url": "/sbt" }
 	] },
 	{ "id": "editor", "title": "Editor / IDE", "url": "/editor" }
 ];
@@ -49,7 +51,7 @@ var sitemap = [
 
 		if( page.children )
 		{
-			update( page.children, page )
+			update( page.children, page );
 		}
 	} );
 } )( sitemap );

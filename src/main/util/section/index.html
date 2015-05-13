@@ -1,0 +1,10 @@
+{%- macro section( file, class = '' ) -%}
+	<section class="{{ class }}" data-src="{{ file }}">{% include file %}</section>
+{%- endmacro -%}
+
+{%- macro section_further_reading( ids ) -%}
+	<section data-src="sources.js">
+		<h3>Further reading</h3>
+		{{ sourcelist( ids ) }}
+	</section>
+{%- endmacro -%}

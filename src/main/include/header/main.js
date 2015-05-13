@@ -13,7 +13,7 @@ define( [ 'jquery' ], function( $ )
 	 */
 	wndw.on( 'resize.navigation', function()
 	{
-		shadow.css( 'height', Math.min( height, wndw.height() * .75 ) );
+		shadow.css( 'height', Math.min( height, wndw.height() * 0.75 ) );
 		list.trigger( 'scroll' );
 	} );
 

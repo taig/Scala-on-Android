@@ -8,22 +8,22 @@
 					<li>
 						<span>Build.scala</span>
 						<p>
-							Your actual build configuration. Here you specify your (sub-) projects, manage application dependencies and configure <em>ProGuard.</em>
+							Your actual build configuration. Here you specify your (sub-) projects, manage application dependencies and configure {{ names.name( 'proguard' ) }}.
 						</p>
 						<p>
-							You can also manage your build via {{ command( '/build.sbt' ) }}. However, {{ command( '/project/Build.scala' ) }} is written in actual Scala code, is slightly more expressive and allows you to keep all of your configuration files in the {{ command( '/project' ) }} folder.
+							You can also manage your build via {{ command( '/build.sbt' ) }}. However, {{ command( '/project/Build.scala' ) }} is written in actual {{ names.name( 'scala' ) }} code, is slightly more expressive and allows you to keep all of your configuration files in the {{ command( '/project' ) }} folder.
 						</p>
 					</li>
 					<li>
 						<span>build.properties</span>
 						<p>
-							An optional, but recommended file that specifies the <em>sbt</em> version for this build.
+							An optional, but recommended file that specifies the {{ names.abbreviation( 'sbt' ) }} version for this build.
 						</p>
 					</li>
 					<li>
 						<span>plugins.sbt</span>
 						<p>
-							Dependencies for <em>sbt</em> are managed in this file. This is necessary, as we need to rely on <em>Android SDK Plugin for SBT</em> here.
+							Dependencies for {{ names.abbreviation( 'sbt' ) }} are managed in this file. This is necessary, as we need to rely on {{ names.name( 'sbt-plugin' ) }} here.
 						</p>
 					</li>
 				</ol>
@@ -46,13 +46,13 @@
 							<li>
 								<span>java/</span>
 								<p>
-									Java source files that may interact with the Scala sources and vice versa.
+									{{ names.name( 'java' ) }} source files that may interact with the {{ names.name( 'scala' ) }} sources and vice versa.
 								</p>
 							</li>
 							<li>
 								<span>scala/</span>
 								<p>
-									The actual application code is located in this folder if you're not building a Java app with <em>sbt</em> (which is also possible).
+									The actual application code is located in this folder if you're not building a {{ names.name( 'java' ) }} app with {{ names.abbreviation( 'sbt' ) }} (which is also possible).
 								</p>
 							</li>
 						</ol>

@@ -6,9 +6,10 @@ section.build-tool-sbt
 
 section.build-tool-sbt-structure
 	.directory-structure
-		+background( darken( color( neutral ), 10% ) )
+		@extend .alert
 		:line-height 1
-		:padding spacing( 2 ) 0
+
+		+pseudo( after, '\f13d' )
 
 		code.inline
 			:background none
@@ -19,11 +20,12 @@ section.build-tool-sbt-structure
 
 		li
 			:padding spacing( .75 ) 0
+			:position relative
 
 			&:last-child
 				:padding-bottom 0
 
 		p
-			:color darken( color( android ), 20% )
+			:color color( android )
 			:font-family font-family( roboto )
 			:line-height $line

@@ -1,25 +1,27 @@
-{% from 'util/alert/index.html' import alert %}
-{% from 'util/code/index.html' import code, command %}
-{% from 'util/image/index.html' import image %}
+{% from 'util/alert/index.html' import alert with context %}
+{% from 'util/code/index.html' import code, command with context %}
+{% from 'util/image/index.html' import image with context %}
+{% from 'util/section/index.html' import section, section_further_reading with context %}
+{% from 'util/source/index.html' import sourcelink, sourcelist with context %}
 
-{%- macro section( file, class = '' ) -%}
-	<section class="{{ class }}" data-src="{{ file }}">{% include file %}</section>
-{%- endmacro -%}
-
-{% set current = sitemap.find( id ) %}
+{% if id %}
+	{% set current = sitemap.find( id ) %}
+	{% set title = sitemap.path( current ) | join( ' › ' ) %}
+	{% set identifier = id %}
+{% endif %}
 
 <!DOCTYPE html>
 
 <html lang="en">
 <head>
 	<meta charset=utf-8 />
-	<title>Scala on Android › {{ sitemap.path( current )|join( ' › ' ) }}</title>
+	<title>Scala on Android › {{ title }}</title>
 	<link rel="stylesheet" type="text/css" media="screen" href="/asset/stylesheet/main.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="/asset/stylesheet/github.css" />
 </head>
 <body>
 	{% include 'include/header/index.html' %}
-	<main id="{{ id }}">{% block content %}{% endblock %}</main>
+	<main id="{{ identifier }}">{% block content %}{% endblock %}</main>
 	{% include 'include/footer/index.html' %}
 
 	<script data-main="/asset/javascript/main" src="/asset/javascript/require-2.1.17.min.js"></script>

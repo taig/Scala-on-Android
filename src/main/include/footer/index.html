@@ -1,13 +1,24 @@
 <footer>
-	<div class="story">
-		{% if current.previous %}
-			<div class="back"><a href="{{ current.previous.url }}">{{ current.previous.title }}</a></div>
-		{% endif %}
-		{% if current.next %}
-			<div class="continue"><a href="{{ current.next.url }}">{{ current.next.title }}</a></div>
-		{% endif %}
-	</div>
+	{% if current %}
+		<div class="story">
+			{% if current.previous %}
+				<div class="back"><a href="{{ current.previous.url }}">{{ current.previous.title }}</a></div>
+			{% endif %}
+			{% if current.next %}
+				<div class="continue"><a href="{{ current.next.url }}">{{ current.next.title }}</a></div>
+			{% endif %}
+		</div>
+	{% endif %}
 	<div class="fixtures">
-		<img src="/asset/image/scala-android-logo.svg" class="logo" alt="Scala on Android logo" />
+		<div class="left"></div>
+		<div class="center">
+			<img src="/asset/image/scala-android-logo.svg" alt="Scala on Android logo" />
+		</div>
+		<div class="right">
+			<ul>
+				<li><a href="/sources">Sources</a></li>
+				<li><a href="/abbreviations">Abbreviations</a></li>
+			</ul>
+		</div>
 	</div>
 </footer>
