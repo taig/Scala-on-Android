@@ -7,13 +7,18 @@ var names = require( './names.js' );
  * fore only require for each level.
  */
 var sitemap = [
-	{ "id": "contents", "title": "Table of Contents", "url": "/", "skip": true },
-	{ "id": "introduction", "title": "Introduction", "url": "/introduction" },
-	{ "id": "prerequisites", "title": "Prerequisites", "url": "/prerequisites" },
-	{ "id": "build-tool", "title": "Build Tool", "url": "/build-tool", "children": [
-		{ "id": "sbt", "title": names.render( 'sbt' ), "url": "/sbt" }
+	{ id: 'contents', title: 'Table of Contents', url: '/', skip: true },
+	{ id: 'introduction', title: 'Introduction', url: '/introduction' },
+	{ id: 'prerequisites', title: 'Prerequisites', url: '/prerequisites' },
+	{ id: 'build-tool', title: 'Build Tool', url: '/build-tool', children: [
+		{ id: 'sbt', title: names.render( 'sbt' ), url: '/sbt' }
 	] },
-	{ "id": "editor", "title": "Editor / IDE", "url": "/editor" }
+	{ id: 'scaffolding', title: 'Scaffolding', url: '/scaffolding' },
+	{ id: 'editor', title: 'Editor / ' + names.abbreviation( 'ide' ), url: '/editor', children: [
+		{ id: 'intellij-idea', title: names.name( 'intellij-idea' ), url: '/intellij-idea' },
+		{ id: 'android-studio', title: names.name( 'android-studio' ), url: '/android-studio' },
+		{ id: 'scala-ide', title: names.name( 'scala-ide' ), url: '/scala-ide' }
+	] }
 ];
 
 // Update relative paths and ids, add next, previous and parent relations

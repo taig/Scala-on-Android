@@ -1,13 +1,15 @@
-code
+pre, code
 	:font-family font-family( code )
 	:font-size .9rem
 
+
+code
 	&.inline
 		:background-color darken( color( neutral ), 10% )
+		:color color( main )
 
-pre code
+pre
 	@extend .alert
-	:display block
 	:tab-size 4
 	:word-wrap break-word
 

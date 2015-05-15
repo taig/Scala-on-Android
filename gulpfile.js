@@ -1,4 +1,5 @@
 var	gulp = require( 'gulp' ),
+	highlight = require( 'highlight.js' ),
 	_ = require( 'underscore' );
 
 var plugin =
@@ -9,7 +10,6 @@ var plugin =
 	debug: require( 'gulp-debug' ),
 	dom: require( 'gulp-dom' ),
 	filter: require( 'gulp-filter' ),
-	highlight: require( 'gulp-highlight' ),
 	htmlmin: require( 'gulp-html-minifier' ),
 	jshint: require( 'gulp-jshint' ),
 	maps: require( 'gulp-sourcemaps' ),
@@ -39,7 +39,7 @@ gulp.task( 'develop', [ 'jshint', 'default', 'connect', 'watch' ] );
 
 gulp.task( 'jshint', function()
 {
-	gulp.src( [ './gulpfile.js', source.main + '**/*.js' ] )
+	gulp.src( '.src/**/*.js' )
 		.pipe( plugin.jshint() )
 		.pipe( plugin.jshint.reporter( 'default' ) )
 		.pipe( plugin.jshint.reporter( 'fail' ) );
@@ -94,16 +94,18 @@ gulp.task( 'stylesheets', function()
 
 gulp.task( 'templates', function()
 {
-	var	names = require( source.main + '/names.js' ),
+	var	dependencies = require( source.main + '/dependencies.js' ),
+		names = require( source.main + '/names.js' ),
 		sitemap = require( source.main + '/sitemap.js' ),
 		sources = require( source.main + '/sources.js' );
 
-	plugin.nunjucks.nunjucks.configure( [ source.main ] );
+	plugin.nunjucks.nunjucks.configure( source.main, { autoescape: false } );
 
 	gulp.src( source.main + '**/index.html' )
-		//.pipe( plugin.plumber() )
-		.pipe( plugin.data( { names: names, sitemap: sitemap, sources: sources } ) )
+		.pipe( plugin.plumber() )
+		.pipe( plugin.data( { dependencies: dependencies, names: names, sitemap: sitemap, sources: sources } ) )
 		.pipe( plugin.nunjucks() )
+		// Create edit button
 		.pipe( plugin.dom( function()
 		{
 			var items = this.querySelectorAll( '[data-src]' );
@@ -127,7 +129,19 @@ gulp.task( 'templates', function()
 
 			return this;
 		} ) )
-		.pipe( plugin.highlight() )
+		// Enable syntax highlighting
+		.pipe( plugin.dom( function()
+		{
+			var items = this.querySelectorAll( '.highlight' );
+
+			for( var i = 0; i < items.length; i++ )
+			{
+				highlight.highlightBlock( items[i] );
+			}
+
+			return this;
+		} ) )
+		//.pipe( plugin.highlight() )
 		.pipe( plugin.rename( function( path )
 		{
 			// Move page/ subdirectories to root directory

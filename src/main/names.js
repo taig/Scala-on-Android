@@ -27,7 +27,8 @@ var names =
 		name: 'Android Software Development Kit Manager'
 	},
 	'android-studio': { name: 'Android Studio' },
-	'github': { name: 'GitHub' },
+	'g8': { name: 'giter8' },
+	'gh': { name: 'GitHub' },
 	'gradle': { name: 'Gradle' },
 	'gradle-plugin': { name: 'gradle-android-scala-plugin' },
 	'google': { name: 'Google' },
@@ -58,11 +59,13 @@ var names =
 	'sbt-plugin': { name: 'Android SDK Plugin for SBT' },
 	'scala': { name: 'Scala' },
 	'scala-android': { name: 'Scala on Android' },
+	'scala-ide': { name: 'Scala IDE' },
 	'sdk':
 	{
 		abbreviation: 'SDK',
 		name: 'Software Development Kit'
 	},
+	'slideshare': { name: 'SlideShare' },
 	'so':
 	{
 		abbreviation: 'SO',

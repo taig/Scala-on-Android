@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% set id = 'scaffolding' %}
+
+{% block content %}
+	{{ section( 'page/scaffolding/introduction.html' ) }}
+	{{ section( 'page/scaffolding/github-template.html' ) }}
+	{{ section( 'page/scaffolding/gen-android.html' ) }}
+	{{ section( 'page/scaffolding/giter8.html' ) }}
+	{{ section_further_reading( [ 'project-skeleton', 'g8', 'g8-templates' ] ) }}
+{% endblock %}

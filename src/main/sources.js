@@ -59,6 +59,18 @@ var sources =
 		url: 'https://developer.android.com/tools/help/index.html',
 		title: names.name( 'android' ) + ' Tools'
 	},
+	'g8':
+	{
+		description: '"A command line tool to apply templates defined on ' + names.name( 'gh' ) + '"',
+		url: 'https://github.com/n8han/giter8/',
+		title: names.name( 'g8' )
+	},
+	'g8-templates':
+	{
+		description: 'A collection of ' + names.name( 'g8' ) + ' templates on ' + names.name( 'gh' ),
+		url: 'https://github.com/n8han/giter8/wiki/giter8-templates',
+		title: names.name( 'g8' ) + ' templates'
+	},
 	'gradle-plugin':
 	{
 		description: '"Adds ' + names.name( 'scala' ) + ' language support to official ' + names.name( 'gradle' ) + ' ' + names.name( 'android' ) + ' plugin"',
@@ -77,11 +89,29 @@ var sources =
 		url: 'https://github.com/simpligility/android-maven-plugin/tree/master/src/test/projects/scala',
 		title: names.name( 'android' ) + ' ' + names.name( 'maven' ) + ' Plugin'
 	},
+	'project':
+	{
+		description: names.name( 'gh' ) + ' repository that contains the source code of this documentation',
+		url: 'https://github.com/taig/scala-on-android',
+		title: names.name( 'scala-android' ) + ' documentation'
+	},
+	'project-skeleton':
+	{
+		description: names.name( 'gh' ) + ' repository that should be cloned in order to set up a new project',
+		url: 'https://github.com/taig/scala-on-android-skeleton',
+		title: names.name( 'scala-android' ) + ' project skeleton'
+	},
 	'scala':
 	{
 		description: 'Official website',
 		url: 'http://www.scala-lang.org/',
 		title: names.name( 'scala' )
+	},
+	'scala-android-introduction-slides':
+	{
+		description: names.name( 'slideshare' ) + ' document that first introduces ' + names.name( 'scala' ) + ' and ' + names.name( 'android' ) + ' separatly and then briefly explains ' + names.name( 'scala-android' ),
+		url: 'http://de.slideshare.net/jakub.kahovec/scala-on-android-12657430',
+		title: names.name( 'scala-android' )
 	},
 	'sbt-manual':
 	{

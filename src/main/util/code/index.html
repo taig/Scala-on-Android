@@ -1,7 +1,7 @@
-{%- macro code( path, class = 'scala' ) -%}
-	<pre><code class="{{ class }}">{% include path %}</code></pre>
+{%- macro code( path, language = 'scala' ) -%}
+	<pre><code class="highlight {{ language }}">{% include path %}</code></pre>
 {%- endmacro -%}
 
-{%- macro command( value, highlight = false ) -%}
-	<code class="inline {{ 'nohighlight' if not highlight }}">{{ value }}</code>
+{%- macro command( value, language = null ) -%}
+	<code class="inline {{ 'highlight' if language }} {{ language }}">{{ value }}</code>
 {%- endmacro -%}
