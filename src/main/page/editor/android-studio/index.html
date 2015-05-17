@@ -1,0 +1,10 @@
+{% extends '/layout.html' %}
+
+{% set id = 'editor-android-studio' %}
+
+{% block content %}
+	<section>
+		{{ section( 'page/editor/android-studio/android-studio.html' ) }}
+		{{ section_further_reading( [ 'android-studio', 'blog-gutefrage-gradle-android-studio' ] ) }}
+	</section>
+{% endblock %}

@@ -5,12 +5,6 @@ var names = require( './names.js' );
  */
 var sources =
 {
-	'47deg-sbt':
-	{
-		description: 'Detailed explanation of ' + names.abbreviation( 'sbt' ) + ' and the ' + names.name( 'sbt-plugin' ) + ' fundamentals',
-		url: 'http://www.47deg.com/blog/scala-on-android-setting-sbt-configuration',
-		title: names.name( 'scala' ) + ' on ' + names.name( 'android' ) + ' - Setting ' + names.abbreviation( 'sbt' ) + ' configuration'
-	},
 	'android':
 	{
 		description: 'Official website',
@@ -47,6 +41,12 @@ var sources =
 		url: 'http://en.wikipedia.org/wiki/Android_Runtime',
 		title: names.name( 'art' )
 	},
+	'android-studio':
+	{
+		description: 'The official ' + names.name( 'android' ) + ' ' + names.abbreviation( 'ide' ) + ', based on ' + names.name( 'intellij-idea' ),
+		url: 'http://developer.android.com/tools/studio/index.html',
+		title: names.name( 'android-studio' )
+	},
 	'android-training':
 	{
 		description: 'Official ' + names.name( 'android' ) + ' tutorials',
@@ -58,6 +58,18 @@ var sources =
 		description: 'Description of all tools that are bundled with an ' + names.name( 'android' ) + ' installation',
 		url: 'https://developer.android.com/tools/help/index.html',
 		title: names.name( 'android' ) + ' Tools'
+	},
+	'blog-47deg-configuration':
+	{
+		description: 'Detailed explanation of ' + names.abbreviation( 'sbt' ) + ' and the ' + names.name( 'sbt-plugin' ) + ' fundamentals',
+		url: 'http://www.47deg.com/blog/scala-on-android-setting-sbt-configuration',
+		title: names.name( 'scala-android' ) + ' - Setting ' + names.abbreviation( 'sbt' ) + ' configuration'
+	},
+	'blog-gutefrage-gradle-android-studio':
+	{
+		description: 'A brief tutorial of setting up a ' + names.name( 'scala-android' ) + ' project with ' + names.name( 'gradle' ) + ' and ' + names.name( 'android-studio' ),
+		url: 'http://engineering.gutefrage.net/2015/01/15/building-an-android-app-using-scala/',
+		title: 'Building an ' + names.name( 'android' ) + ' app using ' + names.name( 'scala' )
 	},
 	'g8':
 	{

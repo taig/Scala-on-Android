@@ -27,6 +27,7 @@ var names =
 		name: 'Android Software Development Kit Manager'
 	},
 	'android-studio': { name: 'Android Studio' },
+	'eclipse': { name: 'Eclipse' },
 	'g8': { name: 'giter8' },
 	'gh': { name: 'GitHub' },
 	'gradle': { name: 'Gradle' },

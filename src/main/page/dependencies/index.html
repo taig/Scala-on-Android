@@ -1,0 +1,25 @@
+{% extends '/layout.html' %}
+
+{% set title = 'Dependencies' %}
+{% set identifier = 'dependencies' %}
+
+{% block content %}
+	<section>
+		<h2>Dependencies</h2>
+
+		<p>
+			A listing of the software and their particular versions that this documentation is referring to.
+		</p>
+
+		<dl>
+			{% for _, dependency in dependencies.all %}
+				{% if dependency.url %}
+					<dt><a href="{{ dependency.url() }}" target="_blank">{{ dependency.title }}</a> ({{ dependency.version }})</dt>
+				{% else %}
+					<dt>{{ dependency.title }} ({{ dependency.version }})</dt>
+				{% endif %}
+				<dd>{{ command( dependency.format() ) }}</dd>
+			{% endfor %}
+		</dl>
+	</section>
+{% endblock %}

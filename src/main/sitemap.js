@@ -17,7 +17,8 @@ var sitemap = [
 	{ id: 'editor', title: 'Editor / ' + names.abbreviation( 'ide' ), url: '/editor', children: [
 		{ id: 'intellij-idea', title: names.name( 'intellij-idea' ), url: '/intellij-idea' },
 		{ id: 'android-studio', title: names.name( 'android-studio' ), url: '/android-studio' },
-		{ id: 'scala-ide', title: names.name( 'scala-ide' ), url: '/scala-ide' }
+		{ id: 'scala-ide', title: names.name( 'scala-ide' ), url: '/scala-ide' },
+		{ id: 'eclipse', title: names.name( 'eclipse' ), url: '/eclipse' }
 	] }
 ];
 
