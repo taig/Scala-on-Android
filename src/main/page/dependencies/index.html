@@ -18,7 +18,9 @@
 				{% else %}
 					<dt>{{ dependency.title }} ({{ dependency.version }})</dt>
 				{% endif %}
-				<dd>{{ command( dependency.format() ) }}</dd>
+				{% if dependency.format %}
+					<dd>{{ command( dependency.format() ) }}</dd>
+				{% endif %}
 			{% endfor %}
 		</dl>
 	</section>

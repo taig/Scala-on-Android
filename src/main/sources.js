@@ -71,6 +71,12 @@ var sources =
 		url: 'http://engineering.gutefrage.net/2015/01/15/building-an-android-app-using-scala/',
 		title: 'Building an ' + names.name( 'android' ) + ' app using ' + names.name( 'scala' )
 	},
+	'blog-tutsplus-gradle':
+	{
+		description: 'An analysis of the ' + names.name( 'gradle' ) + ' build system and its integration with ' + names.name( 'android-studio' ),
+		url: 'http://code.tutsplus.com/tutorials/the-ins-and-outs-of-gradle--cms-22978',
+		title: 'The Ins and Outs of ' + names.name( 'gradle' )
+	},
 	'g8':
 	{
 		description: '"A command line tool to apply templates defined on ' + names.name( 'gh' ) + '"',
@@ -94,6 +100,30 @@ var sources =
 		description: 'Official product page',
 		url: 'https://www.jetbrains.com/idea/',
 		title: names.name( 'intellij-idea' )
+	},
+	'intellij-idea-editions-comparison':
+	{
+		description: 'Comparison of the <em>Ultimate</em> and <em>Community Edition</em>',
+		url: 'https://www.jetbrains.com/idea/features/editions_comparison_matrix.html',
+		title: names.name( 'intellij-idea' ) + ' Editions Comparison'
+	},
+	'intellij-idea-download':
+	{
+		description: 'Official download page',
+		url: 'https://www.jetbrains.com/idea/download/',
+		title: names.name( 'intellij-idea' ) + ' download'
+	},
+	'intellij-idea-plugin-sbt':
+	{
+		description: 'Official product page',
+		url: 'https://plugins.jetbrains.com/plugin/5007/',
+		title: names.abbreviation( 'sbt' ) + ' plugin for ' + names.name( 'intellij-idea' )
+	},
+	'intellij-idea-plugin-scala':
+	{
+		description: 'Official product page',
+		url: 'https://plugins.jetbrains.com/plugin/1347/',
+		title: names.abbreviation( 'scala' ) + ' plugin for ' + names.name( 'intellij-idea' )
 	},
 	'maven-plugin':
 	{
@@ -125,6 +155,12 @@ var sources =
 		url: 'http://de.slideshare.net/jakub.kahovec/scala-on-android-12657430',
 		title: names.name( 'scala-android' )
 	},
+	'scala-ide':
+	{
+		description: 'Official product page',
+		url: 'http://scala-ide.org/',
+		title: names.name( 'scala-ide' )
+	},
 	'sbt-manual':
 	{
 		description: 'Official ' + names.abbreviation( 'sbt' ) + ' documentation',
@@ -136,6 +172,12 @@ var sources =
 		description: '"An easy-to-use ' + names.abbreviation( 'sbt' ) + ' plugin for working with all ' + names.name( 'android' ) + ' projects"',
 		url: 'https://github.com/pfn/android-sdk-plugin',
 		title: names.name( 'sbt-plugin' )
+	},
+	'sbt-plugin-gen-idea':
+	{
+		description: names.name( 'gh' ) + ' repository',
+		url: 'https://github.com/mpeltonen/sbt-idea',
+		title: names.abbreviation( 'sbt' ) + ' plugin: <em>gen-idea</em>'
 	},
 	'sbt-tutorial':
 	{

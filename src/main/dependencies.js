@@ -1,4 +1,5 @@
-var names = require( './names.js' );
+var names = require( './names.js' ),
+	sources = require( './sources.js' );
 
 var dependencies =
 {
@@ -6,7 +7,13 @@ var dependencies =
 	{
 		version: '22',
 		title: names.abbreviation( 'android-sdk' ),
-		format: function () { return 'android-' + this.version; }
+		format: function() { return 'android-' + this.version; }
+	},
+	'intellij-idea':
+	{
+		version: '14.1.3',
+		title: names.name( 'intellij-idea' ) + ' (Community Edition)',
+		url: function() { return sources.find( 'intellij-idea-download' ).url; }
 	},
 	'sbt-plugin':
 	{
@@ -15,7 +22,7 @@ var dependencies =
 		version: '1.3.22',
 		title: names.name( 'sbt-plugin' ),
 		url: function() { return 'https://bintray.com/pfn/sbt-plugins/' + this.artifact + '/' },
-		format: function ()
+		format: function()
 		{
 			return 'addSbtPlugin( "' + this.group + '" % "' + this.artifact + '" % "' + this.version + '" )';
 		}
@@ -25,7 +32,8 @@ var dependencies =
 module.exports =
 {
 	all: dependencies,
-	format: function ( id )
+	find: function( id ) { return dependencies[id]; },
+	format: function( id )
 	{
 		return dependencies[id].format();
 	}

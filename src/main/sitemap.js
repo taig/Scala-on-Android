@@ -13,7 +13,7 @@ var sitemap = [
 	{ id: 'build-tool', title: 'Build Tool', url: '/build-tool', children: [
 		{ id: 'sbt', title: names.render( 'sbt' ), url: '/sbt' }
 	] },
-	{ id: 'scaffolding', title: 'Scaffolding', url: '/scaffolding' },
+	{ id: 'project-setup', title: 'Project Setup', url: '/project-setup' },
 	{ id: 'editor', title: 'Editor / ' + names.abbreviation( 'ide' ), url: '/editor', children: [
 		{ id: 'intellij-idea', title: names.name( 'intellij-idea' ), url: '/intellij-idea' },
 		{ id: 'android-studio', title: names.name( 'android-studio' ), url: '/android-studio' },

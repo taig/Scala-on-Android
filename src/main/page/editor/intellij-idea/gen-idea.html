@@ -1,0 +1,15 @@
+<h3><em>gen-idea</em></h3>
+
+<p>
+	It is now necessary to create the {{ names.abbreviation( 'ide' ) }} configuration files via the <em>gen-idea</em> {{ names.abbreviation( 'sbt' ) }} plugin. This step will hopefully soon be superfluous, but for now it is still obligatory.
+</p>
+
+<p>
+	Navigate your terminal to the project root directory and run {{ command( 'sbt gen-idea' ) }}. This will create {{ names.name( 'intellij-idea' ) }} 13 configuration files, but newer versions of {{ names.name( 'intellij-idea' ) }} are able to convert the configuration to their appropriate format.
+</p>
+
+<p>
+	You can now chose the <em>Open</em> option of the {{ names.name( 'intellij-idea' ) }} and select the root directory of your project.
+</p>
+
+{{ image( '/asset/image/intellij-idea-open.png', 'Selection of IntelliJ IDEA open menu' ) }}
