@@ -2,5 +2,10 @@ div.image
 	:display table
 	:margin auto
 
+	a
+		&::before, &::after
+			:content none
+
 	img
 		:display block
+		:max-width 100%

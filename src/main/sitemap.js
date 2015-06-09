@@ -19,7 +19,12 @@ var sitemap = [
 		{ id: 'android-studio', title: names.name( 'android-studio' ), url: '/android-studio' },
 		{ id: 'scala-ide', title: names.name( 'scala-ide' ), url: '/scala-ide' },
 		{ id: 'eclipse', title: names.name( 'eclipse' ), url: '/eclipse' }
-	] }
+	] },
+	{ id: 'proguard', title: names.name( 'proguard' ), url: '/proguard', children: [
+		{ id: 'cache', title: 'Cache', url: '/cache' }
+	] },
+	{ id: 'tr', title: names.render( 'tr' ), url: '/typed-resources' },
+	{ id: 'parcelable', title: names.name( 'parcelable' ), url: '/parcelable' }
 ];
 
 // Update relative paths and ids, add next, previous and parent relations
@@ -93,5 +98,9 @@ module.exports =
 		while( current );
 
 		return path;
+	},
+	anchor: function( id, title )
+	{
+		return '<a href="' + find( id ).url + '">' + ( title || find( id ).title ) + '</a>';
 	}
 };

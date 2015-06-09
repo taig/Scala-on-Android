@@ -1,0 +1,17 @@
+<h2>{{ names.name( 'parcelable' ) }}</h2>
+
+<p>
+	You are discouraged to use the {{ names.name( 'java' ) }} serialization framework on the {{ names.name( 'android' ) }} platform for performance reasons. Instead, {{ names.name( 'android' ) }} comes with its own serialization method {{ names.name( 'parcelable' ) }}. A {{ names.name( 'parcelable' ) }} class requires you to implement the {{ command( 'Parcelable' ) }} interface and also to fulfill a certain contract as show below.
+</p>
+
+{{ code( 'page/parcelable/parcelable.java', 'java' ) }}
+
+<p>
+	A {{ names.name( 'parcelable' ) }} class forces you to implement a lot of boilerplate code, but offers great performance as it does not rely on runtime reflection like the default {{ names.name( 'java' ) }} serialization framework. But when it comes to {{ names.name( 'scala-android' ) }} there emerges another problem: the {{ names.name( 'parcelable' ) }} contract requires a static class member. This is impossible in {{ names.name( 'scala' ) }} because there is no support for statics.
+</p>
+
+<p>
+	Luckily, the {{ names.name( 'scala' ) }} compiler checks for the {{ names.name( 'android' ) }} {{ command( 'Parcelable' ) }} interface and treats it in a special way to support {{ names.name( 'android' ) }} development. At the end of the day there is just another contract to implement that relies on the class' companion to overcome the lack of statics. Below is a valid {{ names.name( 'scala' ) }} implementation of the previous example.
+</p>
+
+{{ code( 'page/parcelable/parcelable.scala' ) }}

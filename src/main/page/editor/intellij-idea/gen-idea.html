@@ -1,11 +1,21 @@
 <h3><em>gen-idea</em></h3>
 
 <p>
-	It is now necessary to create the {{ names.abbreviation( 'ide' ) }} configuration files via the <em>gen-idea</em> {{ names.abbreviation( 'sbt' ) }} plugin. This step will hopefully soon be superfluous, but for now it is still obligatory.
+	It is now necessary to create the {{ names.abbreviation( 'ide' ) }} configuration files via the <em>gen-idea</em> {{ names.abbreviation( 'sbt' ) }} plugin. This step will hopefully soon be superfluous, but for now it is still obligatory. {{ names.name( 'intellij-idea' ) }} should be able to simply import an {{ names.name( 'sbt-plugin' ) }} based plugin, but it currently fails to do so.
 </p>
 
 <p>
-	Navigate your terminal to the project root directory and run {{ command( 'sbt gen-idea' ) }}. This will create {{ names.name( 'intellij-idea' ) }} 13 configuration files, but newer versions of {{ names.name( 'intellij-idea' ) }} are able to convert the configuration to their appropriate format.
+	<em>gen-idea</em> is necessary to generate configuration files for the {{ names.abbreviation( 'ide' ) }}. To install the {{ sourcelink( 'sbt-plugin-gen-idea', '<em>gen-idea</em>' ) }} plugin create the file {{ command( '~/.sbt/0.13/plugins/gen-idea.sbt' ) }} (the filename is arbitrary) with the contents below.
+</p>
+
+{{ code( 'page/editor/intellij-idea/gen-idea.scala.html' ) }}
+
+<p>
+	This makes the <em>gen-idea</em> {{ names.abbreviation( 'sbt' ) }} command globally available.
+</p>
+
+<p>
+	Now, navigate your terminal to the project root directory and run {{ command( 'sbt gen-idea' ) }}. This will create {{ names.name( 'intellij-idea' ) }} 13 configuration files, but newer versions of {{ names.name( 'intellij-idea' ) }} are able to convert the configuration to their appropriate format.
 </p>
 
 <p>
@@ -13,3 +23,8 @@
 </p>
 
 {{ image( '/asset/image/intellij-idea-open.png', 'Selection of IntelliJ IDEA open menu' ) }}
+{{ image( '/asset/image/intellij-idea-convert-project.png', 'Convert a project configuration of an older IntelliJ IDEA version to the current one' ) }}
+
+<p>
+	Converting the project files only needs to be done once at the initial setup. When the {{ names.abbreviation( 'ide' ) }} finished loading you may delete the {{ command( '/projectFilesBackup' ) }} folder.
+</p>

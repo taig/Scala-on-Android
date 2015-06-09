@@ -1,0 +1,19 @@
+<h3>Configuration</h3>
+
+<p>
+	By default, the {{ names.name( 'sbt-plugin' ) }} runs {{ names.name( 'proguard' ) }} with a reasonable {{ sourcelink( 'sbt-plugin-proguard-defaults', 'default configuration' ) }} whenever you deploy or package your app. If you need to manually enable or disable it, you can use the {{ command( 'useProguard in Android := true', 'scala' ) }} {{ names.abbreviation( 'sbt' ) }} option. It is automatically enabled when your app contains {{ names.name( 'scala' ) }} sources.
+</p>
+
+<p>
+	When you pull in external dependencies, {{ names.name( 'proguard' ) }} will likely strip out more classes than it should and abort the compilation with error messages. This usually happens because it naturally fails to analyse runtime reflection. It is then your job to properly adjust the {{ names.name( 'proguard' ) }} configuration which usually boils down to explicitly instructing it to not remove certain classes.
+</p>
+
+<p>
+	Below is a briefly documented sample {{ names.name( 'proguard' ) }} configuration as it may be added to the {{ names.abbreviation( 'sbt' ) }} build file.
+</p>
+
+{{ code( 'page/proguard/configuration.scala' ) }}
+
+<p>
+	Make sure to have a look at the {{ sourcelink( 'proguard-keep-options' ) }} for a comprehensive overview.
+</p>

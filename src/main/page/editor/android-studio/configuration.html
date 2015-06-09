@@ -1,0 +1,15 @@
+<h3>Configuration</h3>
+
+<p>
+	To run, package and debug your app from within the {{ names.abbreviation( 'ide' ) }}, further adjustments are necessary.
+</p>
+
+{{ image( '/asset/image/android-studio-edit-configurations.png', 'Select Edit Configurations... on the main IDE screen' ) }}
+{{ image( '/asset/image/android-studio-edit-configurations-add.png', 'Click the + icon to add a configuration' ) }}
+{{ image( '/asset/image/android-studio-edit-configurations-add-android-app.png', 'Add an Android Application' ) }}
+{{ image( '/asset/image/android-studio-edit-configurations-add-android-app-settings.png', 'Add a Before launch SBT task' ) }}
+{{ image( '/asset/image/android-studio-edit-configurations-add-android-app-settings-sbt-details.png', 'Insert android:package' ) }}
+
+<p>
+	You should now be able to run and debug your code via the {{ names.abbreviation( 'ide' ) }} controls. If the build progress gets stuck, open the {{ names.abbreviation( 'sbt' ) }} console ({{ command( 'View > Tool Windows > SBT Console' ) }}) to see detailed error messages.
+</p>

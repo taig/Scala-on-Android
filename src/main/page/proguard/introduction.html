@@ -1,0 +1,15 @@
+<h2>{{ names.name( 'proguard' ) }}</h2>
+
+<blockquote>
+	<p>
+		The {{ names.name( 'proguard' ) }} tool shrinks, optimizes, and obfuscates your code by removing unused code and renaming classes, fields, and methods with semantically obscure names. The result is a smaller sized {{ command( '.apk' ) }} file that is more difficult to reverse engineer.
+	</p>
+
+	<footer>
+		{{ sourcelink( 'proguard-android-documentation', names.name( 'android' ) + ' developer documentation' ) }}
+	</footer>
+</blockquote>
+
+<p>
+	In the {{ names.name( 'java' ) }} world, {{ names.name( 'proguard' ) }} is an optional step of the build process. With {{ names.name( 'scala-android' ) }} it becomes a necessity. You need {{ names.name( 'proguard' ) }} to remove unused classes and methods. The {{ names.name( 'android' ) }} toolchain will fail to compile your app if it contains more than 65.536 methods and fields. This limit is easy to reach when you have the {{ names.name( 'scala' ) }} library in your dependencies. Using {{ names.name( 'proguard' ) }} to strip out unused library classes solves this issue. Unfortunately, {{ names.name( 'proguard' ) }} execution is a very time consuming process and its configuration requires a custom syntax.
+</p>

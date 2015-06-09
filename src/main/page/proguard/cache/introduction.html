@@ -1,0 +1,19 @@
+<h2>{{ names.name( 'proguard' ) }} Cache</h2>
+
+<p>
+	The {{ names.name( 'sbt-plugin' ) }} enables you to maintain a cache configuration for your app's dependencies. This configuration instructs the {{ names.abbreviation( 'sbt' ) }} plugin to bundle the specified libraries, optimize them via {{ names.name( 'proguard' ) }} and keep them around for future {{ names.name( 'proguard' ) }} executions.
+</p>
+
+<blockquote>
+	<p>
+		Defining many cache rules will result in a higher cache-miss rate, but will dramatically speed up builds on cache-hits; choose libraries and caching rules carefully to balance the the cache-hit ratio. Large, multi-megabyte libraries should always be cached to avoid hitting the dex-file method-limit.
+	</p>
+	
+	<footer>
+		{{ sourcelink( 'sbt-plugin' ) }}
+	</footer>
+</blockquote>
+
+<p>
+	The bigger your cache, the higher the chance that a code change in your project now calls a method that has previously been removed by {{ names.name( 'proguard' ) }} and is therefore not included in the cache. That is a so called <em>cache miss</em>. If a change has no impact on the cached {{ names.abbreviation( 'api' ) }} you are calling, we can reuse the already optimized dependencies and improve build times dramatically; a <em>cache hit</em>!
+</p>

@@ -1,0 +1,10 @@
+blockquote
+	@extend .alert
+
+	+pseudo( after, '\f186' )
+
+	footer
+		:margin-top spacing()
+
+		+pseudo( before, '—' )
+			:margin auto spacing()

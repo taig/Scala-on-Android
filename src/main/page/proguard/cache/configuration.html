@@ -1,0 +1,11 @@
+<h3>Configuration</h3>
+
+<p>
+	The {{ names.name( 'proguard' ) }} cache is configured in the {{ names.abbreviation( 'sbt' ) }} build file via the {{ command( 'proguardCache in Android ++= Seq()', 'scala' ) }} key. Directives added to the configuration {{ command( 'Seq' ) }} simply contain the package identifiers that you want to add to the cache.
+</p>
+
+{{ code( 'page/proguard/cache/configuration.scala' ) }}
+
+<p>
+	You need to make sure to reference the actual package name, and not the dependency group id. The <em>play-json</em> module for instance is included via {{ names.abbreviation( 'sbt' ) }} as {{ command( '"com.typesafe.play" %% "play-json" % "2.3.9"', 'scala' ) }}, but the actual root package identifier is simply {{ command( 'play' ) }}.
+</p>

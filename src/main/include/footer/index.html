@@ -1,3 +1,5 @@
+{% from 'util/source/index.html' import sourcelink with context %}
+
 <footer>
 	{% if current %}
 		<div class="story">
@@ -10,7 +12,12 @@
 		</div>
 	{% endif %}
 	<div class="fixtures">
-		<div class="left"></div>
+		<div class="left">
+			<ul>
+				<li>{{ sourcelink( 'scala-android', 'Fork me on ' + names.name( 'gh' ) ) }}</li>
+				<li><a href="/help">Getting help</a></li>
+			</ul>
+		</div>
 		<div class="center">
 			<img src="/asset/image/scala-android-logo.svg" alt="Scala on Android logo" />
 		</div>

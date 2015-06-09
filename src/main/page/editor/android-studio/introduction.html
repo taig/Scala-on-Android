@@ -1,0 +1,13 @@
+<h2>{{ names.name( 'android-studio' ) }}</h2>
+
+<p>
+	The official {{ names.abbreviation( 'ide' ) }} for {{ names.name( 'android' ) }} works surprisingly well with {{ names.render( 'sbt' ) }}. You can use it to edit code, run & deploy the app from within the {{ names.abbreviation( 'ide' ) }}, access the {{ names.abbreviation( 'sbt' ) }} console and use the debugger. However, there is currently an issue with the {{ names.abbreviation( 'android-sdk' ) }}. All references to the {{ names.abbreviation( 'sdk' ) }} render as red code, even though the {{ names.abbreviation( 'ide' ) }} manages to import them for you. This does only happen in {{ names.name( 'scala' ) }} code, {{ names.name( 'java' ) }} sources are not affected by this.
+</p>
+
+{% call alert( 'warning' ) %}
+	{{ names.name( 'android-studio' ) }} should currently not be used for development with {{ names.abbreviation( 'sbt' ) }} and {{ names.name( 'scala' ) }}. Chances are, however, that it's a good fit for a {{ names.name( 'gradle' ) }} + {{ names.name( 'scala' ) }} setup.
+{% endcall %}
+
+<p>
+	{{ sourcelink( 'android-studio-download', 'Download' ) }} and install {{ names.name( 'android-studio' ) }} from the official website.
+</p>

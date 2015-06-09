@@ -19,7 +19,7 @@
 					<dt>{{ dependency.title }} ({{ dependency.version }})</dt>
 				{% endif %}
 				{% if dependency.format %}
-					<dd>{{ command( dependency.format() ) }}</dd>
+					<dd><pre>{{ command( dependency.format() ) }}</pre></dd>
 				{% endif %}
 			{% endfor %}
 		</dl>

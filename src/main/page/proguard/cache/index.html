@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% set id = 'proguard-cache' %}
+
+{% block content %}
+	{{ section( 'page/proguard/cache/introduction.html' ) }}
+	{{ section( 'page/proguard/cache/configuration.html' ) }}
+	{{ section( 'page/proguard/cache/troubleshooting.html' ) }}
+	{{ section_further_reading( [ 'proguard', 'sbt-plugin', 'sbt-plugin-sample-proguard' ] ) }}
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'layout.html' %}
+
+{% set id = 'tr' %}
+
+{% block content %}
+	{{ section( 'page/typed-resources/introduction.html' ) }}
+	{{ section( 'page/typed-resources/java.html' ) }}
+	{{ section( 'page/typed-resources/scala.html' ) }}
+	{{ section( 'page/typed-resources/butterknife.html' ) }}
+	{{ section_further_reading( [ 'android-butterknife' ] ) }}
+{% endblock %}

@@ -1,0 +1,29 @@
+<h3>Example</h3>
+
+<p>
+	{{ sourcelink( 'okio' ) }} is an {{ names.abbreviation( 'io' ) }} library by <em>square</em> which is also a part of the famous <em>OkHttp</em> library. Depending on <em>Okio</em> causes {{ names.name( 'proguard' ) }} to fail which may look similar to the log output below.
+</p>
+
+{{ code( 'page/proguard/proguard-error.txt.html', null ) }}
+
+<p>
+	{{ names.name( 'proguard' ) }} prevents compilation as long as there are warnings. To solve those you need to stick to the information about the affected classes at the top of the log (e.g. {{ command( 'Warning: okio.Okio: can\'t find referenced class java.nio.file.Files', null ) }}). In your {{ names.abbreviation( 'sbt' ) }} build configuration, you can now use the {{ command( 'proguardOptions in Android ++= Seq()', 'scala' ) }} key to add {{ names.name( 'proguard' ) }} rules that instruct it to keep certain packages, classes, fields or methods. This is a trial and error process. To exemplarily solve the {{ command( 'Okio' ) }} warning you would first naively try to keep the {{ command( 'java.nio.file.Files' ) }} class.
+</p>
+
+{{ code( 'page/proguard/example-configuration-1.scala' ) }}
+
+<p>
+	This is usually the first attempt to tackle {{ names.name( 'proguard' ) }} warnings that occur after adding a new dependency. In most cases this is also a sufficient solution. Not in this one, though. <em>Okio</em> is a {{ names.name( 'java' ) }} {{ names.abbreviation( 'io' ) }} library that also works with {{ names.name( 'android' ) }}. The affected class {{ command( 'java.nio.file.Files' ) }} is part of the {{ names.name( 'java' ) }} {{ names.abbreviation( 'sdk' ) }}, but does not exist on {{ names.name( 'android' ) }}. Forcing {{ names.name( 'proguard' ) }} to keep the class is therefore not a valid solution because the class does not exist in the first place. Instead we have to rely on <em>Okio</em> to know how to properly handle the {{ names.name( 'android' ) }} environment and instead instruct {{ names.name( 'proguard' ) }} to ignore the issue.
+</p>
+
+{{ code( 'page/proguard/example-configuration-2.scala' ) }}
+
+<p>
+	Suppressing warnings is a dangerous undertaking because it may cause runtime errors if your app (or some underlying library) tries to call a class that does not exist. It also hides all further issues related to the {{ command( 'okio.Okio' ) }} class. Only use it as a last resort to handle {{ names.name( 'proguard' ) }} warnings.
+</p>
+
+{% call alert( 'warning' ) %}
+	<p>
+		This example should make it obvious that configuring {{ names.name( 'proguard' ) }} is not a trivial task. You are forced to learn and understand its options. Getting it right is time consuming because every change forces you to rerun the costly {{ names.name( 'proguard' ) }} process. Furthermore, solving problems does usually force you to drill down on implementation details of foreign code.
+	</p>
+{% endcall %}

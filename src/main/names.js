@@ -27,6 +27,11 @@ var names =
 		name: 'Android Software Development Kit Manager'
 	},
 	'android-studio': { name: 'Android Studio' },
+	'dalvik':
+	{
+		abbreviation: 'DVM',
+		name: 'Dalvik Virtual Machine'
+	},
 	'eclipse': { name: 'Eclipse' },
 	'g8': { name: 'giter8' },
 	'gh': { name: 'GitHub' },
@@ -39,11 +44,31 @@ var names =
 		name: 'Integrated Development Environment'
 	},
 	'intellij-idea': { name: 'IntelliJ IDEA' },
+	'io':
+	{
+		abbreviation: 'I/O',
+		name: 'Input/Output'
+	},
+	'ipc':
+	{
+		abbreviation: 'IPC',
+		name: 'Inter Process Communication'
+	},
+	'irc':
+	{
+		abbreviation: 'IRC',
+		name: 'Internet Relay Chat'
+	},
 	'java': { name: 'Java' },
 	'jdk':
 	{
 		abbreviation: 'JDK',
 		name: 'Java Development Kit'
+	},
+	'json':
+	{
+		abbreviation: 'JSON',
+		name: 'JavaScript Object Notation'
 	},
 	'jvm':
 	{
@@ -51,6 +76,9 @@ var names =
 		name: 'Java Virtual Machine'
 	},
 	'maven': { name: 'Maven' },
+	'multidex': { name: 'MultiDex' },
+	'parcelable': { name: 'Parcelable' },
+	'scala-pickling': { name: 'Scala Pickling' },
 	'proguard': { name: 'ProGuard' },
 	'sbt':
 	{
@@ -72,7 +100,17 @@ var names =
 		abbreviation: 'SO',
 		name: 'StackOverflow'
 	},
-	'wikipedia': { name: 'Wikipedia' }
+	'tr':
+	{
+		abbreviation: 'TR',
+		name: 'Typed Resources'
+	},
+	'wikipedia': { name: 'Wikipedia' },
+	'xml':
+	{
+		abbreviation: 'XML',
+		name: 'Extensible Markup Language'
+	}
 };
 
 module.exports =

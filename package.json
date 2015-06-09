@@ -2,6 +2,7 @@
   "name": "scalaonandroid",
   "description": "Comprehensive documentation for every aspect of your working environment",
   "devDependencies": {
+    "fs": "0.0.2",
     "gulp": "^3.8.11",
     "gulp-autoprefixer": "^2.2.0",
     "gulp-connect": "^2.2.0",
@@ -9,6 +10,7 @@
     "gulp-data": "^1.2.0",
     "gulp-debug": "^2.0.1",
     "gulp-dom": "^0.3.x",
+    "gulp-entity-convert": "0.0.2",
     "gulp-filter": "^2.0.2",
     "gulp-html-minifier": "^0.1.6",
     "gulp-jshint": "^1.10.0",

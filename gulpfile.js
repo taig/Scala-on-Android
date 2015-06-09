@@ -1,10 +1,12 @@
-var	gulp = require( 'gulp' ),
+var	fs = require( 'fs' ),
+	gulp = require( 'gulp' ),
 	highlight = require( 'highlight.js' ),
 	_ = require( 'underscore' );
 
 var plugin =
 {
 	connect: require( 'gulp-connect' ),
+	convert: require( 'gulp-entity-convert' ),
 	cssmin: require( 'gulp-cssmin' ),
 	data: require( 'gulp-data' ),
 	debug: require( 'gulp-debug' ),
@@ -99,7 +101,7 @@ gulp.task( 'templates', function()
 		sitemap = require( source.main + '/sitemap.js' ),
 		sources = require( source.main + '/sources.js' );
 
-	plugin.nunjucks.nunjucks.configure( source.main, { autoescape: false } );
+	plugin.nunjucks.nunjucks.configure( source.main, { autoescape: false, watch: false } );
 
 	gulp.src( source.main + '**/index.html' )
 		.pipe( plugin.plumber() )
@@ -136,12 +138,16 @@ gulp.task( 'templates', function()
 
 			for( var i = 0; i < items.length; i++ )
 			{
-				highlight.highlightBlock( items[i] );
+				var	item = items[i],
+					language = item.getAttribute( 'data-language' ),
+					script = item.innerHTML.replace( /<!--([\s\S]*)-->/, '$1' );
+
+				item.removeAttribute( 'data-language' );
+				item.innerHTML = language ? highlight.highlight( language, script, true ).value : script;
 			}
 
 			return this;
 		} ) )
-		//.pipe( plugin.highlight() )
 		.pipe( plugin.rename( function( path )
 		{
 			// Move page/ subdirectories to root directory
@@ -173,7 +179,7 @@ gulp.task( 'watch', function()
 	plugin.watch( source.asset + '**/*', function() { gulp.start( 'assets' ); } );
 	plugin.watch( source.main + '**/*.js', function() { gulp.start( 'javascript' ); } );
 	plugin.watch( source.main + '**/*.{sass,scss}', function() { gulp.start( 'stylesheets' ); } );
-	plugin.watch( source.main + '**/*.{html,txt}', function() { gulp.start( 'templates' ); } );
+	plugin.watch( source.main + '**/*.{html,txt,scala,java}', function() { gulp.start( 'templates' ); } );
 } );
 
 gulp.task( 'connect', function()

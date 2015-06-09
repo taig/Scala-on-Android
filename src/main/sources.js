@@ -17,6 +17,12 @@ var sources =
 		url: 'https://developer.android.com/guide/index.html',
 		title: names.name( 'android' ) + ' ' + names.abbreviation( 'api' ) + ' Guides'
 	},
+	'android-butterknife':
+	{
+		description: 'View "injection" library for ' + names.name( 'android' ),
+		url: 'http://jakewharton.github.io/butterknife/',
+		title: '<em>Butterknife</em>'
+	},
 	'android-install':
 	{
 		description: names.abbreviation( 'android-sdk' ) + ' install instructions',
@@ -43,9 +49,15 @@ var sources =
 	},
 	'android-studio':
 	{
-		description: 'The official ' + names.name( 'android' ) + ' ' + names.abbreviation( 'ide' ) + ', based on ' + names.name( 'intellij-idea' ),
+		description: 'Official ' + names.name( 'android' ) + ' ' + names.abbreviation( 'ide' ) + ', based on ' + names.name( 'intellij-idea' ),
 		url: 'http://developer.android.com/tools/studio/index.html',
 		title: names.name( 'android-studio' )
+	},
+	'android-studio-download':
+	{
+		description: 'Official download page',
+		url: 'http://developer.android.com/sdk/index.html',
+		title: names.name( 'android-studio' ) + ' download'
 	},
 	'android-training':
 	{
@@ -64,6 +76,12 @@ var sources =
 		description: 'Detailed explanation of ' + names.abbreviation( 'sbt' ) + ' and the ' + names.name( 'sbt-plugin' ) + ' fundamentals',
 		url: 'http://www.47deg.com/blog/scala-on-android-setting-sbt-configuration',
 		title: names.name( 'scala-android' ) + ' - Setting ' + names.abbreviation( 'sbt' ) + ' configuration'
+	},
+	'blog-developerphil-parcelable-serializable':
+	{
+		description: 'A performance and usability comparison',
+		url: 'http://www.developerphil.com/parcelable-vs-serializable/',
+		title: names.name( 'parcelable' ) + ' vs. <em>Serializable</em>'
 	},
 	'blog-gutefrage-gradle-android-studio':
 	{
@@ -131,6 +149,42 @@ var sources =
 		url: 'https://github.com/simpligility/android-maven-plugin/tree/master/src/test/projects/scala',
 		title: names.name( 'android' ) + ' ' + names.name( 'maven' ) + ' Plugin'
 	},
+	'multidex-android-documentation':
+	{
+		description: names.name( 'android' ) + ' developer documentation about ' + names.name( 'multidex' ),
+		url: 'https://developer.android.com/tools/building/multidex.html',
+		title: names.name( 'multidex' )
+	},
+	'multidex-sbt-plugin-sample':
+	{
+		description: names.name( 'gh' ) + ' source of ' + names.name( 'multidex' ) + ' test code',
+		url: 'https://github.com/pfn/android-sdk-plugin/tree/master/sbt-test/android-sdk-plugin/hello-multidex',
+		title: names.name( 'sbt-plugin' ) + ' ' + names.name( 'multidex' )
+	},
+	'okio':
+	{
+		description: names.name( 'gh' ) + ' project repository',
+		url: 'https://github.com/square/okio',
+		title: '<em>Okio</em>'
+	},
+	'proguard':
+	{
+		description: 'Official project page',
+		url: 'http://proguard.sourceforge.net/',
+		title: names.name( 'proguard' )
+	},
+	'proguard-android-documentation':
+	{
+		description: names.name( 'android' ) + ' developer documentation about ' + names.name( 'proguard' ),
+		url: 'http://developer.android.com/tools/help/proguard.html',
+		title: names.name( 'proguard' ) + ' ' + names.name( 'android' ) + ' documentation'
+	},
+	'proguard-keep-options':
+	{
+		description: 'Listing and explanation of all available keep options',
+		url: 'http://proguard.sourceforge.net/manual/usage.html#keepoptions',
+		title: names.name( 'proguard' ) + ' keeps options'
+	},
 	'project':
 	{
 		description: names.name( 'gh' ) + ' repository that contains the source code of this documentation',
@@ -142,6 +196,66 @@ var sources =
 		description: names.name( 'gh' ) + ' repository that should be cloned in order to set up a new project',
 		url: 'https://github.com/taig/scala-on-android-skeleton',
 		title: names.name( 'scala-android' ) + ' project skeleton'
+	},
+	'sbt-manual':
+	{
+		description: 'Official ' + names.abbreviation( 'sbt' ) + ' documentation',
+		url: 'http://www.scala-sbt.org/0.13/docs/index.html',
+		title: names.abbreviation( 'sbt' ) + ' Reference Manual'
+	},
+	'sbt-plugin':
+	{
+		description: '"An easy-to-use ' + names.abbreviation( 'sbt' ) + ' plugin for working with all ' + names.name( 'android' ) + ' projects"',
+		url: 'https://github.com/pfn/android-sdk-plugin',
+		title: names.name( 'sbt-plugin' )
+	},
+	'sbt-plugin-issues':
+	{
+		description: names.name( 'gh' ) + ' issue tracker',
+		url: 'https://github.com/pfn/android-sdk-plugin/issues',
+		title: names.name( 'sbt-plugin' ) + ' issues'
+	},
+	'sbt-plugin-gen-idea':
+	{
+		description: names.name( 'gh' ) + ' repository',
+		url: 'https://github.com/mpeltonen/sbt-idea',
+		title: names.abbreviation( 'sbt' ) + ' plugin: <em>gen-idea</em>'
+	},
+	'sbt-plugin-proguard-defaults':
+	{
+		description: 'Default configuration source on ' + names.name( 'gh' ),
+		url: 'https://github.com/pfn/android-sdk-plugin/blob/master/resources/android-proguard.config',
+		title: names.name( 'sbt-plugin' ) + ' ' + names.name( 'proguard' ) + ' configuration'
+	},
+	'sbt-plugin-readme':
+	{
+		description: names.name( 'gh' ) + ' readme document',
+		url: 'https://github.com/pfn/android-sdk-plugin/blob/master/README.md',
+		title: names.name( 'sbt-plugin' ) + ' readme'
+	},
+	'sbt-plugin-sample-proguard':
+	{
+		description: 'Sample project on ' + names.name( 'gh' ),
+		url: 'https://github.com/pfn/android-sdk-plugin/tree/master/sbt-test/android-sdk-plugin/proguard-cache',
+		title: names.name( 'sbt-plugin' ) + ' ' + names.name( 'proguard' ) + ' sample'
+	},
+	'sbt-plugin-samples':
+	{
+		description: 'Sample projects on ' + names.name( 'gh' ),
+		url: 'https://github.com/pfn/android-sdk-plugin/tree/master/sbt-test/',
+		title: names.name( 'sbt-plugin' ) + ' samples'
+	},
+	'sbt-tutorial':
+	{
+		description: 'Official ' + names.abbreviation( 'sbt' ) + ' tutorial',
+		url: 'http://www.scala-sbt.org/0.13/tutorial/index.html',
+		title: 'Getting Started with ' + names.abbreviation( 'sbt' )
+	},
+	'sbt-vs-gradle':
+	{
+		description: 'A ' + names.name( 'so' ) + ' discussion',
+		url: 'http://stackoverflow.com/questions/11061938/comparing-sbt-and-gradle',
+		title: names.abbreviation( 'sbt' ) + ' vs. ' + names.name( 'gradle' )
 	},
 	'scala':
 	{
@@ -161,35 +275,35 @@ var sources =
 		url: 'http://scala-ide.org/',
 		title: names.name( 'scala-ide' )
 	},
-	'sbt-manual':
+	'scala-android':
 	{
-		description: 'Official ' + names.abbreviation( 'sbt' ) + ' documentation',
-		url: 'http://www.scala-sbt.org/0.13/docs/index.html',
-		title: names.abbreviation( 'sbt' ) + ' Reference Manual'
+		description: 'This documentation',
+		url: 'https://github.com/taig/scala-on-android/',
+		title: names.name( 'scala-android' )
 	},
-	'sbt-plugin':
+	'scala-android-mailing-list':
 	{
-		description: '"An easy-to-use ' + names.abbreviation( 'sbt' ) + ' plugin for working with all ' + names.name( 'android' ) + ' projects"',
-		url: 'https://github.com/pfn/android-sdk-plugin',
-		title: names.name( 'sbt-plugin' )
+		description: 'A good place to stay up to date with the community',
+		url: 'https://groups.google.com/forum/#!forum/scala-on-android',
+		title: names.name( 'scala-android' ) + ' mailing list'
 	},
-	'sbt-plugin-gen-idea':
+	'scala-parcelable':
 	{
-		description: names.name( 'gh' ) + ' repository',
-		url: 'https://github.com/mpeltonen/sbt-idea',
-		title: names.abbreviation( 'sbt' ) + ' plugin: <em>gen-idea</em>'
+		description: 'Compile time code generation for ' + names.name( 'scala-android' ),
+		url: 'https://github.com/taig/parcelable/',
+		title: names.name( 'parcelable' )
 	},
-	'sbt-tutorial':
+	'scala-pickling':
 	{
-		description: 'Official ' + names.abbreviation( 'sbt' ) + ' tutorial',
-		url: 'http://www.scala-sbt.org/0.13/tutorial/index.html',
-		title: 'Getting Started with ' + names.abbreviation( 'sbt' )
+		description: names.name( 'scala' ) + ' serialization project',
+		url: 'http://lampwww.epfl.ch/~hmiller/pickling/',
+		title: names.name( 'scala-pickling' )
 	},
-	'sbt-vs-gradle':
+	'so':
 	{
-		description: 'A ' + names.name( 'so' ) + ' discussion',
-		url: 'http://stackoverflow.com/questions/11061938/comparing-sbt-and-gradle',
-		title: names.abbreviation( 'sbt' ) + ' vs. ' + names.name( 'gradle' )
+		description: 'Popular Q&A platform for programming related topics',
+		url: 'http://stackoverflow.com/',
+		title: names.name( 'so' )
 	}
 };
 
