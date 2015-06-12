@@ -16,9 +16,7 @@ var sitemap = [
 	{ id: 'project-setup', title: 'Project Setup', url: '/project-setup' },
 	{ id: 'editor', title: 'Editor / ' + names.abbreviation( 'ide' ), url: '/editor', children: [
 		{ id: 'intellij-idea', title: names.name( 'intellij-idea' ), url: '/intellij-idea' },
-		{ id: 'android-studio', title: names.name( 'android-studio' ), url: '/android-studio' },
-		{ id: 'scala-ide', title: names.name( 'scala-ide' ), url: '/scala-ide' },
-		{ id: 'eclipse', title: names.name( 'eclipse' ), url: '/eclipse' }
+		{ id: 'android-studio', title: names.name( 'android-studio' ), url: '/android-studio' }
 	] },
 	{ id: 'command-line', title: 'Working with the command line', url: '/command-line' },
 	{ id: 'dependencies', title: 'Dependencies', url: '/dependencies' },
