@@ -1,7 +1,7 @@
 var names = require( './names.js' ),
 	sources = require( './sources.js' );
 
-var dependencies =
+var software =
 {
 	'android-sdk':
 	{
@@ -57,7 +57,7 @@ var dependencies =
 
 module.exports =
 {
-	all: dependencies,
-	find: function( id ) { return dependencies[id]; },
-	format: function( id ) { return dependencies[id].format(); }
+	all: software,
+	find: function( id ) { return software[id]; },
+	format: function( id ) { return software[id].format(); }
 };

@@ -80,6 +80,7 @@ var names =
 	'parcelable': { name: 'Parcelable' },
 	'scala-pickling': { name: 'Scala Pickling' },
 	'proguard': { name: 'ProGuard' },
+	'robolectric': { name: 'Robolectric' },
 	'sbt':
 	{
 		abbreviation: 'sbt',

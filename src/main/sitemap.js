@@ -20,11 +20,16 @@ var sitemap = [
 		{ id: 'scala-ide', title: names.name( 'scala-ide' ), url: '/scala-ide' },
 		{ id: 'eclipse', title: names.name( 'eclipse' ), url: '/eclipse' }
 	] },
+	{ id: 'command-line', title: 'Working with the command line', url: '/command-line' },
+	{ id: 'dependencies', title: 'Dependencies', url: '/dependencies' },
 	{ id: 'proguard', title: names.name( 'proguard' ), url: '/proguard', children: [
 		{ id: 'cache', title: 'Cache', url: '/cache' }
 	] },
 	{ id: 'tr', title: names.render( 'tr' ), url: '/typed-resources' },
-	{ id: 'parcelable', title: names.name( 'parcelable' ), url: '/parcelable' }
+	{ id: 'parcelable', title: names.name( 'parcelable' ), url: '/parcelable' },
+	{ id: 'testing', title: 'Testing', url: '/testing', children: [
+		{ id: 'robolectric', title: names.name( 'robolectric' ), url: '/robolectric' }
+	] }
 ];
 
 // Update relative paths and ids, add next, previous and parent relations

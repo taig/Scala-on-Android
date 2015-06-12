@@ -96,7 +96,7 @@ gulp.task( 'stylesheets', function()
 
 gulp.task( 'templates', function()
 {
-	var	dependencies = require( source.main + '/dependencies.js' ),
+	var	software = require( source.main + '/software.js' ),
 		names = require( source.main + '/names.js' ),
 		sitemap = require( source.main + '/sitemap.js' ),
 		sources = require( source.main + '/sources.js' );
@@ -105,7 +105,7 @@ gulp.task( 'templates', function()
 
 	gulp.src( source.main + '**/index.html' )
 		.pipe( plugin.plumber() )
-		.pipe( plugin.data( { dependencies: dependencies, names: names, sitemap: sitemap, sources: sources } ) )
+		.pipe( plugin.data( { software: software, names: names, sitemap: sitemap, sources: sources } ) )
 		.pipe( plugin.nunjucks() )
 		// Create edit button
 		.pipe( plugin.dom( function()

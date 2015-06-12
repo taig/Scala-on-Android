@@ -197,6 +197,12 @@ var sources =
 		url: 'https://github.com/taig/scala-on-android-skeleton',
 		title: names.name( 'scala-android' ) + ' project skeleton'
 	},
+	'robolectric':
+	{
+		description: 'Official project page',
+		url: 'http://robolectric.org/',
+		title: names.abbreviation( 'robolectric' )
+	},
 	'sbt-manual':
 	{
 		description: 'Official ' + names.abbreviation( 'sbt' ) + ' documentation',

@@ -4,20 +4,6 @@
 {% set identifier = 'help' %}
 
 {% block content %}
-	<section>
-		<h2>Getting help</h2>
-
-		<p>
-			Unlike other topics, {{ sourcelink( 'so' ) }} is not a good place to go for {{ names.name( 'scala-android' ) }} specific questions. It is however a good choice for your {{ names.name( 'scala' ) }} <strong>or</strong> {{ names.name( 'android' ) }} difficulties.
-		</p>
-
-		<p>
-			To discuss {{ names.name( 'scala-android' ) }} issues the {{ sourcelink( 'scala-android-mailing-list', 'mailing list' ) }} is an excellent spot. Alternatively you might want to join the {{ names.abbreviation( 'irc' ) }} channel <em>#sbt-android</em> on <em>Freenode</em>.
-		</p>
-
-		<p>
-			You should also go through the {{ names.name( 'sbt-plugin' ) }} {{ sourcelink( 'sbt-plugin-readme', 'readme' ) }} to get a comprehensive overview of its capabilities, have a look at the project's {{ sourcelink( 'sbt-plugin-samples', 'sample applications' ) }}, and last but not least search the {{ sourcelink( 'sbt-plugin-issues', 'project issues' ) }}. They are well maintained and contain plenty of valuable insider information form the author.
-		</p>
-	</section>
+	{{ section( 'page/help/help.html' ) }}
 	{{ section_further_reading( [ 'so', 'scala-android-mailing-list', 'sbt-plugin', 'sbt-plugin-readme', 'sbt-plugin-samples', 'sbt-plugin-issues' ] ) }}
 {% endblock %}
