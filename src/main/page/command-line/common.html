@@ -1,0 +1,46 @@
+<h3>Common tasks</h3>
+
+<p>
+	Below is a list of common and important {{ names.abbreviation( 'sbt' ) }}, and its respective {{ names.name( 'android' ) }} plugin, commands.
+</p>
+
+<table>
+	<thead>
+		<tr>
+			<td><strong>Command</strong></td>
+			<td><strong>Description</strong></td>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="command">android:run</td>
+			<td>Compile the project, package a debug apk and deploy it to an active device or emulator</td>
+		</tr>
+		<tr>
+			<td class="command">android:packageRelease</td>
+			<td>Create a signed apk</td>
+		</tr>
+		<tr>
+			<td class="command">android:packageDebug</td>
+			<td>Create a debug apk</td>
+		</tr>
+		<tr>
+			<td class="command">reload</td>
+			<td>Apply changes that have been made to your {{ names.abbreviation( 'sbt' ) }} configuration</td>
+		</tr>
+		<tr>
+			<td class="command">compile</td>
+			<td>Compile the source code</td>
+		</tr>
+		<tr>
+			<td class="command">clean</td>
+			<td>
+				Remove all compiled and generated code, delete {{ names.name( 'proguard' ) }} cache. This might be useful when experiencing issues with incremental builds.
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>
+	If you find yourself running a particular {{ command( 'android:*' ) }} task very often, you may want to add a shortcut to your {{ names.abbreviation( 'sbt' ) }} configuration. E.g. {{ command( 'run <<= run in Android', 'scala' ) }} allows you to trigger the task from the console via {{ command( 'run' ) }} instead of {{ command( 'android:run' ) }}.
+</p>

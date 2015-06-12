@@ -29,7 +29,8 @@ var sitemap = [
 	{ id: 'parcelable', title: names.name( 'parcelable' ), url: '/parcelable' },
 	{ id: 'testing', title: 'Testing', url: '/testing', children: [
 		{ id: 'robolectric', title: names.name( 'robolectric' ), url: '/robolectric' }
-	] }
+	] },
+	{ id: 'publish', title: 'Publishing', url: '/publish' }
 ];
 
 // Update relative paths and ids, add next, previous and parent relations
