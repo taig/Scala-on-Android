@@ -21,7 +21,14 @@
 </head>
 <body>
 	{% include 'include/header/index.html' %}
-	<main id="{{ identifier }}">{% block content %}{% endblock %}</main>
+	<main id="{{ identifier }}">
+		{% call alert( 'warning' ) %}
+		<p>
+			This document is under active development, changes frequently and does not claim to be correct. It is available only for demonstration purposes and should not be used to educate about the topic. A stable version of the {{ names.name( 'scala-android' ) }} documentation will ship by end of July!
+		</p>
+		{% endcall %}
+		{% block content %}{% endblock %}
+	</main>
 	{% include 'include/footer/index.html' %}
 
 	<script data-main="/asset/javascript/main" src="/asset/javascript/require-2.1.17.min.js"></script>
