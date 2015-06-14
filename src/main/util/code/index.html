@@ -3,5 +3,5 @@
 {%- endmacro -%}
 
 {%- macro command( value, language = null ) -%}
-	<code class="inline {{ 'highlight' if language }}" data-language="{{ language }}"><!--REMOVEME{{ value }}--></code>
+	<code class="inline {{ 'highlight' if language }}" data-language="{{ language }}">{{ '<!--REMOVEME' + value + '-->' if language else value }}</code>
 {%- endmacro -%}
