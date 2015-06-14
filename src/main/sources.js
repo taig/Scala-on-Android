@@ -167,6 +167,12 @@ var sources =
 		url: 'https://github.com/square/okio',
 		title: '<em>Okio</em>'
 	},
+	'play-framework-documentation-sbt-dependencies':
+	{
+		description: 'Official documentation',
+		url: 'https://www.playframework.com/documentation/2.4.x/SBTDependencies',
+		title: names.name( 'play' ) + ': ' + names.abbreviation( 'sbt' ) + ' dependencies'
+	},
 	'proguard':
 	{
 		description: 'Official project page',
@@ -253,9 +259,15 @@ var sources =
 	},
 	'sbt-tutorial':
 	{
-		description: 'Official ' + names.abbreviation( 'sbt' ) + ' tutorial',
+		description: 'Official tutorial',
 		url: 'http://www.scala-sbt.org/0.13/tutorial/index.html',
-		title: 'Getting Started with ' + names.abbreviation( 'sbt' )
+		title: names.abbreviation( 'sbt' ) + ' tutorial: Getting started'
+	},
+	'sbt-tutorial-library-dependencies':
+	{
+		description: 'Official tutorial',
+		url: 'http://www.scala-sbt.org/0.13/tutorial/Library-Dependencies.html',
+		title: names.abbreviation( 'sbt' ) + ' tutorial: Library dependencies'
 	},
 	'sbt-vs-gradle':
 	{

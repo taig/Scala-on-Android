@@ -3,5 +3,7 @@
 {% set id = 'dependencies' %}
 
 {% block content %}
-	<h2>Dependencies</h2>
+	{{ section( 'page/dependencies/introduction.html' ) }}
+	{{ section( 'page/dependencies/library-dependencies.html' ) }}
+	{{ section_further_reading( [ 'sbt-tutorial-library-dependencies', 'play-framework-documentation-sbt-dependencies' ] ) }}
 {% endblock %}
