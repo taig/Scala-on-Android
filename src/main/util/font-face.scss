@@ -1,6 +1,6 @@
 @each $font in ( 100 normal 100 robotothin, 500 normal 500 robotoregular, 500i italic 500 robotoitalic, 700 normal 700 robotobold )
 {
-	$path: '/asset/font/roboto';
+	$path: '../font/roboto';
 	$file: $path + '/' + nth( $font, 1 );
 	$style: nth( $font, 2 );
 	$weight: nth( $font, 3 );
@@ -20,7 +20,7 @@
 }
 
 @font-face {
-	$file: '/asset/font/icon/material-design';
+	$file: '../font/icon/material-design';
 
 	font-family: font( icon );
 	src: url( '#{$file}.eot?v=1.0.1' );
