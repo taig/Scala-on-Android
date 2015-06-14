@@ -140,7 +140,7 @@ gulp.task( 'templates', function()
 			{
 				var	item = items[i],
 					language = item.getAttribute( 'data-language' ),
-					script = item.innerHTML.replace( /<!--([\s\S]*)-->/, '$1' );
+					script = item.innerHTML.replace( /<!--REMOVEME([\s\S]*)-->/, '$1' );
 
 				item.removeAttribute( 'data-language' );
 				item.innerHTML = language ? highlight.highlight( language, script, true ).value : script;
