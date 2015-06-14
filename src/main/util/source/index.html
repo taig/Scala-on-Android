@@ -1,7 +1,6 @@
 {%- macro sourcelink( id, value = null ) -%}
 	{% set source = sources.find( id ) %}
-	{# TODO apply striptags to description #}
-	<a href="{{ source.url }}" title="{{ ( source.description if not value else source.title ) | escape }}" target="_blank">
+	<a href="{{ source.url }}" title="{{ ( source.description if not value else source.title ) | striptags | escape }}" target="_blank">
 		{{ value if value else source.title }}
 	</a>
 {%- endmacro -%}

@@ -1,6 +1,7 @@
 var	fs = require( 'fs' ),
 	gulp = require( 'gulp' ),
 	highlight = require( 'highlight.js' ),
+	striptags = require( 'striptags' );
 	_ = require( 'underscore' );
 
 var plugin =
@@ -26,15 +27,15 @@ var plugin =
 };
 
 var	source =
-	{
-		asset: './src/asset/',
-		main: './src/main/'
-	},
-	destination =
-	{
-		asset: './dist/asset/',
-		main: './dist/'
-	};
+{
+	asset: './src/asset/',
+	main: './src/main/'
+},
+destination =
+{
+	asset: './dist/asset/',
+	main: './dist/'
+};
 
 gulp.task( 'default', [ 'assets', 'javascript', 'stylesheets', 'templates' ] );
 gulp.task( 'develop', [ 'jshint', 'default', 'connect', 'watch' ] );
@@ -101,7 +102,9 @@ gulp.task( 'templates', function()
 		sitemap = require( source.main + '/sitemap.js' ),
 		sources = require( source.main + '/sources.js' );
 
-	plugin.nunjucks.nunjucks.configure( source.main, { autoescape: false, watch: false } );
+	plugin.nunjucks.nunjucks
+		.configure( source.main, { autoescape: false, watch: false } )
+		.addFilter( "striptags", striptags );
 
 	gulp.src( source.main + '**/index.html' )
 		.pipe( plugin.plumber() )
