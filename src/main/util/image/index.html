@@ -1,7 +1,7 @@
 {%- macro image( src, alt ) -%}
 	<div class="image">
-		<a href="{{ src }}" target="_blank">
-			<img src="{{ src }}" alt="{{ alt }}" />
+		<a href="{{ baseUrl }}{{ src }}" target="_blank">
+			<img src="{{ baseUrl }}{{ src }}" alt="{{ alt }}" />
 		</a>
 	</div>
 {%- endmacro -%}
