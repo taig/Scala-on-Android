@@ -28,6 +28,7 @@ var sitemap = [
 	{ id: 'testing', title: 'Testing', url: '/testing', children: [
 		{ id: 'robolectric', title: names.name( 'robolectric' ), url: '/robolectric' }
 	] },
+	{ id: 'library-project', title: 'Library projects' },
 	{ id: 'publish', title: 'Publishing', url: '/publish' }
 ];
 
@@ -61,7 +62,11 @@ var sitemap = [
 		{
 			page.parent = root;
 			page.id = root.id + '-' + page.id;
-			page.url = root.url + page.url;
+
+			if( page.url )
+			{
+				page.url = root.url + page.url;
+			}
 		}
 
 		if( page.children )
@@ -105,6 +110,15 @@ module.exports =
 	},
 	anchor: function( id, title )
 	{
-		return '<a href="' + find( id ).url + '">' + ( title || find( id ).title ) + '</a>';
+		var entry = find( id );
+
+		if( entry.url )
+		{
+			return '<a href="' + entry.url + '">' + ( title || entry.title ) + '</a>';
+		}
+		else
+		{
+			return '<span>' + ( title || entry.title ) + '</span>';
+		}
 	}
 };

@@ -3,10 +3,10 @@
 		{% for page in contents %}
 			{% if not page.skip %}
 				<li class="{{ 'active' if page.id == id else null }}">
-					{% if page.empty %}
-						<span>{{ page.title }}</span>
-					{% else %}
+					{% if page.url %}
 						<a href="{{ page.url }}">{{ page.title }}</a>
+					{% else %}
+						<span>{{ page.title }}</span>
 					{% endif %}
 					{% if page.children %}
 						{{ list( page.children, page.url ) }}
