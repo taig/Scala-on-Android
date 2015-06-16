@@ -1,6 +1,7 @@
 {% extends 'layout.html' %}
 
 {% set id = 'editor' %}
+{% set title = 'Editors and ' + names.abbreviation( 'ide' ) + 's' %}
 
 {% block content %}
 	{{ section( 'page/editor/editor.html', 'editor' ) }}

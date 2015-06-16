@@ -6,7 +6,6 @@
 
 {% if id %}
 	{% set current = sitemap.find( id ) %}
-	{% set title = sitemap.path( current ) | join( ' › ' ) %}
 	{% set identifier = id %}
 {% endif %}
 
@@ -15,7 +14,7 @@
 <html lang="en">
 <head>
 	<meta charset=utf-8 />
-	<title>Scala on Android › {{ title | striptags }}</title>
+	<title>{{ ( title | striptags ) if title }}{{ ' — ' if title else '' }}Scala on Android</title>
 	<link rel="stylesheet" type="text/css" media="screen" href="/asset/stylesheet/agate.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="/asset/stylesheet/main.css" />
 </head>
