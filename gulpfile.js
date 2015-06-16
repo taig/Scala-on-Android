@@ -113,7 +113,13 @@ gulp.task( 'sitemap', function()
 	}
 
 	mkdirp( destination.main );
-	fs.writeFileSync( destination.main + 'sitemap.txt', urls.join( '\n' ) );
+	fs.writeFileSync(
+		destination.main + 'sitemap.xml',
+		'<?xml version="1.0" encoding="UTF-8"?>' +
+		'<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'+
+		urls.map( function( url ) { return '<url><loc>' + url + '</loc></url>'; } ).join() +
+		'</urlset>'
+	);
 } );
 
 gulp.task( 'templates', function()
