@@ -38,6 +38,8 @@ destination =
 	main: './dist/'
 };
 
+var url = 'http://scala-on-android.taig.io';
+
 gulp.task( 'default', [ 'assets', 'javascript', 'stylesheets', 'templates', 'sitemap' ] );
 gulp.task( 'develop', [ 'jshint', 'default', 'connect', 'watch' ] );
 
@@ -106,7 +108,7 @@ gulp.task( 'sitemap', function()
 	{
 		if( current.hasOwnProperty( 'url' ) )
 		{
-			urls.push( current.url )
+			urls.push( url + current.url )
 		}
 
 		current = current.next
