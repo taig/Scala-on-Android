@@ -32,5 +32,55 @@
 
 	<script data-main="/asset/javascript/main" src="/asset/javascript/require-2.1.17.min.js"></script>
 	{% include './include/analytics.html' %}
+	<script type="application/ld+json">
+	{
+		"@context" : "http://schema.org",
+		"@type" : "WebSite",
+		"name" : "Scala on Android",
+		"url" : "http://scala-on-android.taig.io/"
+	}
+	</script>
+	{% if id and not sitemap.find( id ).skip %}
+		{% set paths = sitemap.path( current ) %}
+		<script type="application/ld+json">
+		{
+			"@context": "http://schema.org",
+			"@type": "BreadcrumbList",
+			"itemListElement":
+			[
+				{% for path in paths %}
+				{
+					"@type": "ListItem",
+					"position": {{ loop.index }},
+					"item":
+					{
+						"@id": "{{ path.url }}",
+						"name": "{{ path.title | striptags }}"
+					}
+				}{{ ',' if not loop.last }}
+				{% endfor %}
+			]
+		}
+		</script>
+	{% elif not id %}
+		<script type="application/ld+json">
+		{
+			"@context": "http://schema.org",
+			"@type": "BreadcrumbList",
+			"itemListElement":
+			[
+				{
+					"@type": "ListItem",
+					"position": 1,
+					"item":
+					{
+						"@id": "/{{ identifier }}",
+						"name": "{{ title }}"
+					}
+				}
+			]
+		}
+		</script>
+	{% endif %}
 </body>
 </html>

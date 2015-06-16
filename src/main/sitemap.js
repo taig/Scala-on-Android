@@ -100,8 +100,7 @@ module.exports =
 
 		do
 		{
-			// TODO upgrade to nunjucks 1.2.6 and use join( x, attribute=title ) instead
-			path.unshift( current.title );
+			path.unshift( current );
 			current = current.parent;
 		}
 		while( current );

@@ -1,10 +1,11 @@
 {% extends 'layout.html' %}
 
+{% set identifier = 'sources' %}
 {% set title = 'Sources' %}
 
 {% block content %}
 	<section>
-		<h2>Sources / Further reading</h2>
+		<h2>Sources and further readings</h2>
 		<ul class="further-reading">
 			{% for _, source in sources.all %}
 				<li>
