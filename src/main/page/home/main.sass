@@ -4,6 +4,15 @@
 		:align-items flex-start
 		:width 100%
 
+		+media( max-width $width )
+			:flex-direction column
+	
+			.icon
+				:align-self center
+				:margin-top spacing( 2 )
+				:max-width 20rem
+				:width 75%
+
 	.wrapper
 		:flex .7
 
@@ -17,12 +26,3 @@
 	li
 		a, span
 			:margin-left spacing()
-
-	+media( max-width $width )
-		:flex-direction column
-
-		.icon
-			:align-self center
-			:margin-top spacing( 2 )
-			:max-width 20rem
-			:width 75%
