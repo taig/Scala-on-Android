@@ -29,7 +29,7 @@ var sitemap = [
 		{ id: 'robolectric', title: names.name( 'robolectric' ), url: '/robolectric' }
 	] },
 	{ id: 'library-project', title: 'Library projects' },
-	{ id: 'publish', title: 'Publishing', url: '/publish' }
+	{ id: 'publish', title: 'Publishing' }
 ];
 
 // Update relative paths and ids, add next, previous and parent relations
