@@ -5,10 +5,16 @@
 	:margin-bottom spacing( 2 )
 	:min-height 2.5rem + spacing( 4 )
 
-	+pseudo( after )
+	+pseudo( after, '\f0a1' )
 		+position( absolute, $top: spacing( 2 ), $left: 0 )
 		:color color( neutral )
-		:content '\f0a1'
 		:font-family font( icon )
 		:font-size 2.5rem
 		:line-height 1
+
+	+media( max-width $width * .75 )
+		:padding-left 0
+		:padding-top spacing( 4 ) + 2.5rem
+
+		&::after
+			:left 50%
