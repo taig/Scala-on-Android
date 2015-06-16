@@ -4,23 +4,20 @@
 {% from 'util/section/index.html' import section, section_further_reading with context %}
 {% from 'util/source/index.html' import sitelink, sourcelink, sourcelist with context %}
 
-{% if id %}
-	{% set current = sitemap.find( id ) %}
-	{% set identifier = id %}
-{% endif %}
+{% set current = sitemap.find( id ) %}
 
 <!DOCTYPE html>
 
 <html lang="en">
 <head>
 	<meta charset=utf-8 />
-	<title>{{ ( title | striptags ) if title }}{{ ' — ' if title else '' }}Scala on Android</title>
+	<title>{{ ( title if title else current.title ) | striptags }} — Scala on Android</title>
 	<link rel="stylesheet" type="text/css" media="screen" href="/asset/stylesheet/agate.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="/asset/stylesheet/main.css" />
 </head>
 <body>
 	{% include 'include/header/index.html' %}
-	<main id="{{ identifier }}">
+	<main id="{{ id }}">
 		{% call alert( 'warning' ) %}
 		<p>
 			This document is under active development, changes frequently and does not claim to be correct. It is available only for demonstration purposes and should not be used to educate about the topic. A stable version of the {{ names.name( 'scala-android' ) }} documentation will ship by end of July!
@@ -40,47 +37,25 @@
 		"url" : "http://scala-on-android.taig.io/"
 	}
 	</script>
-	{% if id and not sitemap.find( id ).skip %}
-		{% set paths = sitemap.path( current ) %}
-		<script type="application/ld+json">
-		{
-			"@context": "http://schema.org",
-			"@type": "BreadcrumbList",
-			"itemListElement":
-			[
-				{% for path in paths %}
+	<script type="application/ld+json">
+	{
+		"@context": "http://schema.org",
+		"@type": "BreadcrumbList",
+		"itemListElement":
+		[
+			{% for path in sitemap.path( current ) %}
+			{
+				"@type": "ListItem",
+				"position": {{ loop.index }},
+				"item":
 				{
-					"@type": "ListItem",
-					"position": {{ loop.index }},
-					"item":
-					{
-						"@id": "{{ path.url }}",
-						"name": "{{ path.title | striptags }}"
-					}
-				}{{ ',' if not loop.last }}
-				{% endfor %}
-			]
-		}
-		</script>
-	{% elif not id %}
-		<script type="application/ld+json">
-		{
-			"@context": "http://schema.org",
-			"@type": "BreadcrumbList",
-			"itemListElement":
-			[
-				{
-					"@type": "ListItem",
-					"position": 1,
-					"item":
-					{
-						"@id": "/{{ identifier }}",
-						"name": "{{ title }}"
-					}
+					"@id": "{{ path.url }}",
+					"name": "{{ path.title | striptags }}"
 				}
-			]
-		}
-		</script>
-	{% endif %}
+			}{{ ',' if not loop.last }}
+			{% endfor %}
+		]
+	}
+	</script>
 </body>
 </html>
