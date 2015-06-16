@@ -149,17 +149,23 @@ var sources =
 		url: 'https://github.com/simpligility/android-maven-plugin/tree/master/src/test/projects/scala',
 		title: names.name( 'android' ) + ' ' + names.name( 'maven' ) + ' Plugin'
 	},
-	'multidex-android-documentation':
+	'android-documentation-multidex':
 	{
-		description: names.name( 'android' ) + ' developer documentation about ' + names.name( 'multidex' ),
+		description: 'Official documentation',
 		url: 'https://developer.android.com/tools/building/multidex.html',
-		title: names.name( 'multidex' )
+		title: names.name( 'android' ) + ' documentation: ' + names.name( 'multidex' )
 	},
-	'multidex-sbt-plugin-sample':
+	'sbt-plugin-sample':
 	{
-		description: names.name( 'gh' ) + ' source of ' + names.name( 'multidex' ) + ' test code',
+		description: names.name( 'gh' ) + ' repository',
+		url: 'https://github.com/pfn/android-sdk-plugin/tree/master/sbt-test/android-sdk-plugin/',
+		title: names.name( 'sbt-plugin' ) + ' samples'
+	},
+	'sbt-plugin-sample-multidex':
+	{
+		description: names.name( 'gh' ) + ' repository',
 		url: 'https://github.com/pfn/android-sdk-plugin/tree/master/sbt-test/android-sdk-plugin/hello-multidex',
-		title: names.name( 'sbt-plugin' ) + ' ' + names.name( 'multidex' )
+		title: names.name( 'sbt-plugin' ) + ' sample: ' + names.name( 'multidex' )
 	},
 	'okio':
 	{
@@ -208,6 +214,18 @@ var sources =
 		description: 'Official project page',
 		url: 'http://robolectric.org/',
 		title: names.abbreviation( 'robolectric' )
+	},
+	'sbt':
+	{
+		description: 'Official project page',
+		url: 'http://www.scala-sbt.org/',
+		title: names.name( 'sbt' )
+	},
+	'sbt-download':
+	{
+		description: 'Official project page',
+		url: 'http://www.scala-sbt.org/download.html',
+		title: names.abbreviation( 'sbt' ) + ': Download'
 	},
 	'sbt-manual':
 	{
@@ -267,6 +285,18 @@ var sources =
 	{
 		description: 'Official tutorial',
 		url: 'http://www.scala-sbt.org/0.13/tutorial/Library-Dependencies.html',
+		title: names.abbreviation( 'sbt' ) + ' tutorial: Library dependencies'
+	},
+	'sbt-tutorial-multi-projects':
+	{
+		description: 'Official tutorial',
+		url: 'http://www.scala-sbt.org/0.13/tutorial/Multi-Project.html',
+		title: names.abbreviation( 'sbt' ) + ' tutorial: Multi-project-builds'
+	},
+	'sbt-tutorial-setup':
+	{
+		description: 'Official tutorial',
+		url: 'http://www.scala-sbt.org/0.13/tutorial/Setup.html',
 		title: names.abbreviation( 'sbt' ) + ' tutorial: Library dependencies'
 	},
 	'sbt-vs-gradle':

@@ -4,6 +4,13 @@
 
 {% block content %}
 	{{ section( 'page/dependencies/introduction.html' ) }}
-	{{ section( 'page/dependencies/library-dependencies.html' ) }}
-	{{ section_further_reading( [ 'sbt-tutorial-library-dependencies', 'play-framework-documentation-sbt-dependencies' ] ) }}
+	{{ section( 'page/dependencies/managed.html' ) }}
+	{{ section( 'page/dependencies/unmanaged.html' ) }}
+	{{ section( 'page/dependencies/sub-project.html' ) }}
+	{{ section_further_reading( [
+			'sbt-tutorial-library-dependencies',
+			'play-framework-documentation-sbt-dependencies',
+			'sbt-tutorial-multi-projects'
+		] )
+	}}
 {% endblock %}

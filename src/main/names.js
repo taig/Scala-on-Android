@@ -108,6 +108,10 @@ var names =
 		abbreviation: 'TR',
 		name: 'Typed Resources'
 	},
+	'vcs': {
+		abbreviation: 'VCS',
+		name: 'Version Control System'
+	},
 	'wikipedia': { name: 'Wikipedia' },
 	'xml':
 	{

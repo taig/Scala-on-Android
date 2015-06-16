@@ -21,5 +21,5 @@
 </p>
 
 {% call alert( 'warning' ) %}
-	Please make sure that the {{ command( './project/android.sbt' ) }} file remains in working order. It contains the dependency to the {{ names.name( 'sbt-plugin' ) }} which you don't nececcarily need, because you are already depending on it via the global configuration, but it is crucial for others to run your project.
+	Please make sure that the generated {{ command( './project/android.sbt' ) }} file remains in working order. It contains the dependency to the {{ names.name( 'sbt-plugin' ) }} which you don't nececcarily need, because you are already depending on it via the global configuration, but it is crucial for others to run your project.
 {% endcall %}

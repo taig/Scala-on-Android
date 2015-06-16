@@ -5,7 +5,11 @@
 </p>
 
 <p>
-	When you pull in external dependencies, {{ names.name( 'proguard' ) }} will likely strip out more classes than it should and abort the compilation with error messages. This usually happens because it naturally fails to analyse runtime reflection. It is then your job to properly adjust the {{ names.name( 'proguard' ) }} configuration which usually boils down to explicitly instructing it to not remove certain classes.
+	When you pull in external dependencies, {{ names.name( 'proguard' ) }} will likely cause issues, report warnings and abort the build process. This is where you have to step in to add additional configuration rules. When {{ names.name( 'proguard' ) }} raises a warning this usually happens because it detects a reference to a class which does not exist. The {{ names.abbreviation( 'android-sdk' ) }} comes with its own implementation of the {{ names.name( 'java' ) }} {{ names.abbreviation( 'api' ) }} which misses out on some classes (e.g. the {{ command( 'java.rmi.*' ) }} package) so this is not a surprise. A library that supports {{ names.name( 'android' ) }} will never call such a missing class when running in this context. It is therefore safe to ignore the warning.
+</p>
+
+<p>
+	{{ names.name( 'proguard' ) }} may also miss out on classes that are referenced within a library via runtime reflection and remove them too eagerly. If the tool has no chance to detect the usage of a class, it will strip it out and you will encounter {{ command( 'ClassDefNotFound' ) }} exceptions at runtime. You then have to manually instruct {{ names.name( 'proguard' ) }} to keep this class.
 </p>
 
 <p>

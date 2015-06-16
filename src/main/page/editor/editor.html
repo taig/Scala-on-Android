@@ -1,9 +1,15 @@
 <h2>Editor / {{ names.abbreviation( 'ide' ) }}</h2>
 
 <p>
-	Any editor that you previously used for {{ names.name( 'scala' ) }} developemnt will also work for your {{ names.name( 'android' ) }} purpose. However, advanced {{ names.abbreviation( 'ide' ) }} features, such as building and deploying your app, debugging or testing, may not be possible with some products or require at least some configuration.
+	Any editor that you previously used for {{ names.name( 'scala' ) }} developemnt should also work for your {{ names.name( 'android' ) }} purpose. However, advanced {{ names.abbreviation( 'ide' ) }} features, such as building and deploying your app, debugging or testing, may not be possible with some products or require at least some configuration.
 </p>
 
 <p>
 	This documentation illustrates how to achieve these important tasks from the {{ names.abbreviation( 'sbt' ) }} command line and does also provide instructions how to configure the recommended {{ names.abbreviation( 'ide' ) }}, {{ sourcelink( 'intellij-idea' ) }}, to integrate these feautres.
 </p>
+
+{% call alert( 'warning' ) %}
+	<p>
+		The state of {{ names.abbreviation( 'ide' ) }} support is <strong>very</strong> fragile. Frequent updates to neccessary {{ names.name( 'scala' ) }} or {{  names.abbreviation( 'sbt' ) }} plugins tend to break features. It is therefore highly advised to not rely on {{ names.abbreviation( 'ide' ) }} features too heavily and instead get comfortable with the {{  names.abbreviation( 'sbt' ) }} command line.
+	</p>
+{% endcall %}

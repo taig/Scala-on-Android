@@ -7,7 +7,7 @@
 {{ code( 'page/proguard/proguard-error.txt.html', null ) }}
 
 <p>
-	{{ names.name( 'proguard' ) }} prevents compilation as long as there are warnings. To solve those you need to stick to the information about the affected classes at the top of the log (e.g. {{ command( 'Warning: okio.Okio: can\'t find referenced class java.nio.file.Files', null ) }}). In your {{ names.abbreviation( 'sbt' ) }} build configuration, you can now use the {{ command( 'proguardOptions in Android ++= Seq()', 'scala' ) }} key to add {{ names.name( 'proguard' ) }} rules that instruct it to keep certain packages, classes, fields or methods. This is a trial and error process. To exemplarily solve the {{ command( 'Okio' ) }} warning you would first naively try to keep the {{ command( 'java.nio.file.Files' ) }} class.
+	{{ names.name( 'proguard' ) }} prevents compilation as long as there are warnings. To solve those you need to stick to the information about the affected classes at the top of the log (e.g. {{ command( 'Warning: okio.Okio: can\'t find referenced class java.nio.file.Files', null ) }}). In your {{ names.abbreviation( 'sbt' ) }} build configuration, you can now use the {{ command( 'proguardOptions in Android', 'scala' ) }} key to add {{ names.name( 'proguard' ) }} rules that instruct it to keep certain packages, classes, fields or methods. This is a trial and error process. To exemplarily solve the {{ command( 'Okio' ) }} warning you would first naively try to keep the {{ command( 'java.nio.file.Files' ) }} class.
 </p>
 
 {{ code( 'page/proguard/example-configuration-1.scala' ) }}

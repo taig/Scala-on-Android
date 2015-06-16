@@ -1,3 +1,1 @@
-proguardOptions in Android ++= Seq(
-	"-dontwarn okio.Okio"
-)
+proguardOptions in Android += "-dontwarn okio.Okio"

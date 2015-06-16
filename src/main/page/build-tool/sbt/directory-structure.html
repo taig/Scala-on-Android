@@ -23,7 +23,7 @@
 					<li>
 						<span>plugins.sbt</span>
 						<p>
-							Dependencies for {{ names.abbreviation( 'sbt' ) }} are managed in this file. This is necessary, as we need to rely on {{ names.name( 'sbt-plugin' ) }} here.
+							Dependencies for {{ names.abbreviation( 'sbt' ) }} plugins are managed in this file. This is necessary, as we need to rely on {{ names.name( 'sbt-plugin' ) }} here.
 						</p>
 					</li>
 				</ol>
@@ -62,6 +62,9 @@
 						<ol>
 							<li>
 								<span>AndroidManifest.xml</span>
+								<p>
+									Optional manifest file to use when tests are executed
+								</p>
 							</li>
 							<li>
 								<span>res/</span>
@@ -77,7 +80,7 @@
 					<li>
 						<span>androidTest/</span>
 						<p>
-							A folder introduced by the Android plugin to host instrumentation tests.
+							A folder for instrumentation tests.
 						</p>
 					</li>
 				</ol>

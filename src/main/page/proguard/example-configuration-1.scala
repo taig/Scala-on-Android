@@ -1,3 +1,1 @@
-proguardOptions in Android ++= Seq(
-	"-keep class java.nio.file.Files { *; }"
-)
+proguardOptions in Android += "-keep class java.nio.file.Files { *; }"

@@ -1,11 +1,11 @@
 <h3><em>gen-idea</em></h3>
 
 <p>
-	It is now necessary to create the {{ names.abbreviation( 'ide' ) }} configuration files via the <em>gen-idea</em> {{ names.abbreviation( 'sbt' ) }} plugin. This step will hopefully soon be superfluous, but for now it is still obligatory. {{ names.name( 'intellij-idea' ) }} should be able to simply import an {{ names.name( 'sbt-plugin' ) }} based plugin, but it currently fails to do so.
+	It is now necessary to create the {{ names.abbreviation( 'ide' ) }} configuration files via the <em>gen-idea</em> {{ names.abbreviation( 'sbt' ) }} plugin. This step will hopefully soon be superfluous, but for now it is still obligatory. {{ names.name( 'intellij-idea' ) }} should be able to simply import an {{ names.name( 'sbt-plugin' ) }} based plugin, but in its current state it fails to do so.
 </p>
 
 <p>
-	<em>gen-idea</em> is necessary to generate configuration files for the {{ names.abbreviation( 'ide' ) }}. To install the {{ sourcelink( 'sbt-plugin-gen-idea', '<em>gen-idea</em>' ) }} plugin create the file {{ command( '~/.sbt/0.13/plugins/gen-idea.sbt' ) }} (the filename is arbitrary) with the contents below.
+	<em>gen-idea</em> is a {{ names.abbreviation( 'sbt' ) }} task that generates configuration files for the {{ names.name( 'intellij-idea' ) }}. To install the {{ sourcelink( 'sbt-plugin-gen-idea', '<em>gen-idea</em>' ) }} plugin create the file {{ command( '~/.sbt/0.13/plugins/gen-idea.sbt' ) }} (the filename is arbitrary) with the contents below.
 </p>
 
 {{ code( 'page/editor/intellij-idea/gen-idea.scala.html' ) }}
