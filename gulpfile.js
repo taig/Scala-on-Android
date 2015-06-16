@@ -37,7 +37,7 @@ destination =
 	main: './dist/'
 };
 
-gulp.task( 'default', [ 'assets', 'javascript', 'stylesheets', 'templates' ] );
+gulp.task( 'default', [ 'assets', 'javascript', 'stylesheets', 'templates', 'sitemap' ] );
 gulp.task( 'develop', [ 'jshint', 'default', 'connect', 'watch' ] );
 
 gulp.task( 'jshint', function()
@@ -93,6 +93,25 @@ gulp.task( 'stylesheets', function()
 		.pipe( plugin.cssmin() )
 		.pipe( gulp.dest( destination.asset + '/stylesheet' ) )
 		.pipe( plugin.reload() );
+} );
+
+gulp.task( 'sitemap', function()
+{
+	var sitemap = require( source.main + '/sitemap.js' ),
+		current = sitemap.all[0],
+		urls = [];
+
+	while( current.hasOwnProperty( 'next' ) )
+	{
+		if( current.hasOwnProperty( 'url' ) )
+		{
+			urls.push( current.url )
+		}
+
+		current = current.next
+	}
+
+	fs.writeFileSync( destination.main + 'sitemap.txt', urls.join( '\n' ) );
 } );
 
 gulp.task( 'templates', function()
