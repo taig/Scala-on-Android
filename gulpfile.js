@@ -1,6 +1,7 @@
 var	fs = require( 'fs' ),
 	gulp = require( 'gulp' ),
 	highlight = require( 'highlight.js' ),
+	mkdirp = require( 'mkdirp' ),
 	striptags = require( 'striptags' );
 	_ = require( 'underscore' );
 
@@ -111,6 +112,7 @@ gulp.task( 'sitemap', function()
 		current = current.next
 	}
 
+	mkdirp( destination.main );
 	fs.writeFileSync( destination.main + 'sitemap.txt', urls.join( '\n' ) );
 } );
 

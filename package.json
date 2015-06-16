@@ -25,6 +25,7 @@
     "gulp-watch": "^4.2.4",
     "highlight.js": "^8.5.0",
     "jquery": "^2.1.4",
+    "mkdirp": "^0.5.1",
     "striptags": "^2.0.2",
     "underscore": "^1.8.3"
   }
