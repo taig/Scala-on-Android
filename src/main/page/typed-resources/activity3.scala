@@ -11,10 +11,10 @@ class MyActivity extends Activity with TypedActivity
 		title.setText( "Hello Scala!" )
 	}
 
-	override def onDestroy() =
+	override def onResume() =
 	{
-		super.onDestroy()
+		super.onResume()
 
-		title.setText( "Goodbye Scala!" );
+		title.setText( "Welcome back, Scala!" )
 	}
 }

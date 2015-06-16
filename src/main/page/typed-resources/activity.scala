@@ -1,7 +1,3 @@
-import android.app.Activity
-import android.os.Bundle
-import android.widget.TextView
-
 class MyActivity extends Activity
 {
 	override def onCreate( savedInstanceState: Bundle ) =

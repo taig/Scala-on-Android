@@ -7,5 +7,5 @@
 {{ code( 'page/typed-resources/activity3.scala' ) }}
 
 <p>
-	This does however force you to take care when accessing the {{ command( 'title' ) }} field because it will evaluate to {{ command( 'null' ) }} when the {{ command( 'setContentView()' ) }} class has not been executed yet. The workflow is very similar to the famous {{ sourcelink( 'android-butterknife' ) }} library, but works with simple language features and is much more transparent.
+	This does however force you to take care when accessing the {{ command( 'title' ) }} field because it will evaluate to {{ command( 'null' ) }} if the {{ command( 'setContentView()' ) }} class has not been executed yet. The workflow is very similar to the famous {{ sourcelink( 'android-butterknife' ) }} library, but works with basic language features and is much more transparent.
 </p>
