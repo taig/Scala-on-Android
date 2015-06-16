@@ -55,7 +55,7 @@ gulp.task( 'assets', function()
 		.pipe( gulp.dest( destination.asset ) )
 		.pipe( plugin.reload() );
 
-	gulp.src( source.asset + 'favicon.ico' )
+	gulp.src( source.asset + '*' )
 		.pipe( plugin.plumber() )
 		.pipe( gulp.dest( destination.main ) )
 		.pipe( plugin.reload() );
