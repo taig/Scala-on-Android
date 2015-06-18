@@ -28,7 +28,7 @@ var software =
 		artifact: 'android-sdk-plugin',
 		version: '1.4.1',
 		title: names.name( 'sbt-plugin' ),
-		url: function() { return 'https://bintray.com/pfn/sbt-plugins/' + this.artifact + '/' },
+		url: function() { return 'https://bintray.com/pfn/sbt-plugins/' + this.artifact + '/'; },
 		format: function()
 		{
 			return 'addSbtPlugin( "' + this.group + '" % "' + this.artifact + '" % "' + this.version + '" )';
@@ -45,7 +45,7 @@ var software =
 			return	'https://oss.sonatype.org/content/repositories/snapshots/' +
 					this.group.replace( '.', '/' ) + '/' +
 					this.artifact + '_2.10_0.13/' +
-					this.version + '/'
+					this.version + '/';
 		},
 		format: function()
 		{

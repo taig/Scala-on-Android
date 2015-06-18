@@ -1,0 +1,28 @@
+<script type="application/ld+json">
+{
+	"@context" : "http://schema.org",
+	"@type" : "WebSite",
+	"name" : "Scala on Android",
+	"url" : "http://scala-on-android.taig.io/"
+}
+</script>
+<script type="application/ld+json">
+{
+	"@context": "http://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement":
+	[
+		{% for path in sitemap.path( current ) %}
+		{
+			"@type": "ListItem",
+			"position": {{ loop.index }},
+			"item":
+			{
+				"@id": "{{ path.url }}",
+				"name": "{{ path.title | striptags }}"
+			}
+		}{{ ',' if not loop.last }}
+		{% endfor %}
+	]
+}
+</script>

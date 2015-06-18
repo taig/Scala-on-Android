@@ -349,7 +349,7 @@ var sources =
 	},
 	'so':
 	{
-		description: 'Popular Q&A platform for programming related topics',
+		description: 'Popular Q&amp;A platform for programming related topics',
 		url: 'http://stackoverflow.com/',
 		title: names.name( 'so' )
 	}

@@ -14,7 +14,8 @@ var plugin =
 	debug: require( 'gulp-debug' ),
 	dom: require( 'gulp-dom' ),
 	filter: require( 'gulp-filter' ),
-	htmlmin: require( 'gulp-html-minifier' ),
+	htmlmin: require( 'gulp-htmlmin' ),
+	htmllint: require( 'gulp-htmllint' ),
 	jshint: require( 'gulp-jshint' ),
 	maps: require( 'gulp-sourcemaps' ),
 	nunjucks: require( 'gulp-nunjucks-render' ),
@@ -40,12 +41,12 @@ destination =
 
 var url = 'http://scala-on-android.taig.io';
 
-gulp.task( 'default', [ 'assets', 'javascript', 'stylesheets', 'templates', 'sitemap' ] );
+gulp.task( 'default', [ 'assets', 'sitemap', 'javascript', 'stylesheets', 'templates' ] );
 gulp.task( 'develop', [ 'jshint', 'default', 'connect', 'watch' ] );
 
 gulp.task( 'jshint', function()
 {
-	gulp.src( '.src/**/*.js' )
+	gulp.src( source.main + '**/*.js' )
 		.pipe( plugin.jshint() )
 		.pipe( plugin.jshint.reporter( 'default' ) )
 		.pipe( plugin.jshint.reporter( 'fail' ) );
@@ -58,7 +59,7 @@ gulp.task( 'assets', function()
 		.pipe( gulp.dest( destination.asset ) )
 		.pipe( plugin.reload() );
 
-	gulp.src( source.asset + '*' )
+	gulp.src( source.asset + '*.*' )
 		.pipe( plugin.plumber() )
 		.pipe( gulp.dest( destination.main ) )
 		.pipe( plugin.reload() );
@@ -78,7 +79,7 @@ gulp.task( 'javascript', function()
 				jquery: '../lib/jquery-2.1.4'
 			}
 		} ) )
-		.pipe( gulp.dest( destination.asset + '/javascript' ) )
+		.pipe( gulp.dest( destination.asset + 'javascript/' ) )
 		.pipe( plugin.reload() );
 } );
 
@@ -90,17 +91,17 @@ gulp.task( 'stylesheets', function()
 		.pipe( plugin.sass( { indentedSyntax: true } ) )
 		.pipe( plugin.prefixer() )
 		.pipe( plugin.maps.write( '.' ) )
-		.pipe( gulp.dest( destination.asset + '/stylesheet' ) )
+		.pipe( gulp.dest( destination.asset + 'stylesheet/' ) )
 		.pipe( plugin.filter( '*.css' ) )
 		.pipe( plugin.rename( { suffix: '.min' } ) )
 		.pipe( plugin.cssmin() )
-		.pipe( gulp.dest( destination.asset + '/stylesheet' ) )
+		.pipe( gulp.dest( destination.asset + 'stylesheet/' ) )
 		.pipe( plugin.reload() );
 } );
 
 gulp.task( 'sitemap', function()
 {
-	var sitemap = require( source.main + '/sitemap.js' ),
+	var sitemap = require( source.main + 'sitemap.js' ),
 		current = sitemap.all[0],
 		urls = [];
 
@@ -126,20 +127,26 @@ gulp.task( 'sitemap', function()
 
 gulp.task( 'templates', function()
 {
-	var	software = require( source.main + '/software.js' ),
-		names = require( source.main + '/names.js' ),
-		sitemap = require( source.main + '/sitemap.js' ),
-		sources = require( source.main + '/sources.js' );
+	var	software = require( source.main + 'software.js' ),
+		names = require( source.main + 'names.js' ),
+		sitemap = require( source.main + 'sitemap.js' ),
+		sources = require( source.main + 'sources.js' );
 
 	plugin.nunjucks.nunjucks
 		.configure( source.main, { autoescape: false, watch: false } )
-		.addFilter( "striptags", striptags );
+		.addFilter( 'striptags', striptags );
 
-	gulp.src( source.main + '**/index.html' )
-		.pipe( plugin.plumber() )
+	gulp.src( [ source.main + 'index.html', source.main + 'page/**/index.html' ] )
 		.pipe( plugin.data( { software: software, names: names, sitemap: sitemap, sources: sources } ) )
 		.pipe( plugin.nunjucks() )
-		// Create edit button
+		.pipe( plugin.rename( function( path )
+		{
+			// Move page/ subdirectories to root directory
+			if( path.dirname.indexOf( 'page/' ) === 0 )
+			{
+				path.dirname = path.dirname.substr( 5 );
+			}
+		} ) )
 		.pipe( plugin.dom( function()
 		{
 			var items = this.querySelectorAll( '[data-src]' );
@@ -147,7 +154,7 @@ gulp.task( 'templates', function()
 			for( var i = 0; i < items.length; i++ )
 			{
 				var item = items[i];
-					url = 'https://github.com/taig/scala-on-android/edit/master/src/main/' + item.getAttribute( 'data-src' );
+				url = 'https://github.com/taig/scala-on-android/edit/master/src/main/' + item.getAttribute( 'data-src' );
 
 				item.removeAttribute( 'data-src' );
 
@@ -163,7 +170,6 @@ gulp.task( 'templates', function()
 
 			return this;
 		} ) )
-		// Enable syntax highlighting
 		.pipe( plugin.dom( function()
 		{
 			var items = this.querySelectorAll( '.highlight' );
@@ -180,14 +186,6 @@ gulp.task( 'templates', function()
 
 			return this;
 		} ) )
-		.pipe( plugin.rename( function( path )
-		{
-			// Move page/ subdirectories to root directory
-			if( path.dirname.indexOf( 'page/' ) === 0 )
-			{
-				path.dirname = path.dirname.substr( 5 );
-			}
-		} ) )
 		.pipe( plugin.htmlmin(
 		{
 			collapseBooleanAttributes: true,
@@ -200,8 +198,7 @@ gulp.task( 'templates', function()
 			removeRedundantAttributes: true,
 			removeEmptyAttributes: true
 		} ) )
-		.pipe( gulp.dest( destination.main ) )
-		.pipe( plugin.reload() );
+		.pipe( gulp.dest( destination.main ) );
 } );
 
 gulp.task( 'watch', function()

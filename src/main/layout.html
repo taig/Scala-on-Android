@@ -12,15 +12,16 @@
 <head>
 	<meta charset=utf-8 />
 	<meta name="description" content="Comprehensive documentation for Scala on Android">
-	<meta name="keywords" content="Scala on Android, Scala, Android, Development, {{ title if title else current.title }}">
+	<meta name="keywords" content="Scala on Android, Scala, Android, Development, {{ ( title if title else current.title ) | striptags | escape }}">
 	<title>{{ ( title if title else current.title ) | striptags }} — Scala on Android</title>
 	<link rel="stylesheet" type="text/css" media="screen" href="/asset/stylesheet/agate.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="/asset/stylesheet/main.css" />
 	<link rel="icon" href="/asset/image/favicon.png" />
-	<link rel="manifest" href="manifest.json" />
+	<link rel="manifest" href="/manifest.json" />
 </head>
 <body>
 	{% include 'include/header/index.html' %}
+
 	<main id="{{ id }}">
 		{% call alert( 'warning' ) %}
 		<p>
@@ -29,37 +30,12 @@
 		{% endcall %}
 		{% block content %}{% endblock %}
 	</main>
+
 	{% include 'include/footer/index.html' %}
 
 	<script data-main="/asset/javascript/main" src="/asset/javascript/require-2.1.17.min.js"></script>
-	{% include './include/analytics.html' %}
-	<script type="application/ld+json">
-	{
-		"@context" : "http://schema.org",
-		"@type" : "WebSite",
-		"name" : "Scala on Android",
-		"url" : "http://scala-on-android.taig.io/"
-	}
-	</script>
-	<script type="application/ld+json">
-	{
-		"@context": "http://schema.org",
-		"@type": "BreadcrumbList",
-		"itemListElement":
-		[
-			{% for path in sitemap.path( current ) %}
-			{
-				"@type": "ListItem",
-				"position": {{ loop.index }},
-				"item":
-				{
-					"@id": "{{ path.url }}",
-					"name": "{{ path.title | striptags }}"
-				}
-			}{{ ',' if not loop.last }}
-			{% endfor %}
-		]
-	}
-	</script>
+
+	{% include 'include/analytics.html' %}
+	{% include 'include/schema.html' %}
 </body>
 </html>
