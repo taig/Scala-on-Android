@@ -106,3 +106,26 @@ body > footer
 				:opacity .75
 				:right rem( -$overlap )
 				:transition left 300ms, opacity 150ms, right 300ms
+
+	+media( max-width 768px )
+		.fixtures
+			:flex-direction column
+
+			.left, .center, .right
+				:flex 1
+				:text-align center
+
+			.right
+				:order 1
+				:margin-bottom spacing( 2 )
+
+			.left
+				:order 2
+				:margin-bottom spacing( 4 )
+
+			.center
+				:order 3
+
+				img
+					:margin auto
+					:width 250px
