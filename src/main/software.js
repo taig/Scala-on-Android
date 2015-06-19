@@ -9,7 +9,6 @@ var software =
 		title: names.abbreviation( 'android-sdk' ),
 		format: function() { return 'android-' + this.version; }
 	},
-
 	'android-studio':
 	{
 		version: '1.2.1.1',
@@ -21,6 +20,18 @@ var software =
 		version: '14.1.3',
 		title: names.name( 'intellij-idea' ) + ' (Community Edition)',
 		url: function() { return sources.find( 'intellij-idea-download' ).url; }
+	},
+	'robotest':
+	{
+		group: 'com.geteit',
+		artifact: 'robotest',
+		version: '0.10',
+		title: names.name( 'robotest' ),
+		url: function() { return 'https://github.com/zbsz/robotest'; },
+		format: function()
+		{
+			return	'"' + this.group + '" %% "' + this.artifact + '" % "' + this.version + '" % "test"';
+		}
 	},
 	'sbt-plugin':
 	{
@@ -51,6 +62,23 @@ var software =
 		{
 			return	'resolvers += "Sonatype snapshots" at "https://oss.sonatype.org/content/repositories/snapshots/"\n\n' +
 					'addSbtPlugin( "' + this.group + '" % "' + this.artifact + '" % "' + this.version + '" )';
+		}
+	},
+	'scalatest':
+	{
+		group: 'org.scalatest',
+		artifact: 'scalatest',
+		version: '2.2.5',
+		title: names.name( 'scalatest' ),
+		url: function()
+		{
+			return encodeURI(
+				'http://search.maven.org/#artifactdetails|' + this.group + '|' + this.artifact + '_2.11|' + this.version
+			);
+		},
+		format: function()
+		{
+			return '"' + this.group + '" %% "' + this.artifact + '" % "' + this.version + '" % "test"';
 		}
 	}
 };

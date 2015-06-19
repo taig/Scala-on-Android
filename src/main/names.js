@@ -83,6 +83,7 @@ var names =
 	'scala-pickling': { name: 'Scala Pickling' },
 	'proguard': { name: 'ProGuard' },
 	'robolectric': { name: 'Robolectric' },
+	'robotest': { name: 'RoboTest' },
 	'sbt':
 	{
 		abbreviation: 'sbt',
@@ -90,6 +91,7 @@ var names =
 	},
 	'sbt-plugin': { name: 'Android SDK Plugin for SBT' },
 	'scala': { name: 'Scala' },
+	'scalatest': { name: 'ScalaTest' },
 	'scala-android': { name: 'Scala on Android' },
 	'scala-ide': { name: 'Scala IDE' },
 	'sdk':
@@ -112,6 +114,7 @@ var names =
 		abbreviation: 'VCS',
 		name: 'Version Control System'
 	},
+	'vogella': { name: 'vogella' },
 	'wikipedia': { name: 'Wikipedia' },
 	'xml':
 	{

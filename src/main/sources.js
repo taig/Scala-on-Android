@@ -203,17 +203,23 @@ var sources =
 		url: 'https://github.com/taig/scala-on-android',
 		title: names.name( 'scala-android' ) + ' documentation'
 	},
-	'project-skeleton':
+	'hello-scala':
 	{
-		description: names.name( 'gh' ) + ' repository that should be cloned in order to set up a new project',
-		url: 'https://github.com/taig/scala-on-android-skeleton',
-		title: names.name( 'scala-android' ) + ' project skeleton'
+		description: names.name( 'gh' ) + ' repository that serves as ' + names.name( 'scala-android' ) + ' project starter template',
+		url: 'https://github.com/taig/hello-scala',
+		title: 'Hello Scala!'
 	},
 	'robolectric':
 	{
 		description: 'Official project page',
 		url: 'http://robolectric.org/',
-		title: names.abbreviation( 'robolectric' )
+		title: names.name( 'robolectric' )
+	},
+	'robotest':
+	{
+		description: names.name( 'gh' ) + ' project page',
+		url: 'https://github.com/zbsz/robotest',
+		title: names.name( 'robotest' )
 	},
 	'sbt':
 	{
@@ -352,6 +358,12 @@ var sources =
 		description: 'Popular Q&amp;A platform for programming related topics',
 		url: 'http://stackoverflow.com/',
 		title: names.name( 'so' )
+	},
+	'vogella-testing':
+	{
+		description: names.name( 'vogella' ) + ' ' + names.name( 'android' ) + ' tutorial',
+		url: 'http://www.vogella.com/tutorials/AndroidTesting/article.html',
+		title: names.name( 'android' ) + ' application testing with the ' + names.name( 'android' ) + ' test framework'
 	}
 };
 

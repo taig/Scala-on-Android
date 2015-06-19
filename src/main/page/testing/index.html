@@ -3,5 +3,6 @@
 {% set id = 'testing' %}
 
 {% block content %}
-	<h2>Testing</h2>
+	{{ section( 'page/testing/introduction.html' ) }}
+	{{ section_further_reading( [ 'vogella-testing' ] ) }}
 {% endblock %}

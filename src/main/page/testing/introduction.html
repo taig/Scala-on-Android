@@ -1,0 +1,14 @@
+<h2>Testing</h2>
+
+{% call blockquote( sourcelink( 'vogella-testing', names.name( 'vogella' ) ) ) %}
+	<p>
+		A unit test tests only the functionality of a certain component. Let's, for example, assume a button in an {{ names.name( 'android' ) }} activity is used to start another activity. A unit test would determine if the corresponding intent was issued, not if the second activity was started.
+	</p>
+	<p>
+		An integration test would also check if the activity was correctly started.
+	</p>
+{% endcall %}
+
+<p>
+	In its current state, the {{ names.name( 'sbt-plugin' ) }} (version {{ software.find( 'sbt-plugin' ).version }}) seems to have some issues with instrumentation tests on {{ names.name( 'scala' ) }} projects. For this reason there is currently no proper configuration available. Unit tests however work fine. It is even possible to set them up with {{ names.name( 'scalatest' ) }} and {{ names.name( 'robolectric' ) }}, as discussed in the {{ sitelink( 'testing-robolectric', 'next chapter' ) }}.
+</p>

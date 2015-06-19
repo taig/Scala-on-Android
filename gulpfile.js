@@ -198,7 +198,8 @@ gulp.task( 'templates', function()
 			removeRedundantAttributes: true,
 			removeEmptyAttributes: true
 		} ) )
-		.pipe( gulp.dest( destination.main ) );
+		.pipe( gulp.dest( destination.main ) )
+		.pipe( plugin.reload() );
 } );
 
 gulp.task( 'watch', function()

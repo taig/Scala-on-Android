@@ -3,5 +3,8 @@
 {% set id = 'testing-robolectric' %}
 
 {% block content %}
-	<h2>Robolectric</h2>
+	{{ section( 'page/testing/robolectric/introduction.html' ) }}
+	{{ section( 'page/testing/robolectric/configuration.html' ) }}
+	{{ section( 'page/testing/robolectric/usage.html' ) }}
+	{{ section_further_reading( [ 'robolectric', 'robotest', 'hello-scala' ] ) }}
 {% endblock %}
