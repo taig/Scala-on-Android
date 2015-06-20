@@ -1,8 +1,9 @@
-var	fs = require( 'fs' ),
+var	exec = exec = require( 'child_process' ).execSync,
+	fs = require( 'fs' ),
 	gulp = require( 'gulp' ),
 	highlight = require( 'highlight.js' ),
 	mkdirp = require( 'mkdirp' ),
-	striptags = require( 'striptags' );
+	striptags = require( 'striptags' ),
 	_ = require( 'underscore' );
 
 var plugin =
@@ -147,57 +148,9 @@ gulp.task( 'templates', function()
 				path.dirname = path.dirname.substr( 5 );
 			}
 		} ) )
-		.pipe( plugin.dom( function()
-		{
-			var items = this.querySelectorAll( '[data-src]' );
-
-			for( var i = 0; i < items.length; i++ )
-			{
-				var item = items[i];
-				url = 'https://github.com/taig/scala-on-android/edit/master/src/main/' + item.getAttribute( 'data-src' );
-
-				item.removeAttribute( 'data-src' );
-
-				var a = this.createElement( 'a' );
-				a.setAttribute( 'class', 'edit' );
-				a.setAttribute( 'href', url );
-				a.setAttribute( 'target', '_blank' );
-				a.setAttribute( 'title', 'Edit on GitHub' );
-				a.innerHTML = '<span>Edit</span>';
-
-				item.appendChild( a );
-			}
-
-			return this;
-		} ) )
-		.pipe( plugin.dom( function()
-		{
-			var items = this.querySelectorAll( '.highlight' );
-
-			for( var i = 0; i < items.length; i++ )
-			{
-				var	item = items[i],
-					language = item.getAttribute( 'data-language' ),
-					script = item.innerHTML.replace( /<!--REMOVEME([\s\S]*)-->/, '$1' );
-
-				item.removeAttribute( 'data-language' );
-				item.innerHTML = language ? highlight.highlight( language, script, true ).value : script;
-			}
-
-			return this;
-		} ) )
-		.pipe( plugin.htmlmin(
-		{
-			collapseBooleanAttributes: true,
-			collapseWhitespace: true,
-			minifyCSS: true,
-			minifyJS: true,
-			minifyURLs: true,
-			removeAttributeQuotes: true,
-			removeComments: true,
-			removeRedundantAttributes: true,
-			removeEmptyAttributes: true
-		} ) )
+		.pipe( metadata )
+		.pipe( syntax )
+		.pipe( minify )
 		.pipe( gulp.dest( destination.main ) )
 		.pipe( plugin.reload() );
 } );
@@ -219,4 +172,61 @@ gulp.task( 'connect', function()
 		root: destination.main,
 		livereload: true
 	} );
+} );
+
+var metadata = plugin.dom( function()
+{
+	var items = this.querySelectorAll( '[data-src]' );
+
+	for( var i = 0; i < items.length; i++ )
+	{
+		var item = items[i],
+			level = item.getAttribute( 'data-level' ),
+			src = item.getAttribute( 'data-src' );
+
+		var html = plugin.nunjucks.nunjucks.render(
+			'./util/meta/index.html',
+			{
+				edited: exec( 'echo $(git log -1 --format=%cd ./src/main/' + src + ')' ).toString( 'utf8' ).trim(),
+				level: level,
+				url: 'https://github.com/taig/scala-on-android/edit/master/src/main/' + src
+			}
+		);
+
+		item.removeAttribute( 'data-level' );
+		item.removeAttribute( 'data-src' );
+		item.innerHTML = html + item.innerHTML;
+	}
+
+	return this;
+} );
+
+var syntax = plugin.dom( function()
+{
+	var items = this.querySelectorAll( '.highlight' );
+
+	for( var i = 0; i < items.length; i++ )
+	{
+		var	item = items[i],
+			language = item.getAttribute( 'data-language' ),
+			script = item.innerHTML.replace( /<!--REMOVEME([\s\S]*)-->/, '$1' );
+
+		item.removeAttribute( 'data-language' );
+		item.innerHTML = language ? highlight.highlight( language, script, true ).value : script;
+	}
+
+	return this;
+} );
+
+var minify = plugin.htmlmin(
+{
+	collapseBooleanAttributes: true,
+	collapseWhitespace: true,
+	minifyCSS: true,
+	minifyJS: true,
+	minifyURLs: true,
+	removeAttributeQuotes: true,
+	removeComments: true,
+	removeRedundantAttributes: true,
+	removeEmptyAttributes: true
 } );

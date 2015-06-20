@@ -1,0 +1,115 @@
+section
+	.meta
+		:float right
+		:position relative
+
+		button
+			:background none
+			:border none
+			:cursor pointer
+			:font-family font( icon )
+			:font-size 1.5rem
+			:line-height 1
+			:outline none
+			:padding 0
+			:position relative
+
+			+pseudo( before )
+				+position( absolute, 50%, 50%, 50%, 50% )
+				:border-radius 50%
+				:opacity 0
+				:transition all 300ms
+				:z-index -1
+
+			&:hover
+				:opacity 1
+
+				&::before
+					+position( null, -30%, -30%, -30%, -30% )
+					:opacity .25
+
+			&:active
+				&::before
+					:opacity .4
+
+			span
+				:display none
+
+		&.level-1
+			button
+				:color darken( color( android ), 5% )
+
+				&::before
+					:background-color color( android )
+
+				&::after
+					:content '\f155'
+
+		&.level-2
+			button
+				:color darken( mix( color( android ), color( scala ) ), 5% )
+
+				&::before
+					:background-color mix( color( android ), color( scala ) )
+
+				&::after
+					:content '\f154'
+
+		&.level-3
+			button
+				:color darken( color( scala ), 5% )
+
+				&::before
+					:background-color color( scala )
+
+				&::after
+					:content '\f152'
+
+		.wrapper
+			:display none
+			:position absolute
+			:right 0
+			:top 0
+			:width 14rem
+			:z-index 10
+
+			+pseudo( before )
+				+position( absolute, rem( -5px ), rem( -5px ), rem( -5px ), rem( -5px ) )
+				:background-color rgba( 0, 0, 0, .2 )
+				:z-index -1
+
+		ul
+			:background color( neutral )
+			:font-size .9rem
+			:list-style none
+
+			li
+				:padding spacing()
+
+				span
+					:display block
+
+			.label, .edit
+				:font-weight 700
+				:text-transform uppercase
+
+			.reliability
+				strong, em
+					:display block
+					:font-style normal
+
+		&.active
+			.wrapper
+				:display block
+
+		&.level-1
+			.reliability strong
+				:color darken( color( android ), 5% )
+
+		&.level-2
+			.reliability strong
+				:color darken( color( android ), 5% )
+
+		&.level-3
+			.reliability strong
+				:color darken( color( android ), 5% )

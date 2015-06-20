@@ -1,1 +1,1 @@
-require( [ 'include/main' ], function() {} );
+require( [ 'include/main', 'util/main' ], function() {} );

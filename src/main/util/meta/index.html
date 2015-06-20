@@ -1,0 +1,29 @@
+<div class="meta level-{{level}}">
+	<button><span>Details</span></button>
+	<div class="wrapper">
+		<ul>
+			<li>
+				<span class="label">Information reliability</span>
+				<span class="reliability">
+					{% if level == 1 %}
+						<strong>Sustainable</strong>
+						<em>Indefinitely valid</em>
+					{% elif level == 2 %}
+						<strong>Moderate</strong>
+						<em>Might become outdated</em>
+					{% else %}
+						<strong>Fragile</strong>
+						<em>Will become outdated very soon</em>
+					{% endif %}
+				</span>
+			</li>
+			<li>
+				<span class="edit">Last edit</span>
+				<span class="date">{{ edited }}</span>
+			</li>
+			<li>
+				<a href="{{ url }}">Edit on <em>GitHub</em></a>
+			</li>
+		</ul>
+	</div>
+</div>

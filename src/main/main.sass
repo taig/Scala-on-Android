@@ -105,46 +105,6 @@ main
 		tr td:nth-child( even )
 			:background-color darken( color( neutral ), 5% )
 
-	a.edit
-		:color color( main )
-		:left -1.5rem - spacing( 2 )
-		:font-family font( icon )
-		:font-size 1.5rem
-		:line-height 1
-		:opacity .25
-		:position absolute
-		:top .4rem
-		:transition opacity 300ms
-
-		+pseudo( before )
-			+position( absolute, 50%, 50%, 50%, 50% )
-			:background-color color( scala )
-			:border-radius 50%
-			:opacity 0
-			:transition all 300ms
-
-		+pseudo( after, '\f1fc' )
-			+position( relative, $right: auto, $left: auto )
-			:background none
-			:display block
-			:height auto
-			:opacity 1
-			:position relative
-
-		&:hover
-			:opacity 1
-
-			&::before
-				+position( null, -30%, -30%, -30%, -30% )
-				:opacity .5
-
-		&:active
-			&::before
-				:opacity .75
-
-		span
-			:display none
-
 	.content-list
 		:list-style-type none
 

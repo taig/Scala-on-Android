@@ -54,7 +54,6 @@ define( [ 'jquery' ], function( $ )
 	{
 		if( !$( event.target ).parents( 'nav' ).is( nav ) && nav.hasClass( 'active' ) )
 		{
-			console.log( 'click outside of stuff, therefore go an hide!' );
 			button.trigger( 'click' );
 		}
 	} );

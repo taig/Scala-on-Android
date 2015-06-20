@@ -3,7 +3,7 @@
 {% set id = 'prerequisites' %}
 
 {% block content %}
-	{{ section( 'page/prerequisites/introduction.html' ) }}
-	{{ section( 'page/prerequisites/prerequisites.html' ) }}
+	{{ section( 'page/prerequisites/introduction.html', 1 ) }}
+	{{ section( 'page/prerequisites/prerequisites.html', 2 ) }}
 	{{ section_further_reading( [ 'android-download', 'android-install', 'android-tools', 'intellij-idea' ] ) }}
 {% endblock %}
