@@ -28,8 +28,8 @@ var sitemap = [
 	{ id: 'testing', title: 'Testing', url: '/testing', children: [
 		{ id: 'robolectric', title: names.name( 'robolectric' ), url: '/robolectric' }
 	] },
-	{ id: 'library-project', title: 'Library projects' },
-	{ id: 'publish', title: 'Publishing' },
+	{ id: 'library-project', title: 'Library projects', url: '/library-project' },
+	{ id: 'publishing', title: 'Publishing', url: '/publishing' },
 	{ id: 'help', title: 'Getting help', url: '/help', skip: true },
 	{ id: 'sources', title: 'Sources', url: '/sources', skip: true },
 	{ id: 'software', title: 'Software', url: '/software', skip: true },

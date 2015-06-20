@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+
+{% set id = 'library-project' %}
+
+{% block content %}
+	{{ section( 'page/library-project/introduction.html' ) }}
+	{{ section( 'page/library-project/configuration.html' ) }}
+	{{ section_further_reading( [ 'sbt-sonatype' ] ) }}
+{% endblock %}

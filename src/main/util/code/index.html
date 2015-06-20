@@ -1,4 +1,4 @@
-{%- macro code( path, language = 'scala' ) -%}
+{%- macro code( path, language = null ) -%}
 	<pre class="code"><code class="highlight" data-language="{{ language }}"><!--REMOVEME{%- include path -%}--></code></pre>
 {%- endmacro -%}
 

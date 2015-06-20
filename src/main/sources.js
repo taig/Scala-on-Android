@@ -59,6 +59,12 @@ var sources =
 		url: 'http://developer.android.com/sdk/index.html',
 		title: names.name( 'android-studio' ) + ' download'
 	},
+	'android-tools-publishing':
+	{
+		description: 'Official tools documentation',
+		url: 'http://developer.android.com/tools/publishing/publishing_overview.html',
+		title: names.name( 'android' ) + ' tools: Publishing'
+	},
 	'android-training':
 	{
 		description: 'Official ' + names.name( 'android' ) + ' tutorials',
@@ -280,6 +286,12 @@ var sources =
 		description: 'Sample projects on ' + names.name( 'gh' ),
 		url: 'https://github.com/pfn/android-sdk-plugin/tree/master/sbt-test/',
 		title: names.name( 'sbt-plugin' ) + ' samples'
+	},
+	'sbt-sonatype':
+	{
+		description: names.name( 'gh' ) + ' repository',
+		url: 'https://github.com/xerial/sbt-sonatype',
+		title: names.abbreviation( 'sbt' ) + '-sonatype'
 	},
 	'sbt-tutorial':
 	{

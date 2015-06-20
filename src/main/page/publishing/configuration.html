@@ -1,0 +1,21 @@
+<h3>Configuration</h3>
+
+{% call blockquote( sourcelink( 'sbt-plugin' ) ) %}
+	<p>
+		Add <code>Apk&shy;Signing&shy;Config</code>, <code>Plain&shy;Signing&shy;Config</code>, <code>Prompt&shy;Storepass&shy;Signing&shy;Config</code> and <code>Prompt&shy;Passwords&shy;Signing&shy;Config</code>. These various signing configurations allow control over prompting for keystore and key passwords. The default is <code>Plain&shy;Signing&shy;Config</code> which observes the original behavior from ant builds (reads properties out of local.properties). Set <code>apkSigningConfig</code> in Android to one of these variants to perform non-default behavior.
+	</p>
+{% endcall %}
+
+<p>
+	The easiest way is to provide all information in the {{ command( 'local.properties' ) }} file at your project's root directory. This file should obviously be not checked into your {{ names.abbreviation( 'vcs' ) }}.
+</p>
+
+{{ code( 'page/publishing/local.properties' ) }}
+
+<p>
+	For more advanced features (e.g. password prompt), please see the available {{ names.abbreviation( 'sbt' ) }} configuration keys of the {{ sourcelink( 'sbt-plugin' ) }}.
+</p>
+
+<p>
+	Via {{ command( 'sbt packageRelease' ) }}, you are now able to generate a signed {{ command( '*.apk' ) }} file, that will be stored in the {{ command( './target/android-bin/' ) }} folder. In this condition it is ready for <em>Goolge Play</em> upload.
+</p>
