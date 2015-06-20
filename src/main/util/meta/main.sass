@@ -24,52 +24,62 @@ section
 			&:hover
 				:opacity 1
 
-				&::before
+				+pseudo( before )
 					+position( null, -30%, -30%, -30%, -30% )
 					:opacity .25
 
 			&:active
-				&::before
+				+pseudo( before )
 					:opacity .4
 
 			span
 				:display none
 
+		&.active
+			button
+				:z-index 11
+
+				+pseudo( after )
+					:color color( main )
+					:content '\f29a' !important
+
 		&.level-1
 			button
 				:color darken( color( android ), 5% )
 
-				&::before
+				+pseudo( before )
 					:background-color color( android )
 
-				&::after
+				+pseudo( after )
 					:content '\f155'
 
 		&.level-2
 			button
 				:color darken( mix( color( android ), color( scala ) ), 5% )
 
-				&::before
+				+pseudo( before )
 					:background-color mix( color( android ), color( scala ) )
 
-				&::after
+				+pseudo( after )
 					:content '\f154'
 
 		&.level-3
 			button
 				:color darken( color( scala ), 5% )
 
-				&::before
+				+pseudo( before )
 					:background-color color( scala )
 
-				&::after
+				+pseudo( after )
 					:content '\f152'
 
 		.wrapper
-			:display none
+			:opacity 0
+			:pointer-events none
 			:position absolute
-			:right 0
-			:top 0
+			:right rem( -5px )
+			:top spacing( -5 )
+			:transition opacity 250ms, top 250ms
 			:width 14rem
 			:z-index 10
 
@@ -77,6 +87,12 @@ section
 				+position( absolute, rem( -5px ), rem( -5px ), rem( -5px ), rem( -5px ) )
 				:background-color rgba( 0, 0, 0, .2 )
 				:z-index -1
+
+		&.active
+			.wrapper
+				:opacity 1
+				:pointer-events auto
+				:top rem( -7px )
 
 		ul
 			:background color( neutral )
@@ -97,10 +113,6 @@ section
 				strong, em
 					:display block
 					:font-style normal
-
-		&.active
-			.wrapper
-				:display block
 
 		&.level-1
 			.reliability strong

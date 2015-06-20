@@ -7,7 +7,7 @@
 				<span class="reliability">
 					{% if level == 1 %}
 						<strong>Sustainable</strong>
-						<em>Indefinitely valid</em>
+						<em>Won't become outdated</em>
 					{% elif level == 2 %}
 						<strong>Moderate</strong>
 						<em>Might become outdated</em>
@@ -22,7 +22,7 @@
 				<span class="date">{{ edited }}</span>
 			</li>
 			<li>
-				<a href="{{ url }}">Edit on <em>GitHub</em></a>
+				<a href="{{ url }}" target="_blank">Edit on <em>GitHub</em></a>
 			</li>
 		</ul>
 	</div>

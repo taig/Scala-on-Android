@@ -1,7 +1,6 @@
 define( [ 'jquery' ], function( $ )
 {
-	var wndw = $( window ),
-		meta = $( 'div.meta' ),
+	var meta = $( 'div.meta' ),
 		button = meta.find( 'button' );
 
 	/**
@@ -19,9 +18,9 @@ define( [ 'jquery' ], function( $ )
 	 */
 	$( document ).on( 'keyup', function( event )
 	{
-		if( event.keyCode === 27 && nav.hasClass( 'active' ) )
+		if( event.keyCode === 27)
 		{
-			button.trigger( 'click' );
+			meta.filter( '.active' ).find( 'button' ).trigger( 'click' );
 		}
 	} );
 
@@ -30,9 +29,7 @@ define( [ 'jquery' ], function( $ )
 	 */
 	$( document ).on( 'click', function( event )
 	{
-		if( !$( event.target ).parents( '.meta' ).is( meta ) && meta.hasClass( 'active' ) )
-		{
-			button.trigger( 'click' );
-		}
+		var parent = $( event.target ).parents( '.meta.active' );
+		meta.filter( '.active' ).not( parent ).find( 'button' ).trigger( 'click' );
 	} );
 } );
