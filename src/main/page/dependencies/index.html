@@ -3,10 +3,10 @@
 {% set id = 'dependencies' %}
 
 {% block content %}
-	{{ section( 'page/dependencies/introduction.html' ) }}
-	{{ section( 'page/dependencies/managed.html' ) }}
-	{{ section( 'page/dependencies/unmanaged.html' ) }}
-	{{ section( 'page/dependencies/sub-project.html' ) }}
+	{{ section( 'page/dependencies/introduction.html', level = 1 ) }}
+	{{ section( 'page/dependencies/managed.html', level = 1 ) }}
+	{{ section( 'page/dependencies/unmanaged.html', level = 1 ) }}
+	{{ section( 'page/dependencies/sub-project.html', level = 1 ) }}
 	{{ section_further_reading( [
 			'sbt-tutorial-library-dependencies',
 			'play-framework-documentation-sbt-dependencies',

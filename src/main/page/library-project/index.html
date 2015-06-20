@@ -3,7 +3,7 @@
 {% set id = 'library-project' %}
 
 {% block content %}
-	{{ section( 'page/library-project/introduction.html' ) }}
-	{{ section( 'page/library-project/configuration.html' ) }}
+	{{ section( 'page/library-project/introduction.html', level = 1 ) }}
+	{{ section( 'page/library-project/configuration.html', level = 2 ) }}
 	{{ section_further_reading( [ 'sbt-sonatype' ] ) }}
 {% endblock %}

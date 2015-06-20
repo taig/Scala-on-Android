@@ -3,8 +3,8 @@
 {% set id = 'introduction' %}
 
 {% block content %}
-	{{ section( 'page/introduction/introduction.html' ) }}
-	{{ section( 'page/introduction/target-audience.html' ) }}
-	{{ section( 'page/introduction/warning.html' ) }}
+	{{ section( 'page/introduction/introduction.html', level = 1 ) }}
+	{{ section( 'page/introduction/target-audience.html', level = 1 ) }}
+	{{ section( 'page/introduction/warning.html', level = 2 ) }}
 	{{ section_further_reading( [ 'scala', 'android', 'android-runtime' ] ) }}
 {% endblock %}

@@ -3,6 +3,6 @@
 {% set id = 'contents' %}
 
 {% block content %}
-	{{ section( 'page/home/contents.html', class = 'toc' ) }}
+	{{ section( 'page/home/contents.html', level = 0, class = 'toc' ) }}
 	{{ section_further_reading( [ 'hello-scala', 'android', 'scala', 'sbt-plugin' ] ) }}
 {% endblock %}

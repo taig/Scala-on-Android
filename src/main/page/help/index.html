@@ -3,6 +3,6 @@
 {% set id = 'help' %}
 
 {% block content %}
-	{{ section( 'page/help/help.html' ) }}
+	{{ section( 'page/help/help.html', level = 1 ) }}
 	{{ section_further_reading( [ 'so', 'scala-android-mailing-list', 'sbt-plugin', 'sbt-plugin-readme', 'sbt-plugin-samples', 'sbt-plugin-issues' ] ) }}
 {% endblock %}

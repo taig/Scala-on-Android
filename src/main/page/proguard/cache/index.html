@@ -4,8 +4,8 @@
 {% set title = names.name( 'proguard' ) + ' cache' %}
 
 {% block content %}
-	{{ section( 'page/proguard/cache/introduction.html' ) }}
-	{{ section( 'page/proguard/cache/configuration.html' ) }}
-	{{ section( 'page/proguard/cache/troubleshooting.html' ) }}
+	{{ section( 'page/proguard/cache/introduction.html', level = 2 ) }}
+	{{ section( 'page/proguard/cache/configuration.html', level = 2 ) }}
+	{{ section( 'page/proguard/cache/troubleshooting.html', level = 3 ) }}
 	{{ section_further_reading( [ 'proguard', 'sbt-plugin', 'sbt-plugin-sample-proguard' ] ) }}
 {% endblock %}

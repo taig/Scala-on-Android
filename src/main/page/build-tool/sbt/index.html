@@ -8,8 +8,8 @@
 			<h2>{{ names.abbreviation( 'sbt' ) }}</h2>
 			<h3>{{ names.name( 'sbt' ) }}</h3>
 		</div>
-		{{ section( 'page/build-tool/sbt/installation.html' ) }}
-		{{ section( 'page/build-tool/sbt/structure.html', class = 'build-tool-sbt-structure' ) }}
+		{{ section( 'page/build-tool/sbt/installation.html', level = 2 ) }}
+		{{ section( 'page/build-tool/sbt/structure.html', level = 2, class = 'build-tool-sbt-structure' ) }}
 		{{ section_further_reading( [ 'sbt', 'sbt-download', 'sbt-manual', 'sbt-tutorial-setup', 'sbt-tutorial', 'sbt-plugin', 'sbt-plugin-gen-idea', 'blog-47deg-configuration' ] ) }}
 	</section>
 {% endblock %}

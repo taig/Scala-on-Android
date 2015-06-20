@@ -3,9 +3,9 @@
 {% set id = 'project-setup' %}
 
 {% block content %}
-	{{ section( 'page/project-setup/introduction.html' ) }}
-	{{ section( 'page/project-setup/github-template.html' ) }}
-	{{ section( 'page/project-setup/gen-android.html' ) }}
-	{{ section( 'page/project-setup/giter8.html' ) }}
+	{{ section( 'page/project-setup/introduction.html', level = 1 ) }}
+	{{ section( 'page/project-setup/github-template.html', level = 1 ) }}
+	{{ section( 'page/project-setup/gen-android.html', level = 1 ) }}
+	{{ section( 'page/project-setup/giter8.html', level = 3 ) }}
 	{{ section_further_reading( [ 'hello-scala', 'g8', 'g8-templates' ] ) }}
 {% endblock %}
