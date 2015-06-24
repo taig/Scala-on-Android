@@ -44,34 +44,49 @@ section
 					:content '\f29a' !important
 
 		&.level-1
+			$color: color( android )
+
 			button
-				:color darken( color( android ), 5% )
+				:color darken( $color, 5% )
 
 				+pseudo( before )
-					:background-color color( android )
+					:background-color $color
 
 				+pseudo( after )
 					:content '\f155'
 
+			.reliability strong
+				:color darken( $color, 5% )
+
 		&.level-2
+			$color: mix( color( android ), color( scala ) )
+
 			button
-				:color darken( mix( color( android ), color( scala ) ), 5% )
+				:color darken( $color, 5% )
 
 				+pseudo( before )
-					:background-color mix( color( android ), color( scala ) )
+					:background-color $color
 
 				+pseudo( after )
 					:content '\f154'
 
+			.reliability strong
+				:color darken( $color, 5% )
+
 		&.level-3
+			$color: darken( color( scala ), 5% )
+
 			button
-				:color darken( color( scala ), 5% )
+				:color darken( $color, 5% )
 
 				+pseudo( before )
-					:background-color color( scala )
+					:background-color $color
 
 				+pseudo( after )
 					:content '\f152'
+
+			.reliability strong
+				:color darken( $color, 5% )
 
 		.wrapper
 			:opacity 0
@@ -113,15 +128,3 @@ section
 				strong, em
 					:display block
 					:font-style normal
-
-		&.level-1
-			.reliability strong
-				:color darken( color( android ), 5% )
-
-		&.level-2
-			.reliability strong
-				:color darken( color( android ), 5% )
-
-		&.level-3
-			.reliability strong
-				:color darken( color( android ), 5% )
