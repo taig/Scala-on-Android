@@ -8,13 +8,13 @@
 	To install {{ names.name( 'sbt-plugin' ) }} globally, create the file {{ command( '~/.sbt/0.13/plugins/android.sbt' ) }} (the name is arbitrary) and insert {{ command( software.format( 'sbt-plugin' ) ) }}.
 </p>
 
-{{ code( 'page/project-setup/add-sbt-plugin.sh.html', null ) }}
+{{ code( 'page/project-setup/add-sbt-plugin.sh' ) }}
 
 <p>
 	Now, if the {{ names.name( 'sbt-plugin' ) }} is available in the global {{ names.abbreviation( 'sbt' ) }} context, navigate to an empty application folder and run the {{ command( 'gen-android <platform-target> <package-name> <name>' | escape ) }} command.
 </p>
 
-{{ code( 'page/project-setup/gen-android.sh.html', null ) }}
+{{ code( 'page/project-setup/gen-android.sh' ) }}
 
 <p>
 	This will create a very basic {{ names.name( 'java' ) }} setup, consisting of an example activity and a corresponding test class, some resources and the {{ names.abbreviation( 'sbt' ) }} configuration. All arguments are compulsory, but it looks like the last parameter {{ command( '<name>' | escape ) }} does not have an effect on the setup process.
