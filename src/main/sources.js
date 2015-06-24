@@ -113,6 +113,12 @@ var sources =
 		url: 'https://github.com/n8han/giter8/wiki/giter8-templates',
 		title: names.name( 'g8' ) + ' templates'
 	},
+	'gitter-sbt-plugin':
+	{
+		description: names.name( 'gitter' ) + ', chatrooms for ' + names.name( 'gh' ) + ' repositories',
+		url: 'https://gitter.im/pfn/android-sdk-plugin',
+		title: names.name( 'gitter' ) + ': ' + names.name( 'sbt-plugin' )
+	},
 	'gradle-plugin':
 	{
 		description: '"Adds ' + names.name( 'scala' ) + ' language support to official ' + names.name( 'gradle' ) + ' ' + names.name( 'android' ) + ' plugin"',

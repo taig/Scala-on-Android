@@ -36,6 +36,7 @@ var names =
 	'g8': { name: 'giter8' },
 	'gh': { name: 'GitHub' },
 	'git': { name: 'Git' },
+	'gitter': { name: 'Gitter' },
 	'gradle': { name: 'Gradle' },
 	'gradle-plugin': { name: 'gradle-android-scala-plugin' },
 	'google': { name: 'Google' },
