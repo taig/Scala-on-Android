@@ -130,15 +130,18 @@ gulp.task( 'templates', function()
 {
 	var	software = require( source.main + 'software.js' ),
 		names = require( source.main + 'names.js' ),
+		version = require( './package.json' ).version,
 		sitemap = require( source.main + 'sitemap.js' ),
 		sources = require( source.main + 'sources.js' );
+
+	var data = { software: software, names: names, sitemap: sitemap, sources: sources, version: version };
 
 	plugin.nunjucks.nunjucks
 		.configure( source.main, { autoescape: false, watch: false } )
 		.addFilter( 'striptags', striptags );
 
 	gulp.src( [ source.main + 'index.html', source.main + 'page/**/index.html' ] )
-		.pipe( plugin.data( { software: software, names: names, sitemap: sitemap, sources: sources } ) )
+		.pipe( plugin.data( data ) )
 		.pipe( plugin.nunjucks() )
 		.pipe( plugin.rename( function( path )
 		{

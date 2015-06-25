@@ -1,4 +1,9 @@
 body > footer
+	$color: darken( color( android ), 30% )
+
+	&, a
+		:color $color
+
 	.story, .fixtures
 		+outer-container()
 		:position relative
@@ -33,9 +38,7 @@ body > footer
 				:margin-left spacing()
 
 		a
-			$color: darken( color( android ), 30% )
 			$overlap: 2px
-			:color $color
 			:position relative
 			:text-decoration none
 			:text-transform uppercase
@@ -61,7 +64,6 @@ body > footer
 	.fixtures
 		+background( darken( color( android ), 10% ) )
 		:display flex
-		:color color( secondary )
 		:padding-bottom spacing( 4 )
 		:padding-top spacing( 4 )
 
@@ -74,6 +76,12 @@ body > footer
 			img
 				:display block
 				:width 100%
+
+			.version
+				:color lighten( $color, 10% )
+				:display block
+				:margin-top spacing( 2 )
+				:text-align center
 
 		.right
 			:flex 1
