@@ -9,6 +9,7 @@ var names = require( './names.js' );
 var sitemap = [
 	{ id: 'contents', title: 'Table of contents', url: '/', skip: true },
 	{ id: 'introduction', title: 'Introduction', url: '/introduction' },
+	{ id: 'about', title: 'About this documentation', url: '/about' },
 	{ id: 'prerequisites', title: 'Prerequisites', url: '/prerequisites' },
 	{ id: 'build-tool', title: 'Build Tool', url: '/build-tool', children: [
 		{ id: 'sbt', title: names.render( 'sbt' ), url: '/sbt' }

@@ -1,0 +1,28 @@
+#about
+	.reception-icons
+		:list-style none
+		:text-align center
+
+		li
+			:font-family font( icon )
+			:font-size 3rem
+			:margin 0 spacing( 4 )
+			:display inline
+
+		span
+			:display none
+
+		.level-1
+			:color color( android )
+
+			+pseudo( before, '\f155' )
+
+		.level-2
+			:color mix( color( android ), color( scala ) )
+
+			+pseudo( before, '\f154' )
+
+		.level-3
+			:color darken( color( scala ), 5% )
+
+			+pseudo( before, '\f152' )

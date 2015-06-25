@@ -165,7 +165,7 @@ gulp.task( 'watch', function()
 	plugin.watch( source.asset + '**/*', function() { gulp.start( 'assets' ); } );
 	plugin.watch( source.main + '**/*.js', function() { gulp.start( 'javascript' ); } );
 	plugin.watch( source.main + '**/*.{sass,scss}', function() { gulp.start( 'stylesheets' ); } );
-	plugin.watch( source.main + '**/*.{html,txt,scala,java}', function() { gulp.start( 'templates' ); } );
+	plugin.watch( source.main + '**/*.{html,txt,sh,scala,java}', function() { gulp.start( 'templates' ); } );
 } );
 
 gulp.task( 'connect', function()
