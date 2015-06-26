@@ -1,9 +1,9 @@
 <h3>Unmanaged dependencies</h3>
 
 <p>
-	It is sometimes necessary to drop in a simple {{ command( '*.jar' ) }} file as a dependency. This <em>jar</em> file is then called an <em>unmanaged dependency</em> and you are generelly discouraged to use it. It is harder to maintain than a <em>managed dependency</em> and it does not play well with {{ names.abbreviation( 'vcs' ) }}s.
+	It is sometimes necessary to drop in a simple {{ command( '*.jar' ) }} file as a dependency. This <em>jar</em> file is then called an <em>unmanaged dependency</em> and you are generally discouraged to use it. It is harder to maintain than a <em>managed dependency</em> and it does not play well with {{ names.abbreviation( 'vcs' ) }}s.
 </p>
 
 <p>
-	The <em>jar</em> file may be placed in the {{ command( './libs' ) }} directory and will then be automatically picked up by {{ names.abbreviation( 'sbt' ) }} in order to compile your code. Valid drop in locations are also {{ command( './src/main/libs/' ) }} or {{ command( './test/main/libs/' ) }}, if you want to narrow the scope or your <em>unmanaged dependency</em>.
+	The <em>jar</em> file may be placed in the {{ command( './src/main/libs/' ) }} directory and will then be automatically picked up by {{ names.abbreviation( 'sbt' ) }} in order to compile your code. A valid drop in location is also {{ command( './test/main/libs/' ) }}, if you want to narrow the scope or your <em>unmanaged dependency</em>.
 </p>
