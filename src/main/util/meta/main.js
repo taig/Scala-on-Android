@@ -1,12 +1,14 @@
 define( [ 'jquery' ], function( $ )
 {
-	var meta = $( 'div.meta' ),
-		button = meta.find( 'button' );
+	var meta = $( 'div.meta' );
+
+	// Add interactive flag for progressively enhanced styling
+	meta.addClass( 'interactive' );
 
 	/**
 	 * Toggle box
 	 */
-	button.on( 'click', function( event )
+	meta.find( 'button' ).on( 'click', function( event )
 	{
 		event.preventDefault();
 
@@ -18,7 +20,7 @@ define( [ 'jquery' ], function( $ )
 	 */
 	$( document ).on( 'keyup', function( event )
 	{
-		if( event.keyCode === 27)
+		if( event.keyCode === 27 )
 		{
 			meta.filter( '.active' ).find( 'button' ).trigger( 'click' );
 		}

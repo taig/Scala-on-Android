@@ -187,6 +187,11 @@ var metadata = plugin.dom( function()
 			level = item.getAttribute( 'data-level' ),
 			src = item.getAttribute( 'data-src' );
 
+		if( level == 0 )
+		{
+			continue;
+		}
+
 		var html = plugin.nunjucks.nunjucks.render(
 			'./util/meta/index.html',
 			{

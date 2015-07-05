@@ -1,13 +1,13 @@
 section
 	.meta
-		:float right
+		:display inline-block
 		:position relative
-		:margin-bottom 0
 
 		button
 			:background none
 			:border none
 			:cursor pointer
+			:display none
 			:font-family font( icon )
 			:font-size 2rem
 			:line-height 1
@@ -35,6 +35,13 @@ section
 
 			span
 				:display none
+
+		&.interactive
+			:float right
+			:margin-bottom 0
+
+			button
+				:display block
 
 		&.active
 			button
@@ -90,11 +97,6 @@ section
 				:color darken( $color, 5% )
 
 		.wrapper
-			:opacity 0
-			:pointer-events none
-			:position absolute
-			:right rem( -5px )
-			:top spacing( -5 )
 			:transition opacity 250ms, top 250ms
 			:width 14rem
 			:z-index 10
@@ -103,6 +105,12 @@ section
 				+position( absolute, rem( -5px ), rem( -5px ), rem( -5px ), rem( -5px ) )
 				:background-color rgba( 0, 0, 0, .2 )
 				:z-index -1
+
+		&.interactive
+			.wrapper
+				+position( absolute, $top: spacing( -5 ), $right: rem( -5px ) )
+				:opacity 0
+				:pointer-events none
 
 		&.active
 			.wrapper
