@@ -8,7 +8,7 @@ var sources =
 	'android':
 	{
 		description: 'Official website',
-		url: 'hhttp://www.android.com/',
+		url: 'http://www.android.com/',
 		title: names.name( 'android' )
 	},
 	'android-api-guides':
