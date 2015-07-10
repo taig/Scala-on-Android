@@ -15,7 +15,7 @@ var sources =
 	{
 		description: 'Official ' + names.name( 'android' ) + ' documentation',
 		url: 'https://developer.android.com/guide/index.html',
-		title: names.name( 'android' ) + ' ' + names.abbreviation( 'api' ) + ' Guides'
+		title: names.name( 'android' ) + ' ' + names.abbr( 'api' ) + ' Guides'
 	},
 	'android-butterknife':
 	{
@@ -25,19 +25,19 @@ var sources =
 	},
 	'android-install':
 	{
-		description: names.abbreviation( 'android-sdk' ) + ' install instructions',
+		description: names.abbr( 'android-sdk' ) + ' install instructions',
 		url: 'https://developer.android.com/sdk/installing/index.html?pkg=tools',
-		title: 'Installing the Stand-alone ' + names.abbreviation( 'sdk' ) + ' Tools'
+		title: 'Installing the Stand-alone ' + names.abbr( 'sdk' ) + ' Tools'
 	},
 	'android-download':
 	{
 		description: 'Official download page',
 		url: 'https://developer.android.com/sdk/index.html#Other',
-		title: names.abbreviation( 'android-sdk' ) + ' download'
+		title: names.abbr( 'android-sdk' ) + ' download'
 	},
 	'android-reference':
 	{
-		description: 'Official ' + names.abbreviation( 'android-sdk' ) + ' reference',
+		description: 'Official ' + names.abbr( 'android-sdk' ) + ' reference',
 		url: 'https://developer.android.com/reference/packages.html',
 		title: names.name( 'android' ) + ' Reference'
 	},
@@ -49,7 +49,7 @@ var sources =
 	},
 	'android-studio':
 	{
-		description: 'Official ' + names.name( 'android' ) + ' ' + names.abbreviation( 'ide' ) + ', based on ' + names.name( 'intellij-idea' ),
+		description: 'Official ' + names.name( 'android' ) + ' ' + names.abbr( 'ide' ) + ', based on ' + names.name( 'intellij-idea' ),
 		url: 'http://developer.android.com/tools/studio/index.html',
 		title: names.name( 'android-studio' )
 	},
@@ -79,9 +79,9 @@ var sources =
 	},
 	'blog-47deg-configuration':
 	{
-		description: 'Detailed explanation of ' + names.abbreviation( 'sbt' ) + ' and the ' + names.name( 'sbt-plugin' ) + ' fundamentals',
+		description: 'Detailed explanation of ' + names.abbr( 'sbt' ) + ' and the ' + names.name( 'sbt-plugin' ) + ' fundamentals',
 		url: 'http://www.47deg.com/blog/scala-on-android-setting-sbt-configuration',
-		title: names.name( 'scala-android' ) + ' - Setting ' + names.abbreviation( 'sbt' ) + ' configuration'
+		title: names.name( 'scala-android' ) + ' - Setting ' + names.abbr( 'sbt' ) + ' configuration'
 	},
 	'blog-developerphil-parcelable-serializable':
 	{
@@ -147,13 +147,13 @@ var sources =
 	{
 		description: 'Official product page',
 		url: 'https://plugins.jetbrains.com/plugin/5007/',
-		title: names.abbreviation( 'sbt' ) + ' plugin for ' + names.name( 'intellij-idea' )
+		title: names.abbr( 'sbt' ) + ' plugin for ' + names.name( 'intellij-idea' )
 	},
 	'intellij-idea-plugin-scala':
 	{
 		description: 'Official product page',
 		url: 'https://plugins.jetbrains.com/plugin/1347/',
-		title: names.abbreviation( 'scala' ) + ' plugin for ' + names.name( 'intellij-idea' )
+		title: names.abbr( 'scala' ) + ' plugin for ' + names.name( 'intellij-idea' )
 	},
 	'maven-plugin':
 	{
@@ -189,7 +189,7 @@ var sources =
 	{
 		description: 'Official documentation',
 		url: 'https://www.playframework.com/documentation/2.4.x/SBTDependencies',
-		title: names.name( 'play' ) + ': ' + names.abbreviation( 'sbt' ) + ' dependencies'
+		title: names.name( 'play' ) + ': ' + names.abbr( 'sbt' ) + ' dependencies'
 	},
 	'proguard':
 	{
@@ -243,17 +243,17 @@ var sources =
 	{
 		description: 'Official project page',
 		url: 'http://www.scala-sbt.org/download.html',
-		title: names.abbreviation( 'sbt' ) + ': Download'
+		title: names.abbr( 'sbt' ) + ': Download'
 	},
 	'sbt-manual':
 	{
-		description: 'Official ' + names.abbreviation( 'sbt' ) + ' documentation',
+		description: 'Official ' + names.abbr( 'sbt' ) + ' documentation',
 		url: 'http://www.scala-sbt.org/0.13/docs/index.html',
-		title: names.abbreviation( 'sbt' ) + ' Reference Manual'
+		title: names.abbr( 'sbt' ) + ' Reference Manual'
 	},
 	'sbt-plugin':
 	{
-		description: '"An easy-to-use ' + names.abbreviation( 'sbt' ) + ' plugin for working with all ' + names.name( 'android' ) + ' projects"',
+		description: '"An easy-to-use ' + names.abbr( 'sbt' ) + ' plugin for working with all ' + names.name( 'android' ) + ' projects"',
 		url: 'https://github.com/pfn/android-sdk-plugin',
 		title: names.name( 'sbt-plugin' )
 	},
@@ -267,7 +267,7 @@ var sources =
 	{
 		description: names.name( 'gh' ) + ' repository',
 		url: 'https://github.com/mpeltonen/sbt-idea',
-		title: names.abbreviation( 'sbt' ) + ' plugin: <em>gen-idea</em>'
+		title: names.abbr( 'sbt' ) + ' plugin: <em>gen-idea</em>'
 	},
 	'sbt-plugin-proguard-defaults':
 	{
@@ -297,37 +297,37 @@ var sources =
 	{
 		description: names.name( 'gh' ) + ' repository',
 		url: 'https://github.com/xerial/sbt-sonatype',
-		title: names.abbreviation( 'sbt' ) + '-sonatype'
+		title: names.abbr( 'sbt' ) + '-sonatype'
 	},
 	'sbt-tutorial':
 	{
 		description: 'Official tutorial',
 		url: 'http://www.scala-sbt.org/0.13/tutorial/index.html',
-		title: names.abbreviation( 'sbt' ) + ' tutorial: Getting started'
+		title: names.abbr( 'sbt' ) + ' tutorial: Getting started'
 	},
 	'sbt-tutorial-library-dependencies':
 	{
 		description: 'Official tutorial',
 		url: 'http://www.scala-sbt.org/0.13/tutorial/Library-Dependencies.html',
-		title: names.abbreviation( 'sbt' ) + ' tutorial: Library dependencies'
+		title: names.abbr( 'sbt' ) + ' tutorial: Library dependencies'
 	},
 	'sbt-tutorial-multi-projects':
 	{
 		description: 'Official tutorial',
 		url: 'http://www.scala-sbt.org/0.13/tutorial/Multi-Project.html',
-		title: names.abbreviation( 'sbt' ) + ' tutorial: Multi-project-builds'
+		title: names.abbr( 'sbt' ) + ' tutorial: Multi-project-builds'
 	},
 	'sbt-tutorial-setup':
 	{
 		description: 'Official tutorial',
 		url: 'http://www.scala-sbt.org/0.13/tutorial/Setup.html',
-		title: names.abbreviation( 'sbt' ) + ' tutorial: Library dependencies'
+		title: names.abbr( 'sbt' ) + ' tutorial: Library dependencies'
 	},
 	'sbt-vs-gradle':
 	{
 		description: 'A ' + names.name( 'so' ) + ' discussion',
 		url: 'http://stackoverflow.com/questions/11061938/comparing-sbt-and-gradle',
-		title: names.abbreviation( 'sbt' ) + ' vs. ' + names.name( 'gradle' )
+		title: names.abbr( 'sbt' ) + ' vs. ' + names.name( 'gradle' )
 	},
 	'scala':
 	{

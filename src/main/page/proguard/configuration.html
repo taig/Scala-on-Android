@@ -1,11 +1,11 @@
 <h3>Configuration</h3>
 
 <p>
-	By default, the {{ names.name( 'sbt-plugin' ) }} runs {{ names.name( 'proguard' ) }} with a reasonable {{ sourcelink( 'sbt-plugin-proguard-defaults', 'default configuration' ) }} whenever you deploy or package your app. If you need to manually enable or disable it, you can use the {{ command( 'useProguard in Android := true', 'scala' ) }} {{ names.abbreviation( 'sbt' ) }} option. It is automatically enabled when your app contains {{ names.name( 'scala' ) }} sources.
+	By default, the {{ names.name( 'sbt-plugin' ) }} runs {{ names.name( 'proguard' ) }} with a reasonable {{ sourcelink( 'sbt-plugin-proguard-defaults', 'default configuration' ) }} whenever you deploy or package your app. If you need to manually enable or disable it, you can use the {{ command( 'useProguard in Android := true', 'scala' ) }} {{ names.abbr( 'sbt' ) }} option. It is automatically enabled when your app contains {{ names.name( 'scala' ) }} sources.
 </p>
 
 <p>
-	When you pull in external dependencies, {{ names.name( 'proguard' ) }} will likely cause issues, report warnings and abort the build process. This is where you have to step in to add additional configuration rules. When {{ names.name( 'proguard' ) }} raises a warning this usually happens because it detects a reference to a class which does not exist. The {{ names.abbreviation( 'android-sdk' ) }} comes with its own implementation of the {{ names.name( 'java' ) }} {{ names.abbreviation( 'api' ) }} which misses out on some classes (e.g. the {{ command( 'java.rmi.*' ) }} package) so this is not a surprise. A library that supports {{ names.name( 'android' ) }} will never call such a missing class when running in this context. It is therefore safe to ignore the warning.
+	When you pull in external dependencies, {{ names.name( 'proguard' ) }} will likely cause issues, report warnings and abort the build process. This is where you have to step in to add additional configuration rules. When {{ names.name( 'proguard' ) }} raises a warning this usually happens because it detects a reference to a class which does not exist. The {{ names.abbr( 'android-sdk' ) }} comes with its own implementation of the {{ names.name( 'java' ) }} {{ names.abbr( 'api' ) }} which misses out on some classes (e.g. the {{ command( 'java.rmi.*' ) }} package) so this is not a surprise. A library that supports {{ names.name( 'android' ) }} will never call such a missing class when running in this context. It is therefore safe to ignore the warning.
 </p>
 
 <p>
@@ -13,7 +13,7 @@
 </p>
 
 <p>
-	Below is a briefly documented sample {{ names.name( 'proguard' ) }} configuration as it may be added to the {{ names.abbreviation( 'sbt' ) }} build file.
+	Below is a briefly documented sample {{ names.name( 'proguard' ) }} configuration as it may be added to the {{ names.abbr( 'sbt' ) }} build file.
 </p>
 
 {{ code( 'page/proguard/configuration.scala', 'scala' ) }}

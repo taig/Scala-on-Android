@@ -1,7 +1,7 @@
 <h3>Manifest</h3>
 
 <p>
-	Some manifest values (e.g. the {{ command( 'version' ) }} and {{ command( 'targetSdkVersion' ) }}) can be specified in the {{ names.abbreviation( 'sbt' ) }} configuration file. The {{ names.name( 'sbt-plugin' ) }} will then inject the values into the existing <em>AndroidManifest.xml</em> and save it at {{ command( './target/android-bin/AndroidManifest.xml' ) }}. If you don't let {{ names.name( 'android-studio' ) }} know about the patched manifest file, the {{ names.abbreviation( 'ide' ) }} might annoy you with linting messages that some {{ names.abbreviation( 'api' ) }} calls are not available with a {{ command( 'minSdkVersion' ) }} of 0.
+	Some manifest values (e.g. the {{ command( 'version' ) }} and {{ command( 'targetSdkVersion' ) }}) can be specified in the {{ names.abbr( 'sbt' ) }} configuration file. The {{ names.name( 'sbt-plugin' ) }} will then inject the values into the existing <em>AndroidManifest.xml</em> and save it at {{ command( './target/android-bin/AndroidManifest.xml' ) }}. If you don't let {{ names.name( 'android-studio' ) }} know about the patched manifest file, the {{ names.abbr( 'ide' ) }} might annoy you with linting messages that some {{ names.abbr( 'api' ) }} calls are not available with a {{ command( 'minSdkVersion' ) }} of 0.
 </p>
 
 {{ image( '/asset/image/android-studio-project-structure.png', 'On the main IDE screen, click button Project Structure' ) }}

@@ -1,17 +1,17 @@
 <h3><em>gen-idea</em></h3>
 
 <p>
-	It is now necessary to create the {{ names.abbreviation( 'ide' ) }} configuration files via the <em>gen-idea</em> {{ names.abbreviation( 'sbt' ) }} plugin. This step will hopefully soon be superfluous, but for now it is still obligatory. {{ names.name( 'intellij-idea' ) }} should be able to simply import an {{ names.name( 'sbt-plugin' ) }} based plugin, but in its current state it fails to do so.
+	It is now necessary to create the {{ names.abbr( 'ide' ) }} configuration files via the <em>gen-idea</em> {{ names.abbr( 'sbt' ) }} plugin. This step will hopefully soon be superfluous, but for now it is still obligatory. {{ names.name( 'intellij-idea' ) }} should be able to simply import an {{ names.name( 'sbt-plugin' ) }} based plugin, but in its current state it fails to do so.
 </p>
 
 <p>
-	<em>gen-idea</em> is a {{ names.abbreviation( 'sbt' ) }} task that generates configuration files for the {{ names.name( 'intellij-idea' ) }}. To install the {{ sourcelink( 'sbt-plugin-gen-idea', '<em>gen-idea</em>' ) }} plugin create the file {{ command( '~/.sbt/0.13/plugins/gen-idea.sbt' ) }} (the filename is arbitrary) with the contents below.
+	<em>gen-idea</em> is a {{ names.abbr( 'sbt' ) }} task that generates configuration files for the {{ names.name( 'intellij-idea' ) }}. To install the {{ sourcelink( 'sbt-plugin-gen-idea', '<em>gen-idea</em>' ) }} plugin create the file {{ command( '~/.sbt/0.13/plugins/gen-idea.sbt' ) }} (the filename is arbitrary) with the contents below.
 </p>
 
 {{ code( 'page/editor/intellij-idea/gen-idea.scala.html' ) }}
 
 <p>
-	This makes the <em>gen-idea</em> {{ names.abbreviation( 'sbt' ) }} command globally available.
+	This makes the <em>gen-idea</em> {{ names.abbr( 'sbt' ) }} command globally available.
 </p>
 
 <p>
@@ -26,5 +26,5 @@
 {{ image( '/asset/image/intellij-idea-convert-project.png', 'Convert a project configuration of an older IntelliJ IDEA version to the current one' ) }}
 
 <p>
-	Converting the project files only needs to be done once at the initial setup. When the {{ names.abbreviation( 'ide' ) }} finished loading you may delete the {{ command( '/projectFilesBackup' ) }} folder.
+	Converting the project files only needs to be done once at the initial setup. When the {{ names.abbr( 'ide' ) }} finished loading you may delete the {{ command( '/projectFilesBackup' ) }} folder.
 </p>

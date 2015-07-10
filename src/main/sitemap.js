@@ -15,7 +15,7 @@ var sitemap = [
 		{ id: 'sbt', title: names.render( 'sbt' ), url: '/sbt' }
 	] },
 	{ id: 'project-setup', title: 'Project setup', url: '/project-setup' },
-	{ id: 'editor', title: 'Editors and ' + names.abbreviation( 'ide' ) + 's', url: '/editor', children: [
+	{ id: 'editor', title: 'Editors and ' + names.abbr( 'ide' ) + 's', url: '/editor', children: [
 		{ id: 'intellij-idea', title: names.name( 'intellij-idea' ), url: '/intellij-idea' },
 		{ id: 'android-studio', title: names.name( 'android-studio' ), url: '/android-studio' }
 	] },

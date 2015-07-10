@@ -1,7 +1,7 @@
 <h3>Configuration</h3>
 
 <p>
-	To enable library project packaging, the {{ names.abbreviation( 'sbt' ) }} project definition needs to be adjusted as follows.
+	To enable library project packaging, the {{ names.abbr( 'sbt' ) }} project definition needs to be adjusted as follows.
 </p>
 
 {{ code( 'page/library-project/configuration.scala', 'scala' ) }}
@@ -11,7 +11,7 @@
 </p>
 
 <p>
-	You are now able to publish the project locally via {{ command( 'sbt publishLocal' ) }}. This allows you to reference the application as an {{ names.abbreviation( 'sbt' ) }} library dependency via {{ command( '"com.example" %% "my-aar-project" % "1.0.0"', 'scala' ) }} on your development machine. To make it publicly available, the {{ sourcelink( 'sbt-sonatype' ) }} plugin provides a convenient deployment process.
+	You are now able to publish the project locally via {{ command( 'sbt publishLocal' ) }}. This allows you to reference the application as an {{ names.abbr( 'sbt' ) }} library dependency via {{ command( '"com.example" %% "my-aar-project" % "1.0.0"', 'scala' ) }} on your development machine. To make it publicly available, the {{ sourcelink( 'sbt-sonatype' ) }} plugin provides a convenient deployment process.
 </p>
 
 {% call alert( 'hint' ) %}

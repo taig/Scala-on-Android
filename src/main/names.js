@@ -165,7 +165,7 @@ module.exports =
 	/**
 	 * Render the abbreviation, if none available fall back to the full name
 	 */
-	abbreviation: function( id )
+	abbr: function( id )
 	{
 		if( names.hasOwnProperty( id ) )
 		{
