@@ -1,0 +1,36 @@
+=outer-container()
+	:margin auto
+	:max-width $width
+	:padding-left spacing( 4 )
+	:padding-right spacing( 4 )
+
+=position( $position, $top: null, $right: null, $bottom: null, $left: null )
+	:bottom $bottom
+	:left $left
+	:position $position
+	:right $right
+	:top $top
+
+=pseudo( $position, $content: '' )
+	&::#{$position}
+		:content $content
+		@content
+
+=size( $width, $height: $width )
+	:height $height
+	:width $width
+
+=background( $background, $position: before )
+	:position relative
+
+	+pseudo( $position )
+		+position( absolute, $top: 0, $left: calc( -50vw + 50% ) )
+		:background $background
+		:height 100%
+		:width 100vw
+		:z-index -1
+
+%icon
+	:font-family font( icon )
+	:display inline-block
+	:line-height 1

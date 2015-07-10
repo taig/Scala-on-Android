@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% set id = 'proguard' %}
+
+{% block content %}
+	{{ section( 'page/proguard/introduction.html', level = 2 ) }}
+	{{ section( 'page/proguard/multidex.html', level = 2 ) }}
+	{{ section( 'page/proguard/configuration.html', level = 2 ) }}
+	{{ section( 'page/proguard/example.html', level = 2 ) }}
+	{{
+		section_further_reading( [
+			'proguard',
+			'proguard-android-documentation',
+			'proguard-keep-options',
+			'android-documentation-multidex',
+			'sbt-plugin-sample-multidex'
+		] )
+	}}
+{% endblock %}

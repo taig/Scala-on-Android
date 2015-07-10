@@ -1,0 +1,21 @@
+<h3>{{ names.name( 'scala' ) }}</h3>
+
+<p>
+	It is of course possible to do the exact same thing with {{ names.name( 'scala' ) }}.
+</p>
+
+{{ code( 'page/typed-resources/activity.scala', 'scala' ) }}
+
+<p>
+	But thanks to the {{ names.name( 'tr' ) }} you can get rid off the cast and therefore simplify the code and improve type safety at the same time.
+</p>
+
+{{ code( 'page/typed-resources/activity2.scala', 'scala' ) }}
+
+<p>
+	The {{ command( 'TR' ) }} mappings are generated on every compile, when the {{ names.name( 'sbt-plugin' ) }} detects changes in the {{ command( 'R' ) }} class. Your {{ names.abbr( 'ide' ) }} usually helps you to keep the {{ command( 'R' ) }} up to date behind the scenes, but it won't do that for the {{ command( 'TR' ) }} class. You can still achieve a similar effect if you open your project {{ names.abbr( 'sbt' ) }} shell and run {{ command( '~compile' ) }}. The tilde before the command tells {{ names.abbr( 'sbt' ) }} to repeat this task whenever it detects a file change.
+</p>
+
+<p>
+	{{ command( 'TR' ) }} mappings only work for {{ names.abbr( 'xml' ) }} widgets that use the {{ command( 'android:id="@+id/xxx"', 'xml' ) }} property. If you chose not to use the {{ command( 'TR' ) }} class you may want to disable it for performance reasons in your project's {{ names.abbr( 'sbt' ) }} configuration via {{ command( 'typedResources := false', 'scala' ) }}.
+</p>

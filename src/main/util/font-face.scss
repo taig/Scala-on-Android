@@ -1,0 +1,33 @@
+@each $font in ( 100 normal 100 robotothin, 500 normal 500 robotoregular, 500i italic 500 robotoitalic, 700 normal 700 robotobold )
+{
+	$path: '../font/roboto';
+	$file: $path + '/' + nth( $font, 1 );
+	$style: nth( $font, 2 );
+	$weight: nth( $font, 3 );
+	$svg: nth( $font, 4 );
+
+	@font-face
+	{
+		font-family: font( roboto );
+		src: url( '#{$file}.eot' );
+		src: url( '#{$file}.eot?#iefix' ) format( 'embedded-opentype' ),
+			 url( '#{$file}.woff' ) format( 'woff' ),
+			 url( '#{$file}.ttf' ) format( 'truetype' ),
+			 url( '#{$file}.svg##{$svg}') format( 'svg' );
+		font-style: $style;
+		font-weight: $weight;
+	}
+}
+
+@font-face {
+	$file: '../font/icon/material-design';
+
+	font-family: font( icon );
+	src: url( '#{$file}.eot?v=1.0.1' );
+	src: url( '#{$file}.eot?#iefix&v=1.0.1' ) format( 'embedded-opentype' ),
+		 url( '#{$file}.woff?v=1.0.1' ) format( 'woff' ),
+		 url( '#{$file}.ttf?v=1.0.1' ) format( 'truetype' ),
+		 url( '#{$file}.svg?v=1.0.1#Material-Design-Iconic-Font' ) format('svg');
+	font-style: normal;
+	font-weight: normal;
+}

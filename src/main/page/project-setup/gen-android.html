@@ -1,0 +1,25 @@
+<h3><em>gen-android</em></h3>
+
+<p>
+	The {{ names.name( 'sbt-plugin' ) }} comes with a {{ names.abbr( 'sbt' ) }} task that works similar to {{ names.name( 'android' ) }}'s {{ command( 'create project' ) }} command. Using this approach has the advantge of automatically targeting your installed {{ names.abbr( 'android-sdk' ) }} installation. But to use it, it is necessary to install the plugin to the global {{ names.abbr( 'sbt' ) }} configuration. Then {{ names.abbr( 'sbt' ) }} will load the {{ names.name( 'sbt-plugin' ) }} on every usage, even if the project is unrelated to {{ names.name( 'scala-android' ) }}. This allows you to access the custom {{ names.name( 'sbt-plugin' ) }} commands (such as {{ command( 'gen-android' ) }}) before the project has actually been created.
+</p>
+
+<p>
+	To install {{ names.name( 'sbt-plugin' ) }} globally, create the file {{ command( '~/.sbt/0.13/plugins/android.sbt' ) }} (the name is arbitrary) and insert {{ command( software.format( 'sbt-plugin' ) ) }}.
+</p>
+
+{{ code( 'page/project-setup/add-sbt-plugin.sh' ) }}
+
+<p>
+	Now, if the {{ names.name( 'sbt-plugin' ) }} is available in the global {{ names.abbr( 'sbt' ) }} context, navigate to an empty application folder and run the {{ command( 'gen-android <platform-target> <package-name> <name>' | escape ) }} command.
+</p>
+
+{{ code( 'page/project-setup/gen-android.sh' ) }}
+
+<p>
+	This will create a very basic {{ names.name( 'java' ) }} setup, consisting of an example activity and a corresponding test class, some resources and the {{ names.abbr( 'sbt' ) }} configuration. All arguments are compulsory, but it looks like the last parameter {{ command( '<name>' | escape ) }} does not have an effect on the setup process.
+</p>
+
+{% call alert( 'warning' ) %}
+	Please make sure that the generated {{ command( './project/android.sbt' ) }} file remains in working order. It contains the dependency to the {{ names.name( 'sbt-plugin' ) }} which you don't nececcarily need, because you are already depending on it via the global configuration, but it is crucial for others to run your project.
+{% endcall %}

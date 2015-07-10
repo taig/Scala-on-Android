@@ -1,0 +1,11 @@
+<h3>{{ names.render( 'jdk' ) }}</h3>
+
+<p>
+	{{ names.name( 'android' ) }} supports {{ names.name( 'java' ) }} 7, so the <a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk7-downloads-1880260.html" target="_blank">{{ names.abbr( 'jdk' ) }} 7</a> should also be your choice for now. If you already have a newer version of the {{ names.abbr( 'jdk' ) }} installed, this will work as well, but then you have to specify your compile target properly to version 1.7, which will be explained in the build tools topic.
+</p>
+
+{% call alert( warning ) %}
+	<p>
+		With the upcoming release of {{ names.name( 'scala' ) }} 2.12, <a href="http://www.scala-lang.org/news/2.12-roadmap" target="_blank">{{ names.name( 'java' ) }} 8 will be required</a>. Therefore <strong>{{ names.name( 'scala' ) }} 2.12 can not be used for {{ names.name( 'android' ) }} development</strong> until {{ names.name( 'google' ) }} introduces {{ names.name( 'java' ) }} 8 support for {{ names.name( 'android' ) }}.
+	</p>
+{% endcall %}

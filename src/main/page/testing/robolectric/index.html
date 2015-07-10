@@ -1,0 +1,10 @@
+{% extends 'layout.html' %}
+
+{% set id = 'testing-robolectric' %}
+
+{% block content %}
+	{{ section( 'page/testing/robolectric/introduction.html', level = 2 ) }}
+	{{ section( 'page/testing/robolectric/configuration.html', level = 3 ) }}
+	{{ section( 'page/testing/robolectric/usage.html', level = 3 ) }}
+	{{ section_further_reading( [ 'robolectric', 'robotest', 'hello-scala', 'sbt-plugin-samples' ] ) }}
+{% endblock %}

@@ -1,0 +1,30 @@
+#contents
+	section.toc
+		:display flex
+		:align-items flex-start
+		:width 100%
+
+		+media( max-width $width )
+			:flex-direction column
+
+			.icon
+				:align-self center
+				:margin-left auto
+				:margin-right auto
+				:margin-top spacing( 2 )
+				:max-width 15rem
+				:width 75%
+
+		.wrapper
+			:flex .7
+
+			> *:not( :last-child )
+				:margin-bottom spacing( 2 )
+
+		.icon
+			:align-self flex-end
+			:flex .3
+
+		li
+			a, span
+				:margin-left spacing()

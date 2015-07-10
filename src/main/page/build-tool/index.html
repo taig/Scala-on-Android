@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+
+{% set id = 'build-tool' %}
+
+{% block content %}
+	{{ section( 'page/build-tool/introduction.html', level = 1 ) }}
+	{{ section( 'page/build-tool/comparison.html', level = 3, class = 'comparison' ) }}
+	{{ section_further_reading( [ 'sbt-plugin', 'gradle-plugin', 'sbt-vs-gradle', 'blog-tutsplus-gradle' ] ) }}
+{% endblock %}

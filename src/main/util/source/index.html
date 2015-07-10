@@ -1,0 +1,23 @@
+{%- macro sitelink( id, value = null ) -%}
+	{% set site = sitemap.find( id ) %}
+	<a href="{{ site.url }}">{{ value if value else site.title }}</a>
+{%- endmacro -%}
+
+{%- macro sourcelink( id, value = null ) -%}
+	{% set source = sources.find( id ) %}
+	<a href="{{ source.url }}" title="{{ ( source.description if not value else source.title ) | striptags | escape }}" target="_blank">
+		{{ value if value else source.title }}
+	</a>
+{%- endmacro -%}
+
+{%- macro sourcelist( ids ) -%}
+	<ul class="further-reading">
+		{% for id in ids %}
+			{% set source = sources.find( id ) %}
+			<li>
+				<a href="{{ source.url }}" target="_blank">{{ source.title }}</a>
+				<p>{{ source.description }}</p>
+			</li>
+		{% endfor %}
+	</ul>
+{%- endmacro -%}

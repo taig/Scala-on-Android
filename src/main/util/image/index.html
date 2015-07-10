@@ -1,0 +1,7 @@
+{%- macro image( src, alt ) -%}
+	<div class="image">
+		<a href="{{ src }}" target="_blank">
+			<img src="{{ src }}" alt="{{ alt | striptags | escape }}" />
+		</a>
+	</div>
+{%- endmacro -%}

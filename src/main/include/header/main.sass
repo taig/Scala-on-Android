@@ -1,0 +1,181 @@
+body > header
+	+background( color( scala ) )
+	+outer-container()
+	+position( fixed, $right: 0, $left: 0 )
+	:align-items center
+	:color color( secondary )
+	:display flex
+	:height $header-height
+	:width 100%
+	:z-index 10
+
+	+pseudo( before )
+		+position( absolute, $top: 0, $left: calc( -50vw + 50% ) )
+		:box-shadow 0 rem( 5px ) 0 0 rgba( 0, 0, 0, .1 )
+
+#title
+	:flex 1
+
+	a
+		:display inline-block
+		:text-decoration none
+
+	h1, h2
+		:font-weight 500
+		:line-height 1
+		:margin 0
+
+	h1
+		:color color( secondary )
+		:font-size 2rem
+		:margin 0
+
+	h2
+		:color darken( color( scala ), 25% )
+		:font-size 1rem
+		:letter-spacing rem( -0.1px )
+
+	+media( max-width 480px )
+		h1
+			:font-size 1.5rem
+
+		h2
+			:display none
+
+/**
+ * Burger button
+ */
+body > header nav
+	> a
+		:color color( secondary )
+		:display block
+		:font-size 2rem
+		:text-decoration none
+		:position relative
+		:transition color 250ms
+		:z-index 20
+
+		+pseudo( before )
+			+position( absolute, 50%, 50%, 50%, 50% )
+			:background-color darken( color( scala ), 25% )
+			:border-radius 50%
+			:opacity 0
+			:z-index -1
+			:transition all 250ms
+
+		+pseudo( after, '\f2a1' )
+			:display block
+			:font-family font( icon )
+
+		&:hover
+			+pseudo( before, null )
+				+position( null, -30%, -30%, -30%, -30% )
+				:opacity .25
+	
+		&:active
+			&::before
+				:opacity .75
+
+		span
+			:display none
+
+	&.active > a
+		:color color( main )
+		:opacity .75
+		:z-index 20
+
+		+pseudo( after, '\f29a' )
+
+		&:hover
+			:opacity 1
+
+	/**
+	 * Navigation shadow
+	 */
+	.shadow
+		+position( absolute, $right: spacing( 3 ), $top: spacing( -10 ) )
+		:opacity 0
+		:pointer-events none
+		:transition opacity 250ms, top 250ms
+		:width 20rem
+		:z-index 15
+
+		+pseudo( before )
+			+position( absolute, rem( 5px ), rem( -5px ), rem( -5px ), rem( -5px ) )
+			:background-color rgba( 0, 0, 0, .2 )
+			:z-index -1
+
+	&.active .shadow
+		:opacity 1
+		:pointer-events auto
+		:top spacing()
+
+	/**
+	 * Navigation listing
+	 */
+	.wrapper
+		:background-color white
+		:height 100%
+		:overflow hidden
+
+		&::before, &::after
+			+position( absolute, $right: 0, $left: 0 )
+			:content ''
+			:height 3rem
+			:opacity 0
+			:pointer-events none
+			:transition opacity 250ms
+
+		&::before
+			:background linear-gradient( to bottom, rgba( 255, 255, 255, 1 ) 0%, rgba( 255, 255, 255, 0 ) 100% )
+			:top 0
+
+		&::after
+			:background linear-gradient( to top, rgba( 255, 255, 255, 1 ) 0%, rgba( 255, 255, 255, 0 ) 100% )
+			:bottom 0
+
+		&:not( .top )
+			&::before
+				:opacity 1
+
+		&:not( .bottom )
+			&::after
+				:opacity 1
+
+		> ol
+			:height 100%
+			:overflow scroll
+			:width calc( 20rem + 50px )
+
+			> li
+				:margin-right 50px
+
+	ol
+		:z-index 1
+
+		li, a
+			:color color( main )
+
+		a, span
+			:display block
+			:padding spacing( 1.25 ) spacing( 2 )
+
+		a
+			:text-decoration none
+			:transition background-color 250ms
+
+			&:hover
+				:background-color lighten( color( main ), 75% )
+
+			&:active
+				:background-color lighten( color( main ), 70% )
+
+		li.active > a
+			:font-weight 700
+
+		li > span
+			:cursor default
+			:opacity .5
+
+		ol a
+			:text-indent spacing( 2 )

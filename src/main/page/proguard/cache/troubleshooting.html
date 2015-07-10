@@ -1,0 +1,9 @@
+<h3>Troubleshooting</h3>
+
+<p>
+	Once in a while the mechanism that detects <em>cache misses</em> or <em>hits</em> does not work as expected. It is then usually sufficient to run {{ command( 'sbt clean' ) }} to force an entire rebuild of the project.
+</p>
+
+<p>
+	The {{ names.name( 'sbt-plugin' ) }} does unfortunately not give you feedback on how your cache directives are working. For instance, if you make a mistake in one of your rules, there will be no error message. To validate your cache manually you may have a look into the {{ command( './target/streams/android/proguardInputs/$global/streams/proguard_cache/proguard-cache-xxx.jar' ) }} file which does at least give you an idea of what is going on.
+</p>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: http://scala-on-android.taig.io/sitemap.xml

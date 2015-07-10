@@ -1,0 +1,15 @@
+{% extends 'layout.html' %}
+
+{% set id = 'parcelable' %}
+
+{% block content %}
+	{{ section( 'page/parcelable/introduction.html', level = 1 ) }}
+	{{ section( 'page/parcelable/alternatives.html', level = 2 ) }}
+	{{
+		section_further_reading( [
+			'blog-developerphil-parcelable-serializable',
+			'scala-pickling',
+			'scala-parcelable'
+		] )
+	}}
+{% endblock %}

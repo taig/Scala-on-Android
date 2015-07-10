@@ -1,0 +1,8 @@
+{%- macro blockquote( source = null ) -%}
+	<blockquote>
+		{{ caller() }}
+		{% if source %}
+			<footer>{{ source }}</footer>
+		{% endif %}
+	</blockquote>
+{%- endmacro -%}

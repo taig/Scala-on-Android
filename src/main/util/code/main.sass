@@ -1,0 +1,16 @@
+pre, code
+	:font-family font-family( code )
+	:font-size .9rem
+
+
+code
+	&.inline
+		:background-color color( main )
+		:color color( neutral )
+
+pre.code
+	@extend .alert
+	:tab-size 4
+	:word-wrap break-word
+
+	+pseudo( after, '\f13d' )

@@ -1,0 +1,20 @@
+{% macro list( contents, path = '' ) %}
+	<ol>
+		{% for page in contents %}
+			{% if not page.skip %}
+				<li class="{{ 'active' if page.id == id else null }}">
+					{% if page.url %}
+						<a href="{{ page.url }}">{{ page.title }}</a>
+					{% else %}
+						<span>{{ page.title }}</span>
+					{% endif %}
+					{% if page.children %}
+						{{ list( page.children, page.url ) }}
+					{% endif %}
+				</li>
+			{% endif %}
+		{% endfor %}
+	</ol>
+{% endmacro %}
+
+{{ list( sitemap.all ) }}

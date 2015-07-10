@@ -1,0 +1,1 @@
+echo '{{ software.format( 'sbt-plugin' ) }}' > ~/.sbt/0.13/plugins/android.sbt

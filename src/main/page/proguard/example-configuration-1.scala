@@ -1,0 +1,1 @@
+proguardOptions in Android += "-keep class java.nio.file.Files { *; }"

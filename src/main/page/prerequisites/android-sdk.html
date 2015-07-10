@@ -1,0 +1,16 @@
+<h3>{{ names.render( 'android-sdk' ) }}</h3>
+
+<p>
+	The {{ names.abbr( 'android-sdk' ) }} is a comprehensive tooling suite. It comes with applications that compile {{ names.name( 'java' ) }} to {{ names.name( 'android' ) }} bytecode, debugging and profiling applications, the {{ names.name( 'android' ) }} emulator and a {{ sourcelink( 'android-tools', 'whole lot more' ) }}.
+</p>
+
+<p>
+	{{ sourcelink( 'android-download', 'Download' ) }} and {{ sourcelink( 'android-install', 'install' ) }} the {{ names.abbr( 'sdk' ) }}. Then open your terminal and run {{ command( 'android sdk' ) }}. The {{ names.abbr( 'android-sdk-manager' ) }} window will pop up and ask you to install {{ names.name( 'android' ) }} version specific documentation, development {{ names.abbr( 'api' ) }}s, sources and disk images for emulation. For a quick start it is sufficient to stick with the default selection.
+</p>
+
+{{
+	image(
+		'/asset/image/android-sdk-manager-settings.png',
+		'A screenshot of the ' + names.abbr( 'android-sdk' ) + ' manager with recommended settings'
+	)
+}}

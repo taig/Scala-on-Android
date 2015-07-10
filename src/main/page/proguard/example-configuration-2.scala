@@ -1,0 +1,1 @@
+proguardOptions in Android += "-dontwarn okio.Okio"

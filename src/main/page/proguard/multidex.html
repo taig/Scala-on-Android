@@ -1,0 +1,13 @@
+<h3>{{ names.name( 'multidex' ) }}</h3>
+
+<p>
+	With {{ names.name( 'android' ) }} 5.0 the {{ names.render( 'art' ) }} replaced the {{ names.render( 'dalvik' ) }} as the {{ names.abbr( 'sdk' ) }} app execution environment. Already aware of the <em>65k issue</em>, {{ names.name( 'google' ) }} equipped {{ names.abbr( 'art' ) }} with a {{ names.name( 'multidex' ) }} mode that allows one app to contain multiple {{ command( '.dex' ) }} files. The {{ command( '.dex' ) }} file is the heart of any {{ command( '.apk' ) }}. Similar to {{ names.name( 'java' ) }}'s {{ command( '.class' ) }} file, {{ command( '.dex' ) }} contains the compiled bytecode of your app. But instead of creating one {{ command( '.class' ) }} file for each class (like <em>javac</em> does it), the {{ command( '.dex' ) }} file contains the entire byte code of your app (including dependencies). And this is of course the file in question of the <em>65k limit</em>.
+</p>
+
+<p>
+	Now, with {{ names.name( 'android' ) }} 5.0 the <em>65k limit</em> still exists, but you may split your bytecode into several {{ command( '.dex' ) }} files which theoretically enables you to ignore the limit and to skip {{ names.name( 'proguard' ) }}. This works also for {{ names.name( 'android' ) }} devices with an older version than 5.0, because {{ names.name( 'google' ) }} provides a support library for the {{ names.name( 'dalvik' ) }}.
+</p>
+
+<p>
+	Since version 1.3.11, the {{ names.name( 'sbt-plugin' ) }} does also provide {{ names.name( 'multidex' ) }} support and its usage is demonstrated as a {{ sourcelink( 'sbt-plugin-sample-multidex', 'sample application' ) }}. But you are discouraged to use the {{ names.name( 'multidex' ) }} feature to avoid stripping out the {{ names.name( 'scala' ) }} overhead because its usage does not come without <a href="https://github.com/pfn/android-sdk-plugin/issues/161" target="_blank">issues</a>. {{ names.name( 'multidex' ) }} is intended for large codebases. You should always make sure to strip out the unused {{ names.name( 'scala' ) }} library code. This also has the benefit of keeping your {{ command( '.apk' ) }} as slim as possible.
+</p>

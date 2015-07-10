@@ -1,0 +1,1 @@
+sbt "gen-android {{ software.format( 'android-sdk' ) }} org.example id"

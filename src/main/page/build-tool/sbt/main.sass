@@ -1,0 +1,32 @@
+section.build-tool-sbt
+	.title
+		h3
+			:font-size 1.2rem
+			:font-weight normal
+
+section.build-tool-sbt-structure
+	.directory-structure
+		@extend .alert
+		:line-height 1
+
+		+pseudo( after, '\f13d' )
+
+		code.inline
+			:background none
+			:color color( scala )
+
+		&, ol
+			:font-family font-family( code )
+			:list-style none
+
+		li
+			:padding spacing( .75 ) 0
+			:position relative
+
+			&:last-child
+				:padding-bottom 0
+
+		p
+			:color color( android )
+			:font-family font-family( roboto )
+			:line-height $line

@@ -1,0 +1,9 @@
+<h2>{{ names.name( 'intellij-idea' ) }}</h2>
+
+<p>
+	Download the {{ names.abbr( 'ide' ) }} from the {{ sourcelink( 'intellij-idea-download', 'official download page' ) }} for your operating system. After successful installation, open it and follow the plugin configuration instructions below.
+</p>
+
+{% call alert( 'warning' ) %}
+	{{ names.name( 'intellij-idea' ) }} is available in two falvors: <em>Ultimate</em> and <em>Community Edition</em>. The latter is free and provides sufficient features for {{ names.name( 'scala-android' ) }} development. It is also the reference version of this documentation. Of course, the <em>Ultimate</em> edition is more powerful than the <em>Community Edition</em> and is absolutely suitable as well.
+{% endcall %}

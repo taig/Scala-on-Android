@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% set id = 'abbreviations' %}
+
+{% block content %}
+	<section>
+		<h2>Abbreviations</h2>
+		<dl>
+			{% for _, name in names.all %}
+				{% if name.abbreviation %}
+					<dt>{{ name.abbreviation }}</dt>
+					<dd>{{ name.name }}</dd>
+				{% endif %}
+			{% endfor %}
+		</dl>
+	</section>
+{% endblock %}

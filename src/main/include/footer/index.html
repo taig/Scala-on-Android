@@ -1,0 +1,33 @@
+{% from 'util/source/index.html' import sourcelink with context %}
+
+<footer>
+	{% if current %}
+		<div class="story">
+			{% if current.previous %}
+				<div class="back"><a href="{{ current.previous.url }}">{{ current.previous.title }}</a></div>
+			{% endif %}
+			{% if current.next %}
+				<div class="continue"><a href="{{ current.next.url }}">{{ current.next.title }}</a></div>
+			{% endif %}
+		</div>
+	{% endif %}
+	<div class="fixtures">
+		<div class="left">
+			<ul>
+				<li>{{ sourcelink( 'scala-android', 'Fork me on ' + names.name( 'gh' ) ) }}</li>
+				<li>{{ sitelink( 'help', 'Getting help' ) }}</li>
+			</ul>
+		</div>
+		<div class="center">
+			<img src="/asset/image/scala-android-logo.svg" alt="{{ names.name( 'scala-android' ) | striptags }} logo" />
+			<span class="version">Version {{ version }}</span>
+		</div>
+		<div class="right">
+			<ul>
+				<li>{{ sitelink( 'sources' ) }}</li>
+				<li>{{ sitelink( 'software' ) }}</li>
+				<li>{{ sitelink( 'abbreviations' ) }}</li>
+			</ul>
+		</div>
+	</div>
+</footer>

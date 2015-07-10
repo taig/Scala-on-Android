@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% set id = 'sources' %}
+
+{% block content %}
+	<section>
+		<h2>Sources and further readings</h2>
+		<ul class="further-reading">
+			{% for _, source in sources.all %}
+				<li>
+					<a href="{{ source.url }}" target="_blank">{{ source.title }}</a>
+					<p>{{ source.description }}</p>
+				</li>
+			{% endfor %}
+		</ul>
+	</section>
+{% endblock %}

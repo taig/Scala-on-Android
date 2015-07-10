@@ -1,0 +1,25 @@
+.alert
+	+background( color( main ) )
+	:color color( neutral )
+	:padding spacing( 2 ) 0 spacing( 2 ) 2.5rem + spacing( 2 )
+	:margin-bottom spacing( 2 )
+	:min-height 2.5rem + spacing( 4 )
+
+	+pseudo( after, '\f0a1' )
+		+position( absolute, $top: spacing( 2 ), $left: 0 )
+		:color color( neutral )
+		:font-family font( icon )
+		:font-size 2.5rem
+		:line-height 1
+
+	+media( max-width $width * .75 )
+		:padding-left 0
+		:padding-top spacing( 4 ) + 2.5rem
+
+		&::after
+			:left 50%
+			:margin-left -( 2.5rem / 2 )
+
+	&.hint
+		+pseudo( after, '\f258' )
+			:transform rotate( 180deg )

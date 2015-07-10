@@ -1,0 +1,139 @@
+section
+	.meta
+		:display inline-block
+		:position relative
+
+		button
+			:background none
+			:border none
+			:cursor pointer
+			:display none
+			:font-family font( icon )
+			:font-size 2rem
+			:line-height 1
+			:outline none
+			:padding 0
+			:position relative
+
+			+pseudo( before )
+				+position( absolute, 50%, 50%, 50%, 50% )
+				:border-radius 50%
+				:opacity 0
+				:transition all 300ms
+				:z-index -1
+
+			&:hover
+				:opacity 1
+
+				+pseudo( before )
+					+position( null, -30%, -30%, -30%, -30% )
+					:opacity .25
+
+			&:active
+				+pseudo( before )
+					:opacity .4
+
+			span
+				:display none
+
+		&.interactive
+			:float right
+			:margin-bottom 0
+
+			button
+				:display block
+
+		&.active
+			button
+				:z-index 11
+
+				+pseudo( after )
+					:color color( main )
+					:content '\f29a' !important
+
+		&.level-1
+			$color: color( android )
+
+			button
+				:color darken( $color, 5% )
+
+				+pseudo( before )
+					:background-color $color
+
+				+pseudo( after )
+					:content '\f155'
+
+			.reliability strong
+				:color darken( $color, 5% )
+
+		&.level-2
+			$color: mix( color( android ), color( scala ) )
+
+			button
+				:color darken( $color, 5% )
+
+				+pseudo( before )
+					:background-color $color
+
+				+pseudo( after )
+					:content '\f154'
+
+			.reliability strong
+				:color darken( $color, 5% )
+
+		&.level-3
+			$color: darken( color( scala ), 5% )
+
+			button
+				:color darken( $color, 5% )
+
+				+pseudo( before )
+					:background-color $color
+
+				+pseudo( after )
+					:content '\f152'
+
+			.reliability strong
+				:color darken( $color, 5% )
+
+		.wrapper
+			:transition opacity 250ms, top 250ms
+			:width 14rem
+			:z-index 10
+
+			+pseudo( before )
+				+position( absolute, rem( -5px ), rem( -5px ), rem( -5px ), rem( -5px ) )
+				:background-color rgba( 0, 0, 0, .2 )
+				:z-index -1
+
+		&.interactive
+			.wrapper
+				+position( absolute, $top: spacing( -5 ), $right: rem( -5px ) )
+				:opacity 0
+				:pointer-events none
+
+		&.active
+			.wrapper
+				:opacity 1
+				:pointer-events auto
+				:top rem( -7px )
+
+		ul
+			:background color( neutral )
+			:font-size .9rem
+			:list-style none
+
+			li
+				:padding spacing()
+
+				span
+					:display block
+
+			.label, .edit
+				:font-weight 700
+				:text-transform uppercase
+
+			.reliability
+				strong, em
+					:display block
+					:font-style normal

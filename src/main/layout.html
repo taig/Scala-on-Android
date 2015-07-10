@@ -1,0 +1,43 @@
+{% from 'util/alert/index.html' import alert with context %}
+{% from 'util/code/index.html' import code, command with context %}
+{% from 'util/image/index.html' import image with context %}
+{% from 'util/quote/index.html' import blockquote with context %}
+{% from 'util/section/index.html' import section, section_further_reading with context %}
+{% from 'util/source/index.html' import sitelink, sourcelink, sourcelist with context %}
+
+{% set current = sitemap.find( id ) %}
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset=utf-8 />
+	<meta name="description" content="Comprehensive documentation for Scala on Android">
+	<meta name="keywords" content="Scala on Android, Scala, Android, Development, {{ ( title if title else current.title ) | striptags | escape }}">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<title>{{ ( title if title else current.title ) | striptags }} — Scala on Android</title>
+	<link rel="stylesheet" type="text/css" media="screen" href="/asset/stylesheet/agate.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="/asset/stylesheet/main.css" />
+	<link rel="icon" href="/asset/image/favicon.png" />
+	<link rel="manifest" href="/manifest.json" />
+</head>
+<body>
+	{% include 'include/header/index.html' %}
+
+	<main id="{{ id }}">
+		{% call alert( 'warning' ) %}
+		<p>
+			This document is under active development, changes frequently and does not claim to be correct. It is available only for demonstration purposes and should not be used to educate about the topic. A stable version of the {{ names.name( 'scala-android' ) }} documentation will ship by end of July!
+		</p>
+		{% endcall %}
+		{% block content %}{% endblock %}
+	</main>
+
+	{% include 'include/footer/index.html' %}
+
+	<script data-main="/asset/javascript/main" src="/asset/javascript/require-2.1.17.min.js"></script>
+
+	{% include 'include/analytics.html' %}
+	{% include 'include/schema.html' %}
+</body>
+</html>

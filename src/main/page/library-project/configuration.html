@@ -1,0 +1,21 @@
+<h3>Configuration</h3>
+
+<p>
+	To enable library project packaging, the {{ names.abbr( 'sbt' ) }} project definition needs to be adjusted as follows.
+</p>
+
+{{ code( 'page/library-project/configuration.scala', 'scala' ) }}
+
+<p>
+	The additional {{ command( 'sourceGenerators in Compile', 'scala' ) }} is a temporary workaround for a <a href="https://github.com/pfn/android-sdk-plugin/issues/88" target="_blank">plugin issue</a>.
+</p>
+
+<p>
+	You are now able to publish the project locally via {{ command( 'sbt publishLocal' ) }}. This allows you to reference the application as an {{ names.abbr( 'sbt' ) }} library dependency via {{ command( '"com.example" %% "my-aar-project" % "1.0.0"', 'scala' ) }} on your development machine. To make it publicly available, the {{ sourcelink( 'sbt-sonatype' ) }} plugin provides a convenient deployment process.
+</p>
+
+{% call alert( 'hint' ) %}
+	<p>
+		If the library project does not make use of views, you may also consider disabling the {{ command( 'TR' ) }} generation via {{ command( 'typedResources in Android := false', 'scala' ) }}.
+	</p>
+{% endcall %}

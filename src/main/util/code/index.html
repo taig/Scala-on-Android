@@ -1,0 +1,7 @@
+{%- macro code( path, language = null ) -%}
+	<pre class="code"><code class="highlight" data-language="{{ language }}"><!--REMOVEME{%- include path -%}--></code></pre>
+{%- endmacro -%}
+
+{%- macro command( value, language = null ) -%}
+	<code class="inline {{ 'highlight' if language }}" data-language="{{ language }}">{{ '<!--REMOVEME' + value + '-->' if language else value }}</code>
+{%- endmacro -%}

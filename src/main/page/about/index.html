@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+
+{% set id = 'about' %}
+
+{% block content %}
+	{{ section( 'page/about/introduction.html', level = 1 ) }}
+	{{ section( 'page/about/metabox.html', level = 1 ) }}
+	{{ section( 'page/about/contributing.html', level = 1 ) }}
+{% endblock %}

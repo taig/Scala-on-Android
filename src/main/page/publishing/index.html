@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+
+{% set id = 'publishing' %}
+
+{% block content %}
+	{{ section( 'page/publishing/introduction.html', level = 1 ) }}
+	{{ section( 'page/publishing/configuration.html', level = 2 ) }}
+	{{ section_further_reading( [ 'android-tools-publishing', 'sbt-plugin' ] ) }}
+{% endblock %}

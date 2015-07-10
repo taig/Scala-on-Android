@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+
+{% set id = 'dependencies' %}
+
+{% block content %}
+	{{ section( 'page/dependencies/introduction.html', level = 1 ) }}
+	{{ section( 'page/dependencies/managed.html', level = 1 ) }}
+	{{ section( 'page/dependencies/unmanaged.html', level = 1 ) }}
+	{{ section( 'page/dependencies/sub-project.html', level = 1 ) }}
+	{{ section_further_reading( [
+			'sbt-tutorial-library-dependencies',
+			'play-framework-documentation-sbt-dependencies',
+			'sbt-tutorial-multi-projects'
+		] )
+	}}
+{% endblock %}

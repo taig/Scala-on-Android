@@ -1,0 +1,8 @@
+{% extends 'layout.html' %}
+
+{% set id = 'testing' %}
+
+{% block content %}
+	{{ section( 'page/testing/introduction.html', level = 3 ) }}
+	{{ section_further_reading( [ 'vogella-testing', 'sbt-plugin-samples' ] ) }}
+{% endblock %}

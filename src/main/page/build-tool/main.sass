@@ -1,0 +1,27 @@
+@import sbt/main
+
+#build-tool
+	.comparison
+		td
+			span
+				:display none
+
+		table
+			a
+				:font-size .75rem
+				:position absolute
+
+		.yes
+			+pseudo( before, '\f023' )
+				@extend %icon
+				:font-size 1.5rem
+
+		.no
+			+pseudo( before, '\f29a' )
+				@extend %icon
+				:font-size 1.5rem
+
+		.unknown
+			+pseudo( before, '\f033' )
+				@extend %icon
+				:font-size 1.5rem

@@ -1,0 +1,119 @@
+@import ../lib/bourbon/bourbon
+@import ../lib/neat/neat
+
+@import util/main
+
+html
+	:-webkit-font-smoothing antialiased
+	:-moz-osx-font-smoothing grayscale
+	:background-color color( neutral )
+	:color color( main )
+	:font-family font-family( roboto )
+	:font-size $base
+	:font-size 100%
+
+body
+	:display flex
+	:flex-direction column
+	:min-height 100vh
+
+h1, h2, h3, h4, h5, h6
+	:font-weight 700
+	:text-transform uppercase
+
+em, abbr
+	:font-style italic
+
+strong
+	:font-weight 700
+
+main
+	+outer-container()
+	:flex 1
+	:line-height $line
+	:margin-top $header-height
+	:padding-bottom spacing( 6 )
+	:padding-top spacing( 4 )
+	:width 100%
+
+	h1, h2, h3, h4, h5, h6
+		:line-height 1.2
+
+	@each $i in ( 1 2 3 4 5 6 )
+		h#{$i}
+			:font-size $base * ( .25 * ( 6 - $i ) + 1 )
+
+	section
+		:margin-bottom spacing( 2 )
+		:position relative
+
+		> *
+			:margin-bottom spacing( 2 )
+
+	ol, ul
+		ol, ul
+			margin-left: spacing( 4 )
+
+	ol
+		:list-style decimal inside
+
+	ul
+		:list-style disc inside
+
+	a
+		$color: color( scala )
+		$overlap: 2px
+		:color $color
+		:text-decoration none
+		:position relative
+
+		+pseudo( after )
+			:background-color $color
+			:bottom 0
+			:height rem( 1px )
+			:left 50%
+			:opacity 0
+			:position absolute
+			:right 50%
+			:transition left 300ms, opacity 150ms 150ms, right 300ms
+
+		&:hover::after
+			:left rem( -$overlap )
+			:opacity .75
+			:right rem( -$overlap )
+			:transition left 300ms, opacity 150ms, right 300ms
+
+		&:visited
+			:color darken( $color, 10% )
+
+	p
+		:text-align justify
+		:hyphens auto
+
+	table
+		:margin-bottom spacing( 2 )
+		:width 100%
+
+		td, th
+			:border-bottom rem( 1px ) solid darken( color( neutral ), 30% )
+			:padding spacing()
+			:text-align center
+			:vertical-align middle
+
+		tbody tr:last-child td
+			:border-bottom none
+
+		tr td:nth-child( even )
+			:background-color darken( color( neutral ), 5% )
+
+	.content-list
+		:list-style-type none
+
+		li:not( :last-child )
+			:margin-bottom spacing( 2 )
+
+		li > *:not( :last-child )
+			:margin-bottom spacing( 2 )
+
+@import include/main
+@import page/main

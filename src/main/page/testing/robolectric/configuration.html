@@ -1,0 +1,17 @@
+<h3>Configuration</h3>
+
+<p>
+	To enable unit testing with {{ names.name( 'scalatest' ) }} and {{ names.name( 'robolectric' ) }} in your project, you need an additional library in your testing scope, called {{ names.name( 'robotest' ) }}. Expand your {{ names.abbr( 'sbt' ) }} configuration as follows.
+</p>
+
+{{ code( 'page/testing/robolectric/configuration.scala', 'scala' ) }}
+
+<p>
+	Please have a look at the {{ names.name( 'robotest' ) }} {{ sourcelink( 'robotest' ) }} documentation for further configuration details.
+</p>
+
+{% call alert( 'hint' ) %}
+	<p>
+		The {{ sourcelink( 'hello-scala' ) }} project template is preconfigured to support {{ names.name( 'scalatest' ) }} and {{ names.name( 'robolectric' ) }} unit tests and does also include sample test cases.
+	</p>
+{% endcall %}
