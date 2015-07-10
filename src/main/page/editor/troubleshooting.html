@@ -1,0 +1,50 @@
+<h3>Troubleshooting</h3>
+
+{{ names.abbr( 'ide' ) }} integration tends to break easily. If it doesn't work for you, have a look on the methods below to overcome common issues.
+
+<h4><em>gen-idea</em></h4>
+
+<p>
+	If the {{ names.abbr( 'ide' ) }} import does not work out, you can let the <em>gen-idea</em> {{ names.abbr( 'sbt' ) }} plugin generate the configuration files instead.
+</p>
+
+<p>
+	<em>gen-idea</em> is a {{ names.abbr( 'sbt' ) }} task that generates configuration files for the {{ names.name( 'intellij-idea' ) }}. To install the {{ sourcelink( 'sbt-plugin-gen-idea', '<em>gen-idea</em>' ) }} plugin create the file {{ command( '~/.sbt/0.13/plugins/gen-idea.sbt' ) }} (the filename is arbitrary) with the contents below.
+</p>
+
+{{ code( 'page/editor/gen-idea.scala.html' ) }}
+
+<p>
+	This makes the <em>gen-idea</em> {{ names.abbr( 'sbt' ) }} command globally available.
+</p>
+
+<p>
+	Now, navigate your terminal to the project root directory and run {{ command( 'sbt gen-idea' ) }}. This will create {{ names.name( 'intellij-idea' ) }} 13 configuration files, but newer versions of {{ names.name( 'intellij-idea' ) }} are able to convert the configuration to their appropriate format.
+</p>
+
+<p>
+	You can now chose the <em>Open</em> option of the {{ names.name( 'intellij-idea' ) }} and select the root directory of your project.
+</p>
+
+{{ image( '/asset/image/intellij-idea-open.png', 'Selection of IntelliJ IDEA open menu' ) }}
+{{ image( '/asset/image/intellij-idea-convert-project.png', 'Convert a project configuration of an older IntelliJ IDEA version to the current one' ) }}
+
+<p>
+	Converting the project files only needs to be done once at the initial setup. When the {{ names.abbr( 'ide' ) }} finished loading you may delete the {{ command( '/projectFilesBackup' ) }} folder.
+</p>
+
+<h4>Import the {{ names.name( 'android' ) }} dependency explicitly</h4>
+
+<p>
+	If your setup is basically working, but imports of the {{ names.abbr( 'android-sdk' ) }} are red, you can fix that by manually importing the {{ command( 'android.jar' ) }}. Go to {{ command( 'File → Project Structure' ) }} and change the {{ names.abbr( 'sdk' ) }} of each module (in the {{ command( 'Dependencies' ) }} tab) from {{ names.name( 'android' ) }} to a simple {{ names.name( 'java' ) }} {{ names.abbr( 'sdk' ) }}. Then, add the {{ command( 'android.jar' ) }} via {{ command( '+ → JARs or directories' ) }} and navigate to {{ command( '$ANDROID_HOME/platforms/android-x/android.jar' ) }}.
+</p>
+
+<p>
+	This approach does unfortunately sacrifice the {{ names.abbr( 'ide' ) }} source code lookup for {{ names.name( 'android' ) }} sources.
+</p>
+
+<h4>Start all over</h4>
+
+<p>
+	If everything fails, remove the {{ '.idea*' }} directories from the project's root directory and start over by importing the {{ names.abbr( 'sbt' ) }} project.
+</p>
