@@ -25,7 +25,7 @@ var software =
 	{
 		group: 'com.geteit',
 		artifact: 'robotest',
-		version: '0.10',
+		version: '0.12',
 		title: names.name( 'robotest' ),
 		url: function() { return 'https://github.com/zbsz/robotest'; },
 		format: function()
@@ -37,7 +37,7 @@ var software =
 	{
 		group: 'com.hanhuy.sbt',
 		artifact: 'android-sdk-plugin',
-		version: '1.4.3',
+		version: '1.4.7',
 		title: names.name( 'sbt-plugin' ),
 		url: function() { return 'https://bintray.com/pfn/sbt-plugins/' + this.artifact + '/'; },
 		format: function()

@@ -25,11 +25,6 @@
 	{% include 'include/header/index.html' %}
 
 	<main id="{{ id }}">
-		{% call alert( 'warning' ) %}
-		<p>
-			This document is under active development, changes frequently and does not claim to be correct. It is available only for demonstration purposes and should not be used to educate about the topic. A stable version of the {{ names.name( 'scala-android' ) }} documentation will ship by end of July!
-		</p>
-		{% endcall %}
 		{% block content %}{% endblock %}
 	</main>
 
