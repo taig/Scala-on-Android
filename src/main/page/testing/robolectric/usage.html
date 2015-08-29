@@ -1,7 +1,7 @@
 <h3>Usage</h3>
 
 <p>
-	Place your unit tests in the {{ command( './src/test/scala' ) }} directory. All test classes must be equipped with an {{ command( '@Config' ) }} annotation for {{ names.name( 'robolectric' ) }}. You need to manually specify the {{ command( 'AndroidManifest.xml' ) }} file location. Furthermore, your manifest file may not contain a {{ command( 'targetSdkVersion' ) }}, as you can also set it via {{ names.abbr( 'sbt' ) }} or it has a {{ command( 'targetSdkVersion' ) }} which is not supported by {{ names.name( 'robolectric' ) }}. In both cases you have to adjust the {{ command( '@Config' ) }} accordingly because {{ names.name( 'robolectric' ) }} requires a valid target {{ names.abbr( 'sdk' ) }} version.
+	Place your unit tests in the {{ command( './src/test/scala' ) }} directory. All test classes may be equipped with an {{ command( '@Config' ) }} annotation for {{ names.name( 'robolectric' ) }}. The annotation allows you to manually specify the {{ command( 'AndroidManifest.xml' ) }} file location or {{ names.abbr( 'android-sdk' ) }} version to use for text execution.
 </p>
 
 <p>
