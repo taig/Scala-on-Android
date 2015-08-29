@@ -1,12 +1,10 @@
-class MyActivity extends Activity
-{
-	override def onCreate( savedInstanceState: Bundle ) =
-	{
-		super.onCreate( savedInstanceState )
+class MyActivity extends Activity {
+    override def onCreate( savedInstanceState: Bundle ) = {
+        super.onCreate( savedInstanceState )
 
-		setContentView( R.layout.main )
+        setContentView( R.layout.main )
 
-		val title = findViewById( R.id.my_title ).asInstanceOf[TextView]
-		title.setText( "Hello Scala!" )
-	}
+        val title = findViewById( R.id.my_title ).asInstanceOf[TextView]
+        title.setText( "Hello Scala!" )
+    }
 }
