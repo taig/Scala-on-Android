@@ -5,7 +5,7 @@ var software =
 {
 	'android-sdk':
 	{
-		version: '22',
+		version: '23',
 		title: names.abbr( 'android-sdk' ),
 		format: function() { return 'android-' + this.version; }
 	},
@@ -37,7 +37,7 @@ var software =
 	{
 		group: 'com.hanhuy.sbt',
 		artifact: 'android-sdk-plugin',
-		version: '1.4.7',
+		version: '1.4.12',
 		title: names.name( 'sbt-plugin' ),
 		url: function() { return 'https://bintray.com/pfn/sbt-plugins/' + this.artifact + '/'; },
 		format: function()
