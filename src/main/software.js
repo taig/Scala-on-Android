@@ -5,7 +5,7 @@ var software =
 {
 	'android-sdk':
 	{
-		version: '22',
+		version: '23',
 		title: names.abbr( 'android-sdk' ),
 		format: function() { return 'android-' + this.version; }
 	},
