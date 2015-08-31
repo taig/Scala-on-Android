@@ -29,6 +29,7 @@
 
 	<main id="{{ id }}">
 		{% block content %}{% endblock %}
+		{% include 'include/disqus.html' %}
 	</main>
 
 	{% include 'include/footer/index.html' %}
