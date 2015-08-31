@@ -1,7 +1,7 @@
 {
 	"name": "scalaonandroid",
 	"description": "Comprehensive documentation for every aspect of your working environment",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"dependencies": {
 		"fs": "0.0.2",
 		"gulp": "^3.8.11",
