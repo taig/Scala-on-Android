@@ -1,6 +1,8 @@
 {% extends 'layout.html' %}
 
 {% set id = 'help' %}
+{% set description = 'Further reading resources and Q&A community for ' + names.render( 'scala-android' ) + ' related problems' %}
+{% set keywords = [ 'getting help', 'further reading', 'Q&A', names.render( 'so' ), names.render( 'gitter' ), names.render( 'sbt-plugin' ) ] %}
 
 {% block content %}
 	{{ section( 'page/help/help.html', level = 1 ) }}

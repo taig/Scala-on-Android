@@ -1,6 +1,8 @@
 {% extends 'layout.html' %}
 
 {% set id = 'project-setup' %}
+{% set description = 'Scaffolding, starter templates or from scratch; what is the best way to set up a fresh ' + names.render( 'scala-android' ) + ' project' %}
+{% set keywords = [ 'project setup', 'scaffolding', 'hello-scala', 'gen-android', names.render( 'g8' ) ] %}
 
 {% block content %}
 	{{ section( 'page/project-setup/introduction.html', level = 1 ) }}

@@ -1,6 +1,8 @@
 {% extends 'layout.html' %}
 
 {% set id = 'parcelable' %}
+{% set description = 'Implementing the ' + names.render( 'parcelable' ) + ' interface in ' + names.render( 'scala' ) %}
+{% set keywords = [ names.render( 'parcelable' ), 'interface', 'serialization', 'serializable', 'creator', 'static' ] %}
 
 {% block content %}
 	{{ section( 'page/parcelable/introduction.html', level = 1 ) }}

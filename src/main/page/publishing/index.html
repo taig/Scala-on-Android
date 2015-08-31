@@ -1,6 +1,8 @@
 {% extends 'layout.html' %}
 
 {% set id = 'publishing' %}
+{% set description = 'Code, compile, package - how to get a ' + names.render( 'scala-android' ) + ' ready for distribution' %}
+{% set keywords = [ 'apk', 'publish', 'sign', 'keystore', 'play store' ] %}
 
 {% block content %}
 	{{ section( 'page/publishing/introduction.html', level = 1 ) }}

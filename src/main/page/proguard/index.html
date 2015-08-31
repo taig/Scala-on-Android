@@ -1,6 +1,8 @@
 {% extends 'layout.html' %}
 
 {% set id = 'proguard' %}
+{% set description = 'What ' + names.render( 'proguard' ) + ' is all about and how to configure it for ' + names.render( 'scala-android' ) %}
+{% set keywords = [ names.render( 'proguard' ), names.render( 'multidex' ) ] %}
 
 {% block content %}
 	{{ section( 'page/proguard/introduction.html', level = 2 ) }}

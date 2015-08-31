@@ -1,6 +1,8 @@
 {% extends 'layout.html' %}
 
 {% set id = 'dependencies' %}
+{% set description = 'Adding unmanaged- and managed dependencies (*.jar as well as *.aar) to a ' + names.render( 'scala-android' ) + ' build' %}
+{% set keywords = [ names.render( 'sbt' ), 'dependencies', 'managed dependencies', 'unmanaged dependencies', 'aar', 'apklib', 'sub projects' ] %}
 
 {% block content %}
 	{{ section( 'page/dependencies/introduction.html', level = 1 ) }}

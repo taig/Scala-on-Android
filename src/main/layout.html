@@ -6,16 +6,19 @@
 {% from 'util/source/index.html' import sitelink, sourcelink, sourcelist with context %}
 
 {% set current = sitemap.find( id ) %}
+{% set title = false if title == false else ( title if title else current.title ) | striptags | escape %}
+{% set description = ( description | striptags | escape ) if description else 'Scala on Android: ' + title %}
+{% set keywords = keywords if keywords else [] %}
 
 <!DOCTYPE html>
 
 <html lang="en">
 <head>
 	<meta charset=utf-8 />
-	<meta name="description" content="Comprehensive documentation for Scala on Android">
-	<meta name="keywords" content="Scala on Android, Scala, Android, Development, {{ ( title if title else current.title ) | striptags | escape }}">
+	<meta name="description" content="{{ description if description else 'Scala on Android: ' + title }}">
+	<meta name="keywords" content="Scala on Android, Scala, Android, documentation, tutorial, development{{ ( ', ' + ( keywords | join( ', ' ) | striptags | escape ) ) if ( keywords | length ) > 0 else '' }}">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-	<title>{{ ( title if title else current.title ) | striptags }} — Scala on Android</title>
+	<title>{{ title + ' - ' if title else '' }}Scala on Android</title>
 	<link rel="stylesheet" type="text/css" media="screen" href="/asset/stylesheet/agate.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="/asset/stylesheet/main.css" />
 	<link rel="icon" href="/asset/image/favicon.png" />

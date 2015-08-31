@@ -2,6 +2,8 @@
 
 {% set id = 'proguard-cache' %}
 {% set title = names.name( 'proguard' ) + ' cache' %}
+{% set description = names.render( 'proguard' ) + ' caching rules to speed up ' + names.render( 'scala-android' ) + ' development' %}
+{% set keywords = [ names.render( 'proguard' ), 'cache' ] %}
 
 {% block content %}
 	{{ section( 'page/proguard/cache/introduction.html', level = 2 ) }}

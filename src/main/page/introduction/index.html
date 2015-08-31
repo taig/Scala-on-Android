@@ -1,6 +1,8 @@
 {% extends 'layout.html' %}
 
 {% set id = 'introduction' %}
+{% set description = 'Introduction to ' + names.render( 'scala-android' ) + ': A technology for adventurous perfectionists' %}
+{% set keywords = [ 'introduction', 'target audience', names.render( 'jvm' ), names.render( 'art' ) ] %}
 
 {% block content %}
 	{{ section( 'page/introduction/introduction.html', level = 1 ) }}

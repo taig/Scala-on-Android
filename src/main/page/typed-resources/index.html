@@ -1,6 +1,8 @@
 {% extends 'layout.html' %}
 
 {% set id = 'tr' %}
+{% set description = 'The ' + names.render( 'sbt-plugin' ) + ' comes with the TR class as a typesafe extension of ' + names.render( 'android' ) + '\'s R class' %}
+{% set keywords = [ 'typed resources', 'TR', 'R', 'findview' ] %}
 
 {% block content %}
 	{{ section( 'page/typed-resources/introduction.html', level = 1 ) }}

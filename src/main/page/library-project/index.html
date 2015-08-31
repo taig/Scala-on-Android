@@ -1,6 +1,8 @@
 {% extends 'layout.html' %}
 
 {% set id = 'library-project' %}
+{% set description = 'How to configure a ' + names.render( 'sbt-plugin' ) + ' build to package in the aar or apklib format' %}
+{% set keywords = [ 'library projects', names.render( 'sbt-plugin' ), names.render( 'sbt' ), 'aar', 'apklib' ] %}
 
 {% block content %}
 	{{ section( 'page/library-project/introduction.html', level = 1 ) }}

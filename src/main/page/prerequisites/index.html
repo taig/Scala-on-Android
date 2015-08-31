@@ -1,6 +1,8 @@
 {% extends 'layout.html' %}
 
 {% set id = 'prerequisites' %}
+{% set description = 'Everything you need to get started with ' + names.render( 'scala-android' ) + ' development' %}
+{% set keywords = [ 'prerequisites', names.render( 'jdk' ), names.render( 'android-sdk' ), 'build tool', names.render( 'sbt' ), 'editor', names.render( 'ide' ) ] %}
 
 {% block content %}
 	{{ section( 'page/prerequisites/introduction.html', level = 1 ) }}

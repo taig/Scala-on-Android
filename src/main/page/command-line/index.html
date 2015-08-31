@@ -1,6 +1,8 @@
 {% extends 'layout.html' %}
 
 {% set id = 'command-line' %}
+{% set description = 'Important command line commands to manage ' + names.render( 'scala-android' ) + ' ' + names.abbr( 'sbt' ) + ' builds' %}
+{% set keywords = [ names.render( 'sbt' ), 'command line', 'shell', 'run', 'clean', 'compile', 'release', 'debug' ] %}
 
 {% block content %}
 	{{ section( 'page/command-line/introduction.html', level = 1 ) }}

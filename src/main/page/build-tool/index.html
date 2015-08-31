@@ -1,6 +1,8 @@
 {% extends 'layout.html' %}
 
 {% set id = 'build-tool' %}
+{% set description = 'Comparison of the ' + names.render( 'sbt' ) + ' and ' + names.render( 'gradle' ) + ' for building ' + names.name( 'scala-android' ) + ' apps' %}
+{% set keywords = [ 'build tools', names.render( 'sbt' ), names.render( 'gradle' ), 'comparison', names.render( 'sbt' ) + ' vs. ' + names.render( 'gradle' ) ] %}
 
 {% block content %}
 	{{ section( 'page/build-tool/introduction.html', level = 1 ) }}

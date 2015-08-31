@@ -1,6 +1,9 @@
 {% extends 'layout.html' %}
 
 {% set id = 'contents' %}
+{% set title = false %}
+{% set description = title + ': The comprehensive documentation' %}
+{% set keywords = [ 'overview', 'topics', 'table of contents' ] %}
 
 {% block content %}
 	{{ section( 'page/home/contents.html', level = 0, class = 'toc' ) }}

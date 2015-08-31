@@ -1,6 +1,8 @@
 {% extends 'layout.html' %}
 
 {% set id = 'editor' %}
+{% set description = 'Setting up your preferred ' + names.render( 'ide' ) + ' for ' + names.render( 'scala-android' ) + ' development' %}
+{% set keywords = [ names.render( 'intellij-idea' ), names.render( 'android-studio' ), names.render( 'sbt' ), 'configuration' ] %}
 
 {% block content %}
 	{{ section( 'page/editor/editor.html', level = 3, class = 'editor' ) }}

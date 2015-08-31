@@ -1,6 +1,8 @@
 {% extends 'layout.html' %}
 
 {% set id = 'build-tool-sbt' %}
+{% set description = names.render( 'sbt' ) + ' tutorial for ' + names.render( 'scala-android' ) %}
+{% set keywords = [ names.render( 'sbt' ), 'installation', 'project structure', 'project layout' ] %}
 
 {% block content %}
 	<section class="build-tool-sbt">
