@@ -37,7 +37,7 @@ var software =
 	{
 		group: 'com.hanhuy.sbt',
 		artifact: 'android-sdk-plugin',
-		version: '1.4.12',
+		version: '1.5.7',
 		title: names.name( 'sbt-plugin' ),
 		url: function() { return 'https://bintray.com/pfn/sbt-plugins/' + this.artifact + '/'; },
 		format: function()

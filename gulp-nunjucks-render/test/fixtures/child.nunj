@@ -1,4 +1,0 @@
-{% extends 'parent.nunj' %}
-{% block contents -%}
-    {{ super() }}
-{%- endblock %}

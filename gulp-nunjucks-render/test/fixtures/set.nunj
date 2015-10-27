@@ -1,2 +1,0 @@
-{% set title = 'Title via set' %}
-{% extends 'parent.nunj' %}

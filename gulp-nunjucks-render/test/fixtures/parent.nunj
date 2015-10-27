@@ -1,4 +1,0 @@
-{{ title }}
-{% block contents -%}
-    Parent contents
-{%- endblock %}
